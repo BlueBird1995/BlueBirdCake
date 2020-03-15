@@ -4,7 +4,7 @@
 <% @products.each do |product| %>
   <%= attachment_image_tag product_image, :image %>
   <%= product.name %>
-  <%= product.price %>
+  <%= product.price*1.08 %>
 <% end %>
 <!-- １ページに８件表示する -->
 <%= paginate @products %>
