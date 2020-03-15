@@ -11,6 +11,17 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2020_03_15_060537) do
+  create_table "orders", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "name", default: ""
+    t.string "postal_code", default: ""
+    t.string "address", default: ""
+    t.integer "payment"
+    t.integer "total_price", null: false
+    t.integer "postage", default: 800
+    t.string "status", default: "入金待ち"
+
+
 
   create_table "deliveries", force: :cascade do |t|
     t.integer "user_id"
