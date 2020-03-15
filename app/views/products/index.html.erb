@@ -6,3 +6,12 @@
   <%= product.name %>
   <%= product.price %>
 <% end %>
+<!-- １ページに８件表示する -->
+<%= paginate @products %>
+
+<div class="pagination">
+  <p>・</p>
+  <p>・</p>
+  <p>・</p>
+  <p>・</p>
+</div>
