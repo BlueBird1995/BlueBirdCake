@@ -1,21 +1,22 @@
 class CartsController < ApplicationController
+  before_action :authenticate_user!
+
   def show
-  	@product = Product.find(params[:id])
-  	@cart_product = CartProduct.new
-  	@cart_products = @product.cart_products
+  	#@product = Product.find(params[:id])
+    #@cart_product = CartProduct.new
+  	#@cart_products = @product.cart_products
   end
 
   def create
-  	@product = Product.find(params[:product_id])
-    @product_new = Product.new
-    @cart_product = @product.cart_product.new(cart_product_comment_params)
+  	@product = params[:cart][:product_id]
+  	@stock = params[:cart][:stock]
+    @cart_product = @product.cart_product.new(cart_product_params)
     @cart_product.user_id = current_user.id
     if @cart_product.save
-      flash[:success] = "Comment was successfully created."
-      redirect_to book_path(@book)
+      #flash[:success] = "Comment was successfully created."
+      redirect_to carts_path(@cart_product)
     else
-      @book_comments = BookComment.where(book_id: @book.id)
-      render '/books/show'
+      render '/carts/show'
     end
   end
 
@@ -23,6 +24,14 @@ class CartsController < ApplicationController
   end
 
   def destroy
+  	@cart_product = CartProduct.find(params[:product_id])
+    @cart_product.destroy
+    redirect_to request.referer
   end
   
+  private
+
+  def cart_product_params
+    params.require(:cart_product).permit(:cart)
+  end
 end
