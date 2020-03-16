@@ -6,8 +6,7 @@ class DeliveriesController < ApplicationController
 
   def create
     @delivery = Delivery.new(delivery_params)
-    @delivery.user_id = params[:user_id]
-    # あとでcurrent_user.idにする
+    @delivery.user_id = current_user.id
     @delivery = @delivery.save
     redirect_back(fallback_location: root_path)
   end
