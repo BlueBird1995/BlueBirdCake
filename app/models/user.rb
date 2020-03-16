@@ -16,7 +16,7 @@ class User < ApplicationRecord
   validates :status,            presence: true
 
 
-
+  has_many :carts, dependent: :destroy
 
   has_many :deliveries, dependent: :destroy
 end

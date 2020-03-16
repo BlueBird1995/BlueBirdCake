@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   #ユーザの論理削除するためのroute
   put "/users/:id/hide" => "users#hide", as: 'users_hide'
     resources :deliveries
-  end
+  
 end
