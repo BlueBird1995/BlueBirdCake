@@ -1,0 +1,17 @@
+<!-- ジャンル検索部分テンプレート -->
+
+<!-- 商品画像 -->
+<%= attachment_image_tag product_image, :image %>
+<!-- 商品名 -->
+<%= @product.name %>
+<!-- 商品説明 -->
+<%= @product.description %>
+<!-- 価格 -->
+<p><%= @product.price*1.08 %>（税込）</p>
+<!-- 個数選択 -->
+<!-- カートに入れるボタン -->
+<%= form_for @cart_product do |f| %>
+  <%= f.hidden_field :product_id, value: @product.id %>
+  <%= f.select :stock, options_for_select((1..10).to_a), include_blank: "個数選択" %>
+  <%= f.submit "カートに入れる" %>
+<% end %>

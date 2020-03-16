@@ -1,0 +1,17 @@
+<!-- ジャンル検索部分テンプレート -->
+
+<h2>商品一覧（全'<%= @content %>'件）</h2>
+<% @products.each do |product| %>
+  <%= attachment_image_tag product_image, :image %>
+  <%= product.name %>
+  <%= product.price*1.08 %>
+<% end %>
+<!-- １ページに８件表示する -->
+<%= paginate @products %>
+
+<div class="pagination">
+  <p>・</p>
+  <p>・</p>
+  <p>・</p>
+  <p>・</p>
+</div>
