@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   def new #注文者情報を入力する
+    @order = Order.new
   end
 
   def confirm #注文確認画面を表示する
@@ -16,4 +17,11 @@ class OrdersController < ApplicationController
 
   def create #注文情報を作成する
   end
+
+
+ private
+  　def order_params
+    　params.require(:order).permit( :name, :postal_code, :address, :payment,
+                                     :total_price, :postage, :status)
+    end
 end
