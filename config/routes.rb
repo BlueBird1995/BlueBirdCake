@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  root 'homes#top'
   devise_for :users
-
+  root 'homes#top'
   resources :users, only: [:show, :edit, :update] do
     #本当に削除しますかページ
     member do
