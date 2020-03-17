@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <% if flash[:notice] && user_signed_in? %>
 <%# ログインに成功した場合 %>
   <p>ようこそ、<%= current_user.first_name %>さん！</p>
@@ -6,5 +7,7 @@
 <h1>Homes#top</h1>
 <p>Find me in app/views/homes/top.html.erb</p>
 
+=======
+>>>>>>> d27732ad04529f095611777d70980a7e14cbed2f
 <%= link_to '新規登録', new_user_registration_path %>
-<%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: '' %>
+<%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>

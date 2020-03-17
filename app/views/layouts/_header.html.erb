@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <title>BlueBirdCake</title>
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
-
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-</head>
-
-<body>
-
-  <header class="navbar navbar-expand-md bg-dark">
+<header class="navbar navbar-expand-md bg-dark">
     <ul class="navbar-nav border my-3 px-3">
       <li class="text-white h3 shop-name">Nagano Cake</li>
     </ul>
@@ -30,9 +16,4 @@
       <li class="nav-item p-2 mr-2 btn-light rounded"><%= link_to 'ログイン', new_user_session_path, class: "text-decoration-none text-secondary" %></li>
     <% end %>
     </ul>
-  </header>
-  
-  <%= yield %>
-</body>
-
-</html>
+</header>
