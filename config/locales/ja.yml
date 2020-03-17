@@ -7,3 +7,13 @@ ja:
         postal_code: 郵便番号
         address: 宛先
         name: 名前
+      user: ユーザー
+    attributes:
+      user:
+        postal_code: 郵便番号
+        address: 住所
+        first_name: 苗字
+        last_name: 名前
+        first_kana: フリガナ（セイ）
+        last_kana: フリガナ（メイ）
+        telephone_number: 電話番号

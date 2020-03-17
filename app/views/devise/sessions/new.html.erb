@@ -1,9 +1,16 @@
+<div class="container">
+  <div class="row">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+  </div>
+</div>
+<%# ここまでエラーメッセージ %>
+
 <div class="all-view">
   <h4 class="ml-5 bg-light d-inline">会員の方はこちらからログイン</h4>
 
-
   <div class="form pt-5">
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
     <div class="container">
       <div class="row mb-6">
 
@@ -37,7 +44,7 @@
 
   <div class="actions row">
     <div class="col-md-3 offset-4 mt-4">
-      <%= f.submit "ログイン", class: "btn btn-primary pr-5 pl-5"%>
+      <%= f.submit "ログイン",method: :post, class: "btn btn-primary pr-5 pl-5"%>
     </div>
   </div>
   <% end %>
