@@ -4,13 +4,15 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :edit, :update] do
     resources :deliveries
+
     #本当に削除しますかページ
+
     member do
       get :confirm_destroy
     end
   end
-  #ユーザの論理削除するためのroute
   put "/users/:id/hide" => "users#hide", as: 'users_hide'
+
 
 
   get '/orders/success' => 'orders#success'
