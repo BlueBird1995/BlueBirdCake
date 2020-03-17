@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   root 'homes#top'
 
   resources :users, only: [:show, :edit, :update] do
+
+    resource :carts,only:[:show,:create,:update,:destroy]
+    #本当に削除しますかページ
+
     resources :deliveries
 
     #本当に削除しますかページ
@@ -13,7 +17,9 @@ Rails.application.routes.draw do
   end
   put "/users/:id/hide" => "users#hide", as: 'users_hide'
 
-
+   
+  resources :products,only:[:index,:show]
+  
 
   get '/orders/success' => 'orders#success'
   post '/orders/success' => 'orders#success'
