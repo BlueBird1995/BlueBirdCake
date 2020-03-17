@@ -12932,3 +12932,40 @@ ActionView::Template::Error (undefined local variable or method `order' for #<#<
     11:          <%= f.radio_button :payment, :bank %>
   
 app/views/orders/new.html.erb:8:in `_app_views_orders_new_html_erb__1150496249084589845_47107448187300'
+Started GET "/orders/2/new" for 10.0.2.2 at 2020-03-17 05:32:17 +0000
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by OrdersController#new as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:5
+  Rendering orders/new.html.erb within layouts/application
+  Rendered orders/new.html.erb within layouts/application (207.3ms)
+Completed 500 Internal Server Error in 364ms (ActiveRecord: 13.6ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `order' for #<#<Class:0x00005565dfe1d6c0>:0x00005565dfe11690>):
+     5:      <h3>支払方法</h3>
+     6:       <br>
+     7:       <!-- enumわからないところ -->
+     8:       <%= form_for(model: order, local: true) do |f| %>
+     9:          <%= f.radio_button :payment, :credit, checked: true %>
+    10:          <%= f.label :payment, "クレジットカード", {value: :credit} %>
+    11:          <%= f.radio_button :payment, :bank %>
+  
+app/views/orders/new.html.erb:8:in `_app_views_orders_new_html_erb__4547464623297895927_46948018091020'
+Started GET "/orders/2/new" for 10.0.2.2 at 2020-03-17 05:33:22 +0000
+Processing by OrdersController#new as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:5
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/new.html.erb:14
+  [1m[36mDelivery Load (1.7ms)[0m  [1m[34mSELECT "deliveries".* FROM "deliveries" WHERE "deliveries"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/orders/new.html.erb:18
+  Rendered orders/new.html.erb within layouts/application (101.1ms)
+Completed 200 OK in 1924ms (Views: 1879.8ms | ActiveRecord: 13.8ms)
+
+
