@@ -10,13 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2020_03_15_044122) do
+ActiveRecord::Schema.define(version: 2020_03_15_060537) do
 
   create_table "carts", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "product_id"
     t.integer "stock"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "deliveries", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "name", null: false
+    t.string "postal_code", null: false
+    t.string "address", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "name", default: ""
+    t.string "postal_code", default: ""
+    t.string "address", default: ""
+    t.integer "payment"
+    t.integer "total_price", null: false
+    t.integer "postage", default: 800
+    t.string "status", default: "入金待ち"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -28,24 +49,6 @@ ActiveRecord::Schema.define(version: 2020_03_15_044122) do
     t.text "description", null: false
     t.boolean "status", default: true, null: false
     t.string "name", null: false
-
-  create_table "orders", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "name", default: ""
-    t.string "postal_code", default: ""
-    t.string "address", default: ""
-    t.integer "payment"
-    t.integer "total_price", null: false
-    t.integer "postage", default: 800
-    t.string "status", default: "入金待ち"
-
-
-
-  create_table "deliveries", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "name", null: false
-    t.string "postal_code", null: false
-    t.string "address", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

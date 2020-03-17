@@ -2,13 +2,20 @@ class DeliveriesController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     @delivery = Delivery.new
+    # フォームを表示するためにdelivery_paramsを与えないDerivery.newを代入。
   end
 
   def create
     @delivery = Delivery.new(delivery_params)
     @delivery.user_id = current_user.id
-    @delivery = @delivery.save
-    redirect_back(fallback_location: root_path)
+    # 親モデルであるUserのidと紐づいているため、Deriveryを保存する前にそれを保存。
+    if @delivery.save
+      redirect_back(fallback_location: root_path)
+    else
+      @user = User.find(params[:user_id])
+      # renderはredirect_toと違い、elseの中でviewを作るため、@userを代入し直す。
+      render :index
+    end
   end
 
   def edit
@@ -23,8 +30,11 @@ class DeliveriesController < ApplicationController
 
   def update
     @delivery = Delivery.find(params[:id])
-    @delivery.update(delivery_params)
+    if @delivery.update(delivery_params)
     redirect_to user_deliveries_path
+    else
+      render :edit
+    end
   end
 
 end

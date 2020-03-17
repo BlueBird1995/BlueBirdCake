@@ -1,3 +1,8 @@
+<% if flash[:notice] && user_signed_in? %>
+<%# ログインに成功した場合 %>
+  <p>ようこそ、<%= current_user.first_name %>さん！</p>
+<% end %>
+
 <h1>Homes#top</h1>
 <p>Find me in app/views/homes/top.html.erb</p>
 
