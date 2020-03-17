@@ -16,6 +16,7 @@ class UsersController < ApplicationController
     end
   end
 
+  #削除確認ページ
   def confirm_destroy
     @user = User.find(params[:id])
   end
@@ -23,9 +24,10 @@ class UsersController < ApplicationController
 
   def hide
     @user = User.find(params[:id])
-    #userのstatusを反転させてる
+    #真偽値反転
     @user.toggle!(:status)
-    #この行でセッション削除してログアウトさせたい
+    #セッション情報削除
+    reset_session
     flash[:notice] = "退会完了しました"
     redirect_to root_path
   end
@@ -37,6 +39,7 @@ class UsersController < ApplicationController
                                   :email,
                                   :postal_code,
                                   :address,
-                                  :telephone_number )
+                                  :telephone_number,
+                                  :status )
   end
 end

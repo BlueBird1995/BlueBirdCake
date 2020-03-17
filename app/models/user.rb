@@ -9,11 +9,11 @@ class User < ApplicationRecord
   validates :first_kana,        presence: true
   validates :last_kana,         presence: true
   validates :email,             presence: true
-  validates :password,          presence: true
   validates :postal_code,       presence: true
   validates :address,           presence: true
   validates :telephone_number,  presence: true
   validates :status,            presence: true
+
 
 
   has_many :carts, dependent: :destroy
