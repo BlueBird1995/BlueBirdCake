@@ -1,21 +1,31 @@
-<p>配送先登録／一覧だよ</p>
+<h4 class="ml-5 bg-light d-inline">配送先登録／一覧</h4>
+
 
 <%= form_for [@user, @delivery] do |f| %>
-<table>
-  <tr>
-    <td>郵便番号</td>
-    <td><%= f.text_field :postal_code %></td>
+<% if @delivery.errors.any? %>
+  <h3><%= @delivery.errors.count %>個のエラーがあります。</h3>
+  <% @delivery.errors.full_messages.each do |message| %>
+<ul>
+  <li><%= message %></li>
+</ul>
+<% end %>
+<% end %>
+
+<div class="container">
+  <div class="row">
+    郵便番号
+    <%= f.text_field :postal_code %>
+  </div>
+  
+    住所
+    <%= f.text_field :address %>
   </tr>
-  <tr>
-    <td>住所</td>
-    <td><%= f.text_field :address %></td>
+  
+    宛名
+    <%= f.text_field :name %>
+    <%= f.submit "登録する" %>
   </tr>
-  <tr>
-    <td>宛名</td>
-    <td><%= f.text_field :name %></td>
-    <td><%= f.submit "登録する" %></td>
-  </tr>
-</table>
+</div>
 <% end %>
 
 <table>

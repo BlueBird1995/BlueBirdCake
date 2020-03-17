@@ -14,8 +14,14 @@
  *= require_self
  */
 @import "bootstrap";
-@import "users.scss";
+
+// Devise-ログイン画面のフォームを中央に寄せるために使用（ほりゆう）
+.all-view {
+  margin-top: 100px;
+  margin-left: 200px;
+}
 
 .shop-name {
     font-family: "Gill Sans", sans-serif;
+
 }

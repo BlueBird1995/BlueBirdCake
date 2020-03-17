@@ -69,3 +69,6 @@ gem "refile-mini_magick"
 gem 'pry-byebug'
 gem 'jp_prefecture'
 gem 'dotenv-rails'
+gem 'rails-i18n'
+gem 'devise-i18n'
+gem 'devise-i18n-views'

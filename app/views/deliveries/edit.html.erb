@@ -1,3 +1,13 @@
+<% if @delivery.errors.any? %>
+  <h3><%= @delivery.errors.count %>個のエラーがあります。</h3>
+  <% @delivery.errors.full_messages.each do |message| %>
+<ul>
+  <li><%= message %></li>
+</ul>
+
+<% end %>
+<% end %>
+
 <%= form_for(@delivery, url: user_delivery_path, html: {method: "patch"}) do |f| %>
 <table>
 <tr><td>郵便番号</td><td><%= f.text_field :postal_code %></td></tr>
@@ -5,3 +15,4 @@
 <tr><td>宛名</td><td><%= f.text_field :name %></td><td><%= f.submit "編集する" %></td></tr>
 </table>
 <% end %>
+
