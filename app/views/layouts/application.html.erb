@@ -1,15 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>BlueBirdCake</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <title>BlueBirdCake</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-  <body>
-    <%= yield %>
-  </body>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  <header class="navbar navbar-expand-md bg-dark">
+    <ul class="navbar-nav">
+    <li class="text-white h3">Nagano Cake</li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+    <% if user_signed_in? %>
+      <li class="nav-item p-2 mr-2 btn-light rounded-pill"><%= link_to 'マイページ', user_path(current_user.id) %></li>
+      <%# 商品機能が完成したら修正  %>
+      <li class="nav-item p-2 mr-2 btn-light rounded-pill"><%= link_to '商品一覧（未実装）', user_path(current_user.id) %></li>
+      <li class="nav-item p-2 mr-2 btn-light rounded-pill"><%= link_to 'カート（未実装）', user_path(current_user.id) %></li>
+      <li class="nav-item p-2 btn-light rounded-pill"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+    </ul>
+    <% else %>
+    <!-- 商品機能が完成したら他も実装 -->
+    <li class="nav-item p-2 mr-2 btn-light rounded-pill"><%= link_to '商品一覧（未実装）', new_user_registration_path %></li>
+    <li class="nav-item p-2 mr-2 btn-light rounded-pill"><%= link_to '新規登録', new_user_registration_path %></li>
+    <li class="nav-item p-2 mr-2 btn-light rounded-pill"><%= link_to 'ログイン', new_user_session_path %></li>
+    <% end %>
+  </header>
+  
+  <p id="notice"><%= notice %></p>
+  <%= yield %>
+</body>
+
 </html>

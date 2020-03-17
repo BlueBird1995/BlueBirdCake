@@ -12,6 +12,14 @@
 
 ActiveRecord::Schema.define(version: 2020_03_15_060537) do
 
+  create_table "carts", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "product_id"
+    t.integer "stock"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "deliveries", force: :cascade do |t|
     t.integer "user_id"
     t.string "name", null: false
@@ -30,6 +38,17 @@ ActiveRecord::Schema.define(version: 2020_03_15_060537) do
     t.integer "total_price", null: false
     t.integer "postage", default: 800
     t.string "status", default: "入金待ち"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.integer "genre_id", null: false
+    t.string "product_image_id"
+    t.integer "price", null: false
+    t.text "description", null: false
+    t.boolean "status", default: true, null: false
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
