@@ -2,9 +2,12 @@ class CartsController < ApplicationController
   before_action :authenticate_user!
 
   def show
-    @cart = current_user.carts
-    @carts = Cart.all
-    @total_price = @carts.sum(:subtotal)
+    @carts = current_user.carts
+    @total_price = 0
+    @carts.each do |f|
+      @total_price += f.subtotal
+    end
+
   end
 
   def create
