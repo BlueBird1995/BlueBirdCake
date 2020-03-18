@@ -26,12 +26,11 @@
   </tbody>
 </table>
 
-
 <!-- 合計金額表示 -->
 <table>
   <tr>
     <th>合計金額</th>
-    
+　　　<td><%= @total_price %></td>
   </tr>
 </table>
 
@@ -41,3 +40,5 @@
 
 <!-- 情報入力に進むボタン -->
 <%= link_to "情報入力画面に進む",'/orders/new',class: 'btn-sm btn-success' %>
+<%= @carts.hidden_field :total_price, :value => @total_price %>
+

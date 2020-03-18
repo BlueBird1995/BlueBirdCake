@@ -16,9 +16,8 @@ Rails.application.routes.draw do
   end
   put "/users/:id/hide" => "users#hide", as: 'users_hide'
 
-   
+
   resources :products,only:[:index,:show]
-  
 
   get '/orders/success' => 'orders#success'
   post '/orders/success' => 'orders#success'

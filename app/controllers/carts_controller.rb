@@ -7,7 +7,6 @@ class CartsController < ApplicationController
     @carts.each do |f|
     @total_price += f.subtotal
     end
-   # @total_price = @carts.sum(subtotal)
   end
 
   def create
