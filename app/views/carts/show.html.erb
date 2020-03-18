@@ -1,5 +1,6 @@
 <h2>ショッピングカート</h2>
 <!-- カートを空にするボタン -->
+<%= button_to "カートを空にする",  {controller: 'carts', action: 'destroy_all'}, {method: :delete},class: 'btn-sm btn-danger' %>
 
 <table>
   <thead>
@@ -12,34 +13,33 @@
 	  </tr>
   </thead>
   <tbody>
-
 	  <% @carts.each do |cart| %>
 	  <tr>
 	  	<td><%= cart.product.name %></td>
 	  	<td><%= cart.tax_included %></td>
 	  	<td><%= cart.stock %></td>
-	  	<td><%= cart.subtotal %></td>
-	  	<td><%= link_to "削除する",user_carts_path(cart),class: 'btn-sm btn-danger', method: :delete %></td>
+		<td><%= cart.subtotal %></td>
+	  	<td><%= link_to "削除する",user_carts_path(cart), class: 'btn-sm btn-danger', method: :delete %></td>
 	  </tr>
 	  <% end %>
   </tbody>
 </table>
-
 <!-- 合計金額表示 -->
 <table>
   <tr>
     <th>合計金額</th>
-   <!-- <td><%= @total_price %></td> -->
+　　　<td><%= @total_price %></td>
   </tr>
-
-<%= @total_price %>
-
 </table>
 
 <!-- 買い物を続けるボタン -->
-<%= link_to "買い物を続ける",products_path,class: 'btn-sm btn-success' %>
+<%= link_to "買い物を続ける",products_path,class: 'btn-sm btn-primary' %>
+
 
 
 <!-- 情報入力に進むボタン -->
-<%= link_to "買い物を続ける",products_path,class: 'btn-sm btn-success' %>
+
 <%= hidden_field :total_price, :value => @total_price %>
+
+<%= link_to "情報入力画面に進む",'/orders/new',class: 'btn-sm btn-success' %>
+
