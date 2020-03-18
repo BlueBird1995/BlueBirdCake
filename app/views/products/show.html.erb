@@ -7,7 +7,7 @@
 <!-- 商品説明 -->
 <%= @product.description %>
 <!-- 価格 -->
-<p><%= @product.price*1.08 %>（税込）</p>
+<%= @product.tax_included %>
 <!-- 個数選択 -->
 <!-- カートに入れるボタン -->
 <%= form_for @cart ,url: user_carts_path(@user) do |f| %>
