@@ -13,7 +13,7 @@
   </thead>
   <tbody>
 
-	  <% @cart.each do |cart| %>
+	  <% @carts.each do |cart| %>
 	  <tr>
 	  	<td><%= cart.product.name %></td>
 	  	<td><%= cart.tax_included %></td>
@@ -25,13 +25,15 @@
   </tbody>
 </table>
 
-
 <!-- 合計金額表示 -->
 <table>
   <tr>
     <th>合計金額</th>
-    <td><%= @total_price %></td>
+   <!-- <td><%= @total_price %></td> -->
   </tr>
+
+<%= @total_price %>
+
 </table>
 
 <!-- 買い物を続けるボタン -->
@@ -39,3 +41,5 @@
 
 
 <!-- 情報入力に進むボタン -->
+<%= link_to "買い物を続ける",products_path,class: 'btn-sm btn-success' %>
+<%= @carts.hidden_field :total_price, :value => @total_price %>

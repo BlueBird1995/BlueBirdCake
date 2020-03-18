@@ -1,14 +1,12 @@
-ja:
   activerecord:
     models:
-      delivery: 配送先 
+      user: ユーザー
+      delivery: 配送先
     attributes:
       delivery:
         postal_code: 郵便番号
         address: 宛先
         name: 名前
-      user: ユーザー
-    attributes:
       user:
         postal_code: 郵便番号
         address: 住所
@@ -17,11 +15,13 @@ ja:
         first_kana: フリガナ（セイ）
         last_kana: フリガナ（メイ）
         telephone_number: 電話番号
-    attributes:
       order:
         payment: 支払方法
+      order/payment:
+        creditcard: "クレジットカード"
+        bank: "銀行振込"
   enums:
     order:
       payment:
-        creditcard: クレジットカード
-        bank: 銀行振込
+        creditcard: "クレジットカード"
+        bank: "銀行振込"
