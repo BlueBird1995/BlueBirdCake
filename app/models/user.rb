@@ -26,4 +26,5 @@ class User < ApplicationRecord
     first_name + last_name
   end
   # 注文の際に使います
+
 end
