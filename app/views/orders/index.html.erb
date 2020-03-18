@@ -16,14 +16,14 @@
 
   	<% @orders.each do |f| %>
     <tr>
-     <td><%= f.created_at %></td>
+     <td><%= f.created_at.strftime("%Y/%m/%d")%></td>
      <td><%= f.postal_code %>
     	<%= f.address %>
     	<%= f.name %></td>
      <td>仮注文商品</td>
      <td><%= f.total_price %></td>
      <td><%= f.status %></td>
-     <td><%= link_to '詳細', order_path(f.id) %></td>
+     <td><%= link_to '表示する', order_path(f.id) %></td>
      </tr>
     <% end %>
 

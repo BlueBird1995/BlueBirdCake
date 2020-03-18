@@ -16,4 +16,9 @@ class User < ApplicationRecord
   has_many :carts, dependent: :destroy
   has_many :deliveries, dependent: :destroy
   has_many :orders, dependent: :destroy
+
+  #注文する際の住所を指定するためのもの
+  def full_address
+    postal_code + address + first_name + last_name
+  end
 end
