@@ -2,21 +2,21 @@ class CartsController < ApplicationController
   before_action :authenticate_user!
 
   def show
-  	#@product = Product.find(params[:id])
-    #@cart_product = CartProduct.new
-  	#@cart_products = @product.cart_products
+    @cart = current_user.carts
+    @carts = Cart.all
+    @total_price = @carts.sum(:subtotal)
   end
 
   def create
   	@product = params[:cart][:product_id]
   	@stock = params[:cart][:stock]
-    @cart_product = @product.cart_product.new(cart_product_params)
-    @cart_product.user_id = current_user.id
-    if @cart_product.save
+    @cart = Cart.new(cart_params)
+    #@cart.user_id = current_user.id
+    if @cart.save
       #flash[:success] = "Comment was successfully created."
-      redirect_to carts_path(@cart_product)
+      redirect_to user_carts_path(@cart)
     else
-      render '/carts/show'
+      redirect_to product_path(@product)
     end
   end
 
@@ -31,7 +31,7 @@ class CartsController < ApplicationController
   
   private
 
-  def cart_product_params
-    params.require(:cart_product).permit(:cart)
+  def cart_params
+    params.require(:cart).permit(:product_id,:stock,:user_id)
   end
 end
