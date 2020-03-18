@@ -1,11 +1,8 @@
 class CartsController < ApplicationController
   before_action :authenticate_user!
-
+  
   def show
     @carts = current_user.carts
-  end
-
-  def create
     @cart = Cart.new(cart_params)
     @user = User.find(params[:user_id])
     if @cart.save
@@ -19,8 +16,13 @@ class CartsController < ApplicationController
   end
 
   def destroy
-  	@cart_product = CartProduct.find(params[:product_id])
-    @cart_product.destroy
+  	@cart = Cart.find(params[:user_id])
+    @cart.destroy
+    redirect_to request.referer
+  end
+
+  def destroy_all
+    cart = Cart.destroy_all
     redirect_to request.referer
   end
 

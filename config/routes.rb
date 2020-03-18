@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update] do
 
     resource :carts,only:[:show,:create,:update,:destroy]
-    #本当に削除しますかページ
 
     resources :deliveries
 
@@ -29,5 +28,6 @@ Rails.application.routes.draw do
     end
   end
   get '/orders/:id/new' => 'orders#new'
-
+  #注文確認画面confirmよくわからん
+  delete '/users/:id/carts' => 'carts#destroy_all', as:'destroy_all'
 end
