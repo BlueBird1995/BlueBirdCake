@@ -12,6 +12,7 @@
 	  </tr>
   </thead>
   <tbody>
+
 	  <% @cart.each do |cart| %>
 	  <tr>
 	  	<td><%= cart.product.name %></td>
@@ -24,6 +25,7 @@
   </tbody>
 </table>
 
+
 <!-- 合計金額表示 -->
 <table>
   <tr>
@@ -34,4 +36,6 @@
 
 <!-- 買い物を続けるボタン -->
 <%= link_to "買い物を続ける",products_path,class: 'btn-sm btn-success' %>
+
+
 <!-- 情報入力に進むボタン -->

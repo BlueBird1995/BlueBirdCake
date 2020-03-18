@@ -1,5 +1,6 @@
 <% if flash[:notice] && user_signed_in? %>
 <%# ログインに成功した場合 %>
+
   <p>ようこそ、<%= current_user.first_name %>さん！</p>
 <% end %>
 
