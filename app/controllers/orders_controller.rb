@@ -2,12 +2,21 @@ class OrdersController < ApplicationController
 
   def new #注文者情報を入力する
     @order = Order.new
+    # 追記
     @order.user_id = current_user.id
     @user = current_user
-  end
 
+  end
+  
   def confirm #注文確認画面を表示する
     @order = Order.new(order_params)
+
+    if params[:address_button] == "deliveries_address" #保存してある住所を選んだ場合
+      @order.address = Delivery.find(params[:select]).full_address #モデルに定義した住所を合体させるメソッド
+    else 
+      redirect_to root_path
+    end
+
   end
 
   def create #注文情報を作成する
@@ -34,9 +43,10 @@ class OrdersController < ApplicationController
   end
 
 
- private
-  def order_params
+private
+ def order_params
    params.require(:order).permit( :user_id, :name, :postal_code, :address, :payment,
-                                     :total_price, :postage, :status, :credit, :bank)
-  end
+     :total_price, :postage, :status, :creditcard, :bank, :select)
+ end
+
 end

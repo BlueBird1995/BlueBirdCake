@@ -16,4 +16,10 @@ class User < ApplicationRecord
   has_many :carts, dependent: :destroy
   has_many :deliveries, dependent: :destroy
   has_many :orders, dependent: :destroy
+
+  def full_address
+    address + first_name + last_name
+  end
+  # 住所合体させるために記載しました（なるちゃん用）
+
 end
