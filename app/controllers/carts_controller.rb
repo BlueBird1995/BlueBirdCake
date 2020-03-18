@@ -3,15 +3,6 @@ class CartsController < ApplicationController
   
   def show
     @carts = current_user.carts
-    @total_price = 0
-    @carts.each do |f|
-    @total_price += f.subtotal
-    end
-  end
-
-  def create
-  	#@product = params[:cart][:product_id]
-  	#@stock = params[:cart][:stock]
     @cart = Cart.new(cart_params)
     @user = User.find(params[:user_id])
     if @cart.save
@@ -34,9 +25,8 @@ class CartsController < ApplicationController
     cart = Cart.destroy_all
     redirect_to request.referer
   end
-  
-  private
 
+  private
   def cart_params
     params.require(:cart).permit(:product_id,:stock,:user_id)
   end

@@ -13,19 +13,17 @@
 	  </tr>
   </thead>
   <tbody>
-
 	  <% @carts.each do |cart| %>
 	  <tr>
 	  	<td><%= cart.product.name %></td>
 	  	<td><%= cart.tax_included %></td>
 	  	<td><%= cart.stock %></td>
-	  	<td><%= cart.subtotal %></td>
-	  	<td><%= link_to "削除する",user_carts_path(cart),class: 'btn-sm btn-danger', method: :delete %></td>
+		<td><%= cart.subtotal %></td>
+	  	<td><%= link_to "削除する",user_carts_path(cart), class: 'btn-sm btn-danger', method: :delete %></td>
 	  </tr>
 	  <% end %>
   </tbody>
 </table>
-
 <!-- 合計金額表示 -->
 <table>
   <tr>
@@ -36,6 +34,7 @@
 
 <!-- 買い物を続けるボタン -->
 <%= link_to "買い物を続ける",products_path,class: 'btn-sm btn-primary' %>
+
 
 
 <!-- 情報入力に進むボタン -->
