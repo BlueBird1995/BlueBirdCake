@@ -17,4 +17,9 @@ class User < ApplicationRecord
   has_many :carts, dependent: :destroy
   has_many :deliveries, dependent: :destroy
   has_many :orders, dependent: :destroy
+
+  def full_address
+    postal_code + address + first_name + last_name
+  end
+
 end
