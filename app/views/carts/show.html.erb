@@ -42,4 +42,4 @@
 
 <!-- 情報入力に進むボタン -->
 <%= link_to "買い物を続ける",products_path,class: 'btn-sm btn-success' %>
-<%= @carts.hidden_field :total_price, :value => @total_price %>
+<%= hidden_field :total_price, :value => @total_price %>
