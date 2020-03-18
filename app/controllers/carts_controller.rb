@@ -3,7 +3,6 @@ class CartsController < ApplicationController
 
   def show
     @carts = current_user.carts
-    @cart_items = @carts.group(:product_id).
   end
 
   def create
