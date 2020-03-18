@@ -13,6 +13,7 @@ class User < ApplicationRecord
   validates :address,           presence: true
   validates :telephone_number,  presence: true
   validates :status,            presence: true
+
   has_many :carts, dependent: :destroy
   has_many :deliveries, dependent: :destroy
   has_many :orders, dependent: :destroy
@@ -24,5 +25,6 @@ class User < ApplicationRecord
   def name
     first_name + last_name
   end
+  # 注文の際に使います
 
 end

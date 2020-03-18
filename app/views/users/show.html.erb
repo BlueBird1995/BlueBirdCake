@@ -7,7 +7,7 @@
     <div class="row my-3">
         <strong class="col-2">登録情報</strong>
         <%= link_to "編集する", edit_user_path(@user), class:"btn btn-primary col-3 mr-2" %>
-        <%= link_to "パスワードを変更する", "#", class:"btn btn-primary col-4"%>
+        <%= link_to "パスワードを変更する", new_user_password_path(@user), class:"btn btn-primary col-4"%>
     </div>
 
     <table class="table">

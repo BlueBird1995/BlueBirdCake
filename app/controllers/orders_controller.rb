@@ -5,11 +5,13 @@ class OrdersController < ApplicationController
     # 追記
     @order.user_id = current_user.id
     @user = current_user
+    # binding.pry
+    # @deliveries = @user.deliveries
   end
 
   def confirm #注文確認画面を表示する
     @order = Order.new(order_params)
-    if params[:address_button] == "my_address" #ご自身の住所
+    if params[:address_button] == "my_address" #ご自身の住所  
       @order.postal_code = current_user.postal_code
       @order.address = current_user.address
       @order.name = current_user.name
@@ -49,4 +51,3 @@ private
    params.require(:order).permit( :user_id, :name, :postal_code, :address, :payment, :total_price, :postage, :status)
   end
 end
-
