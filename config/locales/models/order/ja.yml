@@ -1,0 +1,11 @@
+ja:
+  activerecord:
+    models:
+      order: 注文
+    attributes:
+      order:
+        payment: 支払方法
+  enums:
+    order:
+      payment:
+        creditcard: クレジットカード

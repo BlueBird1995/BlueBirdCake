@@ -17,3 +17,11 @@ ja:
         first_kana: フリガナ（セイ）
         last_kana: フリガナ（メイ）
         telephone_number: 電話番号
+    attributes:
+      order:
+        payment: 支払方法
+  enums:
+    order:
+      payment:
+        creditcard: クレジットカード
+        bank: 銀行振込
