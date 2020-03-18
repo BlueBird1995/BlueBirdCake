@@ -1,19 +1,26 @@
-<header class="navbar navbar-expand-md bg-dark">
+  <header class="navbar navbar-expand-md bg-dark mb-5">
+    <%# 他の要素とスペースを開けるためにヘッダーにマージンを設定しています。（ほりゆう） %>
     <ul class="navbar-nav border my-3 px-3">
-      <li class="text-white h3 shop-name">Nagano Cake</li>
+      <li class="text-white h3 shop-name pt-2">Nagano Cake</li>
     </ul>
     <ul class="navbar-nav ml-auto my-3">
-    <% if user_signed_in? %>
-      <li class="nav-item p-2 mr-2 btn-light rounded"><%= link_to 'マイページ', user_path(current_user.id), class: "text-decoration-none text-secondary" %></li>
-      <%# 商品機能が完成したら修正  %>
-      <li class="nav-item p-2 mr-2 btn-light rounded"><%= link_to '商品一覧（未実装）', user_path(current_user.id), class: "text-decoration-none text-secondary" %></li>
-      <li class="nav-item p-2 mr-2 btn-light rounded"><%= link_to 'カート（未実装）', user_path(current_user.id), class: "text-decoration-none text-secondary" %></li>
-      <li class="nav-item p-2 btn-light rounded"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "text-decoration-none text-secondary" %></li>
-    <% else %>
-      <!-- 商品機能が完成したら他も実装 -->
-      <li class="nav-item p-2 mr-2 btn-light rounded"><%= link_to '商品一覧（未実装）', new_user_registration_path, class: "text-decoration-none text-secondary" %></li>
-      <li class="nav-item p-2 mr-2 btn-light rounded"><%= link_to '新規登録', new_user_registration_path, class: "text-decoration-none text-secondary" %></li>
-      <li class="nav-item p-2 mr-2 btn-light rounded"><%= link_to 'ログイン', new_user_session_path, class: "text-decoration-none text-secondary" %></li>
-    <% end %>
+      <% if user_signed_in? %>
+      <li class="nav-item p-2 mr-5 btn-light rounded">
+        <%= link_to 'マイページ', user_path(current_user.id), class: "text-decoration-none text-secondary" %></li>
+      <li class="nav-item p-2 mr-5 btn-light rounded">
+        <%= link_to '商品一覧', products_path, class: "text-decoration-none text-secondary" %></li>
+      <li class="nav-item p-2 mr-5 btn-light rounded">
+        <%= link_to 'カート', user_carts_path(current_user.id), class: "text-decoration-none text-secondary px-2" %></li>
+      <li class="nav-item p-2 btn-light rounded">
+        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "text-decoration-none text-secondary" %>
+      </li>
+      <% else %>
+      <li class="nav-item p-2 mr-5 btn-light rounded">
+        <%= link_to '商品一覧', products_path, class: "text-decoration-none text-secondary" %></li>
+      <li class="nav-item p-2 mr-5 btn-light rounded">
+        <%= link_to '新規登録', new_user_registration_path, class: "text-decoration-none text-secondary" %></li>
+      <li class="nav-item p-2 mr-5 btn-light rounded">
+        <%= link_to 'ログイン', new_user_session_path, class: "text-decoration-none text-secondary" %></li>
+      <% end %>
     </ul>
-</header>
+  </header>
