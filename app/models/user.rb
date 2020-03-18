@@ -21,4 +21,8 @@ class User < ApplicationRecord
     postal_code + address + first_name + last_name
   end
 
+  def name
+    first_name + last_name
+  end
+
 end

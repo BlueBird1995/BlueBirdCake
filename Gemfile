@@ -72,4 +72,4 @@ gem 'dotenv-rails'
 gem 'rails-i18n'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
-gem 'enum_help'
+gem 'enum_help' #enum日本語にするもの
