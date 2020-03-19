@@ -1,6 +1,6 @@
 <h2>ショッピングカート</h2>
 <!-- カートを空にするボタン -->
-<%# <%= button_to "カートを空にする",  {controller: 'carts', action: 'destroy_all'}, {method: :delete},class: 'btn-sm btn-danger' %>
+<%= button_to "カートを空にする", destroy_all_path, class: 'btn-sm btn-danger', method: :delete %>
 
 <table>
 	<thead>
@@ -59,7 +59,5 @@
 
 
 <!-- 情報入力に進むボタン -->
+<%= link_to "情報入力画面に進む",new_order_path(current_user.id),class: 'btn-sm btn-success' %>
 
-<%# <%= hidden_field :total_price, :value => @total_price %>
-
-<%= link_to "情報入力画面に進む",'/orders/new',class: 'btn-sm btn-success' %>

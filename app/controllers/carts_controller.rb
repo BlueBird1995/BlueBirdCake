@@ -15,7 +15,7 @@ class CartsController < ApplicationController
   def create
     @cart = Cart.new(cart_params)
     @user = User.find(params[:user_id])
-    
+
     if Cart.where(params[:product_id]).present?
       # もし、クリックされた商品のIDがカートモデルに存在していたら数量を増やすだけのコード
       @cart = Cart.find_by(product_id: params[:cart][:product_id],user_id: params[:user_id])
@@ -31,6 +31,7 @@ class CartsController < ApplicationController
     end
     
   end
+
   
   def update
     @cart = Cart.find_by(product_id: params[:cart][:product_id],user_id: params[:user_id])
@@ -44,8 +45,10 @@ class CartsController < ApplicationController
     @cart.destroy
     redirect_to request.referer
   end
+  
   def destroy_all
-    Cart.destroy_all
+    @carts = current_user.carts
+    @carts.destroy_all
     redirect_to request.referer
   end
   private
