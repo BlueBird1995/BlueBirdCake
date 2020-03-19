@@ -31,7 +31,7 @@
 			<%= form_for(cart, url: user_carts_path, html: {method: "patch"}) do |f| %>
 			<td><%= f.text_field :stock, class: "form-control" %></td>
 			<%# これだけだと商品の特定ができないので、hidden %>
-			<%= f.hidden_field :product_id, :value => @cart.product_id %>
+			<%= f.hidden_field :product_id, :value => cart.product_id %>
 			<td><%= f.submit "数量変更"%></td>
 		</tr>
 		<% end %>
