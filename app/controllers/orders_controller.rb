@@ -8,6 +8,8 @@ class OrdersController < ApplicationController
 
   def confirm #注文確認画面を表示する
     @order = Order.new(order_params)
+    @carts = current_user.carts
+
     if params[:address_button] == "my_address" #ご自身の住所
       @order.postal_code = current_user.postal_code
       @order.address = current_user.address
@@ -16,6 +18,15 @@ class OrdersController < ApplicationController
       @order.postal_code = Delivery.find(params[:select]).postal_code
       @order.address = Delivery.find(params[:select]).address
       @order.name = Delivery.find(params[:select]).name
+    end
+    # 合計個数機能
+    @cart = current_user.carts
+    @total_stock = @cart.sum(:stock)
+
+    # 合計金額
+    @total_price = 0 #初期化している
+    @carts.each do |f|
+      @total_price += f.subtotal
     end
   end
 
