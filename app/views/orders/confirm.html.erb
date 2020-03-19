@@ -1,55 +1,83 @@
 <div class="container">
 
+  <h4 class="row ml-5 bg-light d-inline">注文情報確認</h4>
 
-<h2>注文情報確認</h2>
+  <div class="row mt-3">
+    <div class="col-md-7">
+      <table class="table table-bordered">
+        <tr class="bg-light">
+          <td>商品名</td>
+          <td>単価（税込）</td>
+          <td>数量</td>
+          <td>小計</td>
+        </tr>
 
-<table class="table table-bordered">
-  <tr>
-    <td>商品名</td>
-    <td>単価(税込)</td>
-    <td>数量</td>
-    <td>小計</td>
-  </tr>
+        <tr>
+          <td>仮：ショートケーキ</td>
+          <td>仮：¥10,000</td>
+          <td>仮：100個</td>
+          <td>仮：¥1,000,000</td>
+        </tr>
+      </table>
+    </div>
 
-  <tr>
-    <td>仮しょーとけーき</td>
-    <td>仮10000</td>
-    <td>仮100</td>
-    <td>仮1000000</td>
-  </tr>
-</table>
+    <div class="col-md-4">
+      <table class="table table-bordered">
+        <%= form_for(@order, url: orders_path)do |f| %>
+        <tr>
+          <th class="bg-light">送料</th>
+          <td><%= @order.postage %></td>
+        </tr>
 
-<table class="table table-bordered">
-<%= form_for(@order, url: orders_path)do |f| %>
-  <tr>
-    <th>送料</th><td><%= @order.postage %></td>
-  </tr>
+        <tr>
+          <th class="bg-light">商品合計</th>
+          <td>商品合計</td>
+        </tr>
 
-  <tr>
-    <th>商品合計</th><td>ここなに</td>
-  </tr>
+        <tr>
+          <th class="bg-light">請求金額</th>
+          <td><%= @order.total_price %></td>
+        </tr>
+      </table>
+    </div>
 
-  <tr>
-    <th>請求金額</th><td><%= @order.total_price %></td>
-  </tr>
-</table>
+  </div>
 
-  <h5>支払方法</h5><br>
-	<p><%= @order.payment_i18n %></p><br>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2">
+        <h6 class="font-weight-bold">支払方法</h6>
+      </div>
+      <div class="col-md-6">
+        <p class="pt-2"><%= @order.payment_i18n %></p>
+      </div>
+    </div>
 
-  <h5>お届け先</h5><br>
-<%= @order.postal_code %>
-<%= @order.address %>
-<%= @order.name %>
+    <div class="row">
+      <div class="col-md-2">
+        <h6 class="font-weight-bold">お届け先</h6>
+      </div>
+      <div class="col-md-6 pt-2">
 
-<%= f.hidden_field :user_id, :value => current_user.id %>
-<%= f.hidden_field :name, :value => @order.name %>
-<%= f.hidden_field :postal_code, :value => @order.postal_code %>
-<%= f.hidden_field :address, :value => @order.address %>
-<%= f.hidden_field :total_price, :value => @order.total_price %>
-<%= f.hidden_field :payment %>
-<br>
-<br>
+        <%= @order.postal_code %>
+        <%= @order.address %><br>
+        <%= @order.name %>
+      </div>
+    </div>
+  </div>
 
-	<%= f.submit '購入を確定する' %>
-	<% end %>
+  <%# 値を保存するために必要 %>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+  <%= f.hidden_field :name, :value => @order.name %>
+  <%= f.hidden_field :postal_code, :value => @order.postal_code %>
+  <%= f.hidden_field :address, :value => @order.address %>
+  <%= f.hidden_field :total_price, :value => 1000 %>
+  <%= f.hidden_field :payment %>
+
+  <div class="row">
+    <div class="col-md-3 offset-4 mt-3">
+      <%= f.submit '購入を確定する', class: "btn btn-success px-5" %>
+    </div>
+  </div>
+  <% end %>
+</div>
