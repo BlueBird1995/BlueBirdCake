@@ -7,9 +7,10 @@ class CartsController < ApplicationController
     @carts.each do |f|
       @total_price += f.subtotal
     end
+    @cart = @carts[0]
   end
-  
-  
+
+
   def create
     @cart = Cart.new(cart_params)
     @user = User.find(params[:user_id])
@@ -30,20 +31,20 @@ class CartsController < ApplicationController
     end
   end
 
-  
+
   def update
     #@cart = Cart.find_by(product_id: params[:cart][:product_id],user_id: params[:user_id])
     @cart.stock = params[:cart][:stock]
     @cart.save
     redirect_to user_carts_path
   end
-  
+
   def destroy
   	@cart = Cart.find(params[:user_id])
     @cart.destroy
     redirect_to request.referer
   end
-  
+
   def destroy_all
     @carts = current_user.carts
     @carts.destroy_all

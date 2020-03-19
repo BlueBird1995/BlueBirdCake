@@ -11,13 +11,14 @@
           <td>数量</td>
           <td>小計</td>
         </tr>
-
+        <% @carts.each do |cart| %>
         <tr>
-          <td>仮：ショートケーキ</td>
-          <td>仮：¥10,000</td>
-          <td>仮：100個</td>
-          <td>仮：¥1,000,000</td>
+          <td><%= cart.product.name %></td>
+          <td><%= cart.tax_included %></td>
+          <td><%= cart.stock %></td>
+          <td><%= cart.subtotal %></td>
         </tr>
+        <% end %>
       </table>
     </div>
 
@@ -31,12 +32,12 @@
 
         <tr>
           <th class="bg-light">商品合計</th>
-          <td>商品合計</td>
+          <td><%= @total_stock %></td>
         </tr>
 
         <tr>
           <th class="bg-light">請求金額</th>
-          <td><%= @order.total_price %></td>
+          <td><%= @total_price %></td>
         </tr>
       </table>
     </div>
