@@ -1,11 +1,40 @@
-<% if flash[:notice] && user_signed_in? %>
-<%# ログインに成功した場合 %>
-
-  <p>ようこそ、<%= current_user.first_name %>さん！</p>
-<% end %>
-
-<h1>Homes#top</h1>
-<p>Find me in app/views/homes/top.html.erb</p>
-
-<%= link_to '新規登録', new_user_registration_path %>
-<%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+    <!-- ジャンル検索 -->
+      <div class="border border-dark text-center">
+        <p class="border-bottom border-dark"><strong>ジャンル検索</strong></p>
+        <% @genres.each do |genre| %>
+          <p><%= genre.name %></p>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-9">
+      <div class="jumbotron">
+        <p>
+          ようこそ、長野ケーキへ！<br>
+          このサイトは、ケーキ販売のECサイトになります。<br>
+          会員でないかたも商品の閲覧ができますが、<br>
+          購入には会員登録が必要になります。
+        </p>
+      </div>
+      <div class="recomend-products">
+        <h2>おすすめ商品</h2>
+        <div class="d-flex flex-row">
+          <% @products.each do |product| %>
+            <div class="p-1 mr-2 bg-success">
+              <p class="bg-secondary">
+                image!!<br/>
+                image!!<br/>
+                image!!<br/>
+              </p>
+              <p><%= product.name %></p>
+              <p><%= product.price %></p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <%= link_to "もっと見る>", products_path, class: "nav justify-content-end" %>
+    </div>
+  </div>
+</div>

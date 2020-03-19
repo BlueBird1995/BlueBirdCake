@@ -1,6 +1,6 @@
 class CartsController < ApplicationController
   before_action :authenticate_user!
-  
+
   def show
     @carts = current_user.carts
     @cart = Cart.new(cart_params)

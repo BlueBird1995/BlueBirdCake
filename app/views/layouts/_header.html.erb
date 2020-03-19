@@ -3,6 +3,10 @@
     <ul class="navbar-nav border my-3 px-3">
       <li class="text-white h3 shop-name pt-2">Nagano Cake</li>
     </ul>
+    <% if flash[:notice] && user_signed_in? %>
+      <%# ログインに成功した場合 %>
+      <p>ようこそ、<%= current_user.first_name, class: "text-white" %>さん！</p>
+    <% end %>
     <ul class="navbar-nav ml-auto my-3">
       <% if user_signed_in? %>
       <li class="nav-item p-2 mr-5 btn-light rounded">
