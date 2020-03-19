@@ -1,3 +1,4 @@
+ja:
   activerecord:
     models:
       user: ユーザー
@@ -25,4 +26,3 @@
       payment:
         creditcard: "クレジットカード"
         bank: "銀行振込"
-
