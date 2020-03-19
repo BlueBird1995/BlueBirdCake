@@ -3,8 +3,6 @@ class CartsController < ApplicationController
 
   def show
     @carts = current_user.carts
-
-    @cart = @carts[0]
     @total_price = 0
     @carts.each do |f|
       @total_price += f.subtotal
@@ -17,7 +15,8 @@ class CartsController < ApplicationController
     @user = User.find(params[:user_id])
     @findcart = current_user.carts
 
-    if @findcart.find_by(product_id:params[:cart][:product_id]).present?
+    
+    if @findcart.find_by(product_id: params[:cart][:product_id]).present?
       # もし、クリックされた商品のIDがカートモデルに存在していたら数量を増やすだけのコード
       @cart = Cart.find_by(product_id: params[:cart][:product_id],user_id: params[:user_id])
       # 商品IDが送られてきた値と同一、かつユーザーIDが送られてきたIDと同一のもの（唯一のカート）を特定
