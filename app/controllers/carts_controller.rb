@@ -15,8 +15,10 @@ class CartsController < ApplicationController
   def create
     @cart = Cart.new(cart_params)
     @user = User.find(params[:user_id])
+    #@product = Product.find(params[:product_id])
+    @findcart = current_user.carts
 
-    if Cart.where(params[:product_id]).present?
+    if @findcart.find_by(product_id: params[:cart][:product_id]).present?
       # もし、クリックされた商品のIDがカートモデルに存在していたら数量を増やすだけのコード
       @cart = Cart.find_by(product_id: params[:cart][:product_id],user_id: params[:user_id])
       # 商品IDが送られてきた値と同一、かつユーザーIDが送られてきたIDと同一のもの（唯一のカート）を特定
@@ -26,10 +28,9 @@ class CartsController < ApplicationController
       # whereで探すと配列として結果が出てsaveできないので、find_byを使いました。
       redirect_to user_carts_path(@user)
     else
-      @cart.save
+    @cart.save
       redirect_to user_carts_path(@user)
     end
-    
   end
 
   
