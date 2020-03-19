@@ -14,14 +14,26 @@ class CartsController < ApplicationController
   	#@stock = params[:cart][:stock]
     @cart = Cart.new(cart_params)
     @user = User.find(params[:user_id])
-    if @cart.save
+    if Cart.where(params[:product_id]).present?
+      # もし、クリックされた商品のIDがカートモデルに存在していたら数量を増やすだけのコード
+      @cart = Cart.find_by(product_id: params[:cart][:product_id],user_id: params[:user_id])
+      # 商品IDが送られてきた値と同一、かつユーザーIDが送られてきたIDと同一のもの（唯一のカート）を特定
+      @cart.stock += params[:cart][:stock].to_i
+      # そのカートのストックに、送られてきた追加したい文を加算する（データを整数値に直しています）
+      @cart.save
+      # whereで探すと配列として結果が出てsaveできないので、find_byを使いました。
       redirect_to user_carts_path(@user)
     else
-      redirect_to product_path(@product)
+      @cart.save
+      redirect_to user_carts_path(@user)
     end
   end
+    
 
   def update
+    #@cart = Cart.find(params[:product_id])
+    #@cart.update(cart_params)
+    #redirect_to user_carts_path(@user)
   end
 
   def destroy
@@ -31,7 +43,8 @@ class CartsController < ApplicationController
   end
 
   def destroy_all
-    cart = Cart.destroy_all
+    @carts = current_user.carts
+    @carts.destroy_all
     redirect_to request.referer
   end
   
