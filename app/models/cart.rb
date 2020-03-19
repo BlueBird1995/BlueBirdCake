@@ -10,6 +10,6 @@ class Cart < ApplicationRecord
 
     def subtotal
 		(product.price*stock*1.1).round
-	　end
+	  end
 
 end
