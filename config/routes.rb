@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :admins
+  get '/admins/product' => 'admins#index'
+  get '/admins/product/new' => 'admins#new'
+  post '/admins/product/new' => 'admins#create'
+  get '/admins/product/show' => 'admins#show'
+  post '/admins/product/update' => 'admins#update'
+  
   devise_for :users
   root 'homes#top'
 
