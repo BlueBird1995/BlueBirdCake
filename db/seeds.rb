@@ -23,3 +23,21 @@ Product.create!(
   description: "まずいよ",
   status: false
 )
+
+#初期のジャンル追加
+Genre.create!(
+    name: "焼き菓子",
+    status: true
+)
+Genre.create!(
+    name: "ケーキ",
+    status: true
+)
+Genre.create!(
+    name: "キャンデー",
+    status: true
+)
+Genre.create!(
+    name: "プリン",
+    status: true
+)
