@@ -3,8 +3,6 @@ class CartsController < ApplicationController
 
   def show
     @carts = current_user.carts
-
-    @cart = @carts[0]
     @total_price = 0
     @carts.each do |f|
       @total_price += f.subtotal
@@ -15,7 +13,6 @@ class CartsController < ApplicationController
   def create
     @cart = Cart.new(cart_params)
     @user = User.find(params[:user_id])
-    #@product = Product.find(params[:product_id])
     @findcart = current_user.carts
 
     if @findcart.find_by(product_id: params[:cart][:product_id]).present?
@@ -35,7 +32,7 @@ class CartsController < ApplicationController
 
   
   def update
-    @cart = Cart.find_by(product_id: params[:cart][:product_id],user_id: params[:user_id])
+    #@cart = Cart.find_by(product_id: params[:cart][:product_id],user_id: params[:user_id])
     @cart.stock = params[:cart][:stock]
     @cart.save
     redirect_to user_carts_path
