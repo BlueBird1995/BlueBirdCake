@@ -19,7 +19,7 @@ module BlueBirdCake
     config.i18n.default_locale = :ja
     # config.load_defaults 5.2
     # 日本語化するためにコメントアウトしました
-    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.yml').to_s]
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb.yml}').to_s]
     # エラーメッセージの日本語化
     config.time_zone = 'Tokyo'
     # 日本時間へ変換してるだよ(なる)

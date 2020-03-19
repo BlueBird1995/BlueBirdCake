@@ -8,10 +8,10 @@ class OrdersController < ApplicationController
     # binding.pry
     # @deliveries = @user.deliveries
   end
-  
+
   def confirm #注文確認画面を表示する
     @order = Order.new(order_params)
-    if params[:address_button] == "my_address"
+    if params[:address_button] == "my_address" #ご自身の住所  
       @order.postal_code = current_user.postal_code
       @order.address = current_user.address
       @order.name = current_user.name
@@ -38,7 +38,7 @@ class OrdersController < ApplicationController
   end
 
   def index #注文履歴一覧を表示する
-    @orders = Order.all
+    @orders = Order.all.order(created_at: :desc)
   end
 
   def show #注文履歴詳細を表示する
@@ -48,8 +48,6 @@ class OrdersController < ApplicationController
 
 private
  def order_params
-   params.require(:order).permit( :user_id, :name, :postal_code, :address, :payment,
-     :total_price, :postage, :status, :creditcard, :bank, :select)
- end
-
+   params.require(:order).permit( :user_id, :name, :postal_code, :address, :payment, :total_price, :postage, :status)
+  end
 end
