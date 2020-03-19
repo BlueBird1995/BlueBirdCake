@@ -9,9 +9,18 @@
 Product.create!(
   genre_id: 1,
   product_image_id: 1,
-  name: "hogehoge",
+  name: "おいしいケーキ",
   price: 100,
-  description: "hgoehogehogehogehogheohgoe",
+  description: "おいしいよ",
+  status: false
+)
+
+Product.create!(
+  genre_id: 1,
+  product_image_id: 2,
+  name: "まずいケーキ",
+  price: 200,
+  description: "まずいよ",
   status: false
 )
 
