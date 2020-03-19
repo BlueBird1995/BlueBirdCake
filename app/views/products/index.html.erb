@@ -3,12 +3,12 @@
 <h2>商品一覧（全'<%=  %>'件）</h2>
 <% @products.each do |product| %>
 <table>
- <tr>
- 	<td>
-  <%= product.name %><br>
-  <%= product.tax_included %>
-</td>
-</tr>
+  <tr>
+    <td><%= link_to "商品画像",product_path(product) %><br>
+      <%= product.name %><br>
+      <%= product.tax_included %>
+    </td>
+  </tr>
 </table>
 <% end %>
 <!-- １ページに８件表示する -->

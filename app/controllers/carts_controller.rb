@@ -31,9 +31,9 @@ class CartsController < ApplicationController
     
 
   def update
-    #@cart = Cart.find(params[:product_id])
-    #@cart.update(cart_params)
-    #redirect_to user_carts_path(@user)
+    @cart = Cart.find(params[:product_id])
+    @cart.update(cart_params)
+    redirect_to user_carts_path(@user)
   end
 
   def destroy
