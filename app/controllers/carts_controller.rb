@@ -16,7 +16,6 @@ class CartsController < ApplicationController
     @user = User.find(params[:user_id])
     @findcart = current_user.carts
 
-    
     if @findcart.find_by(product_id: params[:cart][:product_id]).present?
       # もし、クリックされた商品のIDがカートモデルに存在していたら数量を増やすだけのコード
       @cart = Cart.find_by(product_id: params[:cart][:product_id],user_id: params[:user_id])
@@ -27,10 +26,9 @@ class CartsController < ApplicationController
       # whereで探すと配列として結果が出てsaveできないので、find_byを使いました。
       redirect_to user_carts_path(@user)
     else
-      @cart.save
+    @cart.save
       redirect_to user_carts_path(@user)
     end
-
   end
 
 
