@@ -27,7 +27,7 @@ Rails.application.routes.draw do
       get :confirm
     end
   end
-  get '/orders/:id/new' => 'orders#new'
+  get '/orders/:id/new' => 'orders#new', as:'new_order'
   #注文確認画面confirmよくわからん
-  delete '/users/:id/carts' => 'carts#destroy_all', as:'destroy_all'
+  delete '/users/carts' => 'carts#destroy_all', as:'destroy_all'
 end
