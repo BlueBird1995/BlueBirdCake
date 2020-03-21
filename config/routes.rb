@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   devise_for :users
   devise_for :admins, controllers: {
     registrations: 'admins/registrations',
@@ -30,6 +29,9 @@ Rails.application.routes.draw do
 
 
   resources :products,only:[:index,:show]
+    namespace :admins do
+      resources :products
+    end
 
   get '/orders/success' => 'orders#success'
   post '/orders/success' => 'orders#success'

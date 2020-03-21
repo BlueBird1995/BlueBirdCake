@@ -4,7 +4,9 @@
 <% @products.each do |product| %>
 <table>
   <tr>
-    <td><%= link_to "商品画像",product_path(product) %><br>
+    <td><%= link_to product_path(product) do %>
+      <%= attachment_image_tag @product, :product_image,　format: 'jpeg', fallback: "no_image.jpg", size: "100x100" %>
+      <% end %><br>
       <%= product.name %><br>
       <%= product.tax_included %>
     </td>
