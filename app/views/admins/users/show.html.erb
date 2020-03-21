@@ -1,0 +1,49 @@
+<div class="profile-page">
+
+    <div class="row">
+        <h4 class="text-center col-6">会員詳細</h4>
+    </div>
+
+    <table class="w-100">
+        <tr class="row my-3">
+            <td class="col-3">顧客ID</td>
+            <td class="col-9">
+                <%= @user.id %>
+                <% if @user.status == true %>
+                    <span class="bg-primary rounded p-1 ml-3">有効会員</span>
+                <% else %>
+                    <span class="bg-danger rounded p-1 ml-3">退会済みユーザー</span>
+                <% end %>
+            </td>
+        </tr>
+        <tr class="row my-3">
+            <td class="col-3">氏名</td>
+            <td class="col-9"><%= @user.name %></td>
+        </tr>
+        <tr class="row my-3">
+            <td class="col-3">カナ</td>
+            <td class="col-9"><%= @user.first_kana %><%= @user.last_kana %></td>
+        </tr>
+        <tr class="row my-3">
+            <td class="col-3">郵便番号</td>
+            <td class="col-9"><%= @user.postal_code %></td>
+        </tr>
+        <tr class="row my-3">
+            <td class="col-3">住所</td>
+            <td class="col-9"><%= @user.address %></td>
+        </tr>
+        <tr class="row my-3">
+            <td class="col-3">電話番号</td>
+            <td class="col-9"><%= @user.telephone_number %></td>
+        </tr>
+        <tr class="row my-3">
+            <td class="col-3">メールアドレス</td>
+            <td class="col-9"><%= @user.email %></td>
+        </tr>
+    </table>
+
+    <div class="row my-3">
+        <%= link_to "編集する", edit_admins_user_path(@user), class:"btn btn-primary col-4" %>
+        <%= link_to "注文履歴を見る", admins_order_path(@user), class:"btn btn-primary col-4 ml-3" %>
+    </div>
+</div>

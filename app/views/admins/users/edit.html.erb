@@ -1,0 +1,54 @@
+<div class="profile-edit">
+    <div class="row">
+        <h4 class="text-center col-6">登録情報編集</h4>
+    </div>
+
+    <%= form_for @user, :url => { action: "update" } do |f| %>
+        <div class="field row my-3">
+            <%= f.label "名前", class: "col-2" %>
+            <span class="col-1">（性）</span><%= f.text_field :first_name, class: "form-control col-3" %>
+            <span class="col-1">（名）</span><%= f.text_field :last_name,  class: "form-control col-3" %>
+        </div>
+
+        <div class="field row my-3">
+            <%= f.label "カナ", class: "col-2" %>
+            <span class="col-1">(セイ)</span><%= f.text_field :first_kana, class: "form-control col-3" %>
+            <span class="col-1">(メイ)</span><%= f.text_field :last_kana,  class: "form-control col-3" %>
+        </div>
+
+        <div class="field row my-3">
+            <%= f.label :email, "メールアドレス", class: "col-2" %>
+            <span class="col-1"></span><%= f.email_field :email, class: "form-control col-3" %>
+        </div>
+
+        <div class="field row my-3">
+            <%= f.label :postal_code, "郵便番号", class: "col-2" %>
+            <span class="col-1"></span><%= f.text_field :postal_code, class: "form-control col-3" %>
+        </div>
+
+        <div class="field row my-3">
+            <%= f.label :address, "住所", class: "col-2" %>
+            <span class="col-1"></span><%= f.text_field :address, class: "form-control col-3" %>
+        </div>
+
+        <div class="field row my-3">
+            <%= f.label :telphone_number, "郵便番号", class: "col-2" %>
+            <span class="col-1"></span><%= f.text_field :telephone_number, class: "form-control col-3" %>
+        </div>
+
+        <div class="field row my-3">
+            <%= f.label :status, "会員ステータス" %>
+            <span class="col-1"></span>
+            <div class="ml-5">
+                <%= f.label :status, "有効" %>
+                <%= f.radio_button :status, true %>
+                <%= f.label :status, "無効", class: "ml-4" %>
+                <%= f.radio_button :status, false %>
+            </div>
+        </div>
+
+        <div class="row">
+            <%= f.submit "変更を保存する", class: "btn btn-primary"%>
+        </div>
+    <% end %>
+</div>
