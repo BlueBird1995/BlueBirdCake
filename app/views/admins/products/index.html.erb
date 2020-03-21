@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
   	<h2>商品一覧画面</h2>
-	  <table class = table>
+	  <table class = "table">
 	    <thead>
 		    <tr>
 		      <th>商品ID</th>
@@ -11,16 +11,23 @@
 		      <th>ステータス</th>
 		    </tr>
 		  </thead>
-		<% @products.each do |product| %>
 		  <tbody>
+		    <% @products.each do |product| %>
 		    <tr>
 		      <td><%= product.id %></td>
 		      <td><%= link_to product.name,admins_product_path(product) %></td>
 		      <td><%= product.price %></td>
-		      <td><%= product.status %></td>
+		      <td><%= product.genre.name %></td>
+		      <td>
+		        <% if product.status %>
+		      	  <span>販売中</span>
+		      	<% else %>
+		      	  <span>販売停止中</span>
+		      	<% end %>
+		      </td>
 		    </tr>
-		  </tbody>
-		<% end %>
+		    <% end %>
+		 </tbody>
 	  </table>
   </div>
 </div>

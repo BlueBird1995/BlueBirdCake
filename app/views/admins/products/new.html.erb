@@ -1,1 +1,23 @@
 <h2>商品新規登録画面</h2>
+<%= form_for @product,:url => {action:"create"} do |f| %>
+<!-- 画像選択 -->
+<%= f.attachment_field :product_image %>
+<!-- 画像選択ボタン -->
+
+<h4>商品名</h4>
+<%= f.text_field :name %>
+
+<h4>商品説明</h4>
+<%= f.text_area :description %>
+
+<h4>ジャンル</h4>
+<%= f.select :genre_id, [['ケーキ',1],['プリン',2],['焼き菓子',3],['キャンディー',4]], {include_blank: '--選択してください--'} %>
+
+<h4>税抜価格</h4>
+<%= f.text_field :price %>
+
+<h4>販売ステータス</h4>
+<%= f.select :status, [['販売中',true],['販売停止中',false]], {include_blank: '--選択してください--'} %>
+<!-- 新規登録ボタン -->
+<%= f.submit '新規登録',class: 'btn-sm btn-primary' %>
+<% end %>
