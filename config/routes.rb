@@ -1,6 +1,18 @@
 Rails.application.routes.draw do
+
   devise_for :users
+  devise_for :admins, controllers: {
+    registrations: 'admins/registrations',
+    sessions: 'admins/sessions'
+  }
+
   root 'homes#top'
+
+  #adminのorder
+  get '/admins' => 'admins/orders#top'
+  namespace :admins do
+    resources :orders, only: [:index, :show, :update]
+  end
 
   resources :users, only: [:show, :edit, :update] do
 
@@ -28,6 +40,5 @@ Rails.application.routes.draw do
     end
   end
   get '/orders/:id/new' => 'orders#new', as:'new_order'
-  #注文確認画面confirmよくわからん
   delete '/users/carts' => 'carts#destroy_all', as:'destroy_all'
 end

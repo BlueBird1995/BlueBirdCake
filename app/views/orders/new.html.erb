@@ -39,12 +39,12 @@
         <div class="col-md-12"> <!-- 親 -->
           <input type="radio" name="address_button" value="new_address" class="mb-2 ml-4">新しいお届け先
        　  <div class="row"> <!-- 子 -->
-            <div class="col-md-2 mb-3 ml-5 small">郵便番号(ハイフンなし)</div>
-            <div class="col-md-9"><%= f.text_field :postal_code, placeholder: "郵便番号"%></div>
-            <div class="col-md-2 mb-3 ml-5 small">住所</div>
-            <div class="col-md-9"><%= f.text_field :address, placeholder: "住所",:size => "65" %></div>
-            <div class="col-md-2 mb-3 ml-5 small">宛名</div>
-            <div class="col-md-9"><%= f.text_field :name, placeholder: "宛名" %></div>
+            <div class="col-md-3 mb-3 ml-5 small">郵便番号(ハイフンなし)</div>
+            <div class="col-md-8"><%= f.text_field :postal_code, placeholder: "郵便番号"%></div>
+            <div class="col-md-3 mb-3 ml-5 small">住所</div>
+            <div class="col-md-8"><%= f.text_field :address, placeholder: "住所",:size => "65" %></div>
+            <div class="col-md-3 mb-3 ml-5 small">宛名</div>
+            <div class="col-md-8"><%= f.text_field :name, placeholder: "宛名" %></div>
            </div>
         </div>
        </div>
