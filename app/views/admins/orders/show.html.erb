@@ -1,0 +1,50 @@
+
+<div class="container">
+
+ <h3>注文詳細画面</h3>
+
+
+ <h4>購入者</h4>
+ <p><%= @order.name %></p><br>
+
+ <h4>配送先</h4>
+ <p><%= @order.postal_code %></p>
+ <p><%= @order.address %></p>
+ <p><%= @order.name %></p><br>
+
+ <h4>支払方法</h4>
+ <p><%= @order.payment_i18n %></p><br>
+
+ <h4>注文ステータス</h4>
+
+ <%= form_for @order, :url => { action: "update" } do |f| %>
+   <%= f.select :status, ['入金待ち', '入金確認', '製作中', '発送準備中', '発送済み'] %>
+   <%= f.submit "更新" %>
+ <% end %>
+
+ <table class="table table-bordered">
+  <tr class="bg-light">
+    <td>商品名</td>
+    <td>単価(税込)</td>
+    <td>数量</td>
+    <td>小計</td>
+    <td>製作ステータス</td>
+    <td></td>
+  </tr>
+
+   <% @ordered_products.each do |ordered_product| %>
+    <tr>
+     <td><%= ordered_product.product.name %></td>
+     <td><%= ordered_product.product.price %></td>
+     <td><%= ordered_product.stock %></td>
+     <td><%= ordered_product.price %></td>
+     <td> <%= form_for ordered_product, :url => { action: "update" } do |f| %>
+            <%= f.select :status, ['着手不可', '製作待ち', '製作中', '製作完了'] %>
+  		　　 <%= f.submit "更新" %>
+ 　　　　　<% end %></td>
+     <td></td>
+    </tr>
+   <% end %>
+</table>
+
+</div>
