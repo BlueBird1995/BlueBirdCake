@@ -1,8 +1,8 @@
 <h2>商品新規登録画面</h2>
 <%= form_for @product,:url => {action:"create"} do |f| %>
-<!-- 画像選択 -->
+<!-- 画像選択 --><!-- 画像選択ボタン -->
 <%= f.attachment_field :product_image %>
-<!-- 画像選択ボタン -->
+
 
 <h4>商品名</h4>
 <%= f.text_field :name %>
