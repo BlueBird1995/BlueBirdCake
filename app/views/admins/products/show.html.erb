@@ -1,0 +1,16 @@
+<h2>商品詳細画面</h2>
+<!-- 商品画像 -->
+<%= attachment_image_tag @product, :product_image,　format: 'jpeg', fallback: "no_image.jpg", size: "100x100" %>
+
+商品名<%= @product.name %><br>
+
+商品説明<%= @product.description %><br>
+
+ジャンル<%= @product.genre_id %><br>
+
+税込価格（税抜価格）<%= @product.price %>(<%= @product.tax_included %>)円<br>
+
+販売ステータス<%= @product.status %>
+
+<!-- 編集ボタン -->
+<%= link_to "編集する",edit_admins_product_path(@product),class: 'btn-sm btn-primary' %>

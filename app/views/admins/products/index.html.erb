@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+  	<h2>商品一覧画面</h2>
+	  <table class = table>
+	    <thead>
+		    <tr>
+		      <th>商品ID</th>
+		      <th>商品名</th>
+		      <th>税抜価格</th>
+		      <th>ジャンル</th>
+		      <th>ステータス</th>
+		    </tr>
+		  </thead>
+		<% @products.each do |product| %>
+		  <tbody>
+		    <tr>
+		      <td><%= product.id %></td>
+		      <td><%= link_to product.name,admins_product_path(product) %></td>
+		      <td><%= product.price %></td>
+		      <td><%= product.status %></td>
+		    </tr>
+		  </tbody>
+		<% end %>
+	  </table>
+  </div>
+</div>
+
+<%= paginate @products %>
+
+	<div class="pagination">
+	  <p>・</p>
+	  <p>・</p>
+	  <p>・</p>
+	  <p>・</p>
+	</div>
+
