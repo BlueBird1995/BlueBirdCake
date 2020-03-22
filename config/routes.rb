@@ -6,14 +6,26 @@ Rails.application.routes.draw do
   }
 
   devise_for :users
+  devise_for :admins, controllers: {
+    registrations: 'admins/registrations',
+    sessions: 'admins/sessions'
+  }
+
+  #全てここに入れました（admin用のルーティング／ほりゆう）
+  namespace :admins do
+    resources :users, only: [:index, :show, :edit, :update]
+    resources :orders, only: [:index, :show, :update]
+    resources :genres
+  end
+
   root 'homes#top'
-
   
-  resources :genres 
+  get '/admins' => 'admins/orders#top'
+ 
 
-    namespace :admins do
-      resources :genres
-    end
+  resource :carts,only:[:show,:create,:update,:destroy]
+
+
 
 
   # ユーザーのルーティング
@@ -27,6 +39,10 @@ Rails.application.routes.draw do
   end
 
 
+  resources :products,only:[:index,:show]
+    namespace :admins do
+      resources :products
+    end
 
   put "/users/:id/hide" => "users#hide", as: 'users_hide'
   resources :products,only:[:index,:show]
