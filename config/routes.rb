@@ -6,10 +6,6 @@ Rails.application.routes.draw do
   }
 
   devise_for :users
-  devise_for :admins, controllers: {
-    registrations: 'admins/registrations',
-    sessions: 'admins/sessions'
-  }
 
   #全てここに入れました（admin用のルーティング／ほりゆう）
   namespace :admins do

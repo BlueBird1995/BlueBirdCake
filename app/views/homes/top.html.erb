@@ -22,19 +22,19 @@
         <h2>おすすめ商品</h2>
         <div class="d-flex flex-row">
           <% @products.each do |product| %>
-            <div class="p-1 mr-2 bg-success">
-              <p class="bg-secondary">
-                image!!<br/>
-                image!!<br/>
-                image!!<br/>
-              </p>
-              <p><%= product.name %></p>
-              <p><%= product.price %></p>
-            </div>
+            <table>
+              <tr>
+                <td class="pr-2">
+                  <%= attachment_image_tag product, :product_image,　format: 'jpeg', fallback: "no_image.jpg", size: "200x100" %><br>
+                  <%= product.name %><br>
+                  <%= product.price %>
+                </td>
+              </tr>
+            </table>
           <% end %>
         </div>
+        <%= link_to "もっと見る>", products_path, class: "nav justify-content-end" %>
       </div>
-      <%= link_to "もっと見る>", products_path, class: "nav justify-content-end" %>
     </div>
   </div>
 </div>
