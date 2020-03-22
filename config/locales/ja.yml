@@ -3,6 +3,7 @@ ja:
     models:
       user: ユーザー
       delivery: 配送先
+      genre: ジャンル
     attributes:
       delivery:
         postal_code: 郵便番号
@@ -16,6 +17,10 @@ ja:
         first_kana: フリガナ（セイ）
         last_kana: フリガナ（メイ）
         telephone_number: 電話番号
+      genre:
+        status:
+        true: 有効
+        false: 無効
       order:
         payment: 支払方法
       order/payment:
