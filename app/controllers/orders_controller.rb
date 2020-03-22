@@ -8,13 +8,14 @@ class OrdersController < ApplicationController
 
   def confirm #注文確認画面を表示する
     @order = Order.new(order_params)
+    @order.ordered_products.build
     @carts = current_user.carts
 
     if params[:address_button] == "my_address" #ご自身の住所
       @order.postal_code = current_user.postal_code
       @order.address = current_user.address
       @order.name = current_user.name
-     elsif params[:address_button] == "deliveries_address" #保存してある住所
+    elsif params[:address_button] == "deliveries_address" #保存してある住所
       @order.postal_code = Delivery.find(params[:select]).postal_code
       @order.address = Delivery.find(params[:select]).address
       @order.name = Delivery.find(params[:select]).name
@@ -51,11 +52,20 @@ class OrdersController < ApplicationController
 
   def show #注文履歴詳細を表示する
     @order = Order.find(params[:id])
+    @ordered_products = OrderedProduct.all
   end
 
 
 private
  def order_params
-   params.require(:order).permit( :user_id, :name, :postal_code, :address, :payment, :total_price, :postage, :status)
+   params.require(:order).permit( :user_id,
+                                  :name,
+                                  :postal_code,
+                                  :address,
+                                  :payment,
+                                  :total_price,
+                                  :postage,
+                                  :status,
+                                  ordered_products_attributes: [:price, :stock])
  end
 end

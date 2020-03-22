@@ -25,20 +25,26 @@
     <div class="col-md-4">
       <table class="table table-bordered">
         <%= form_for(@order, url: orders_path)do |f| %>
-        <tr>
-          <th class="bg-light">送料</th>
-          <td><%= @order.postage %></td>
-        </tr>
+          <%# OrderedProductに送信 %>
+          <%= f.fields_for :ordered_products do |ord| %>
+              <%= ord.hidden_field :stock, :value => @total_stock %>
+              <%= ord.hidden_field :price, :value => @total_price %>
+          <% end %>
+            <tr>
+              <th class="bg-light">送料</th>
+              <td><%= @order.postage %></td>
+            </tr>
 
-        <tr>
-          <th class="bg-light">商品合計</th>
-          <td><%= @total_stock %></td>
-        </tr>
+            <tr>
+              <th class="bg-light">商品合計</th>
+              <!-- 商品合計金額。個数ではないのでは？ -->
+              <td><%= @total_stock %></td>
+            </tr>
 
-        <tr>
-          <th class="bg-light">請求金額</th>
-          <td><%= @total_price %></td>
-        </tr>
+            <tr>
+              <th class="bg-light">請求金額</th>
+              <td><%= @total_price %></td>
+            </tr>
       </table>
     </div>
 
@@ -67,7 +73,7 @@
     </div>
   </div>
 
-  <%# 値を保存するために必要 %>
+  <%# Orderに送信 %>
   <%= f.hidden_field :user_id, :value => current_user.id %>
   <%= f.hidden_field :name, :value => @order.name %>
   <%= f.hidden_field :postal_code, :value => @order.postal_code %>

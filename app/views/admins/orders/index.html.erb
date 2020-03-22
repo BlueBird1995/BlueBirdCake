@@ -19,7 +19,9 @@
          <% end %>
      </td>
      <td><%= order.user.name %></td>
-     <td><%= order.cart.stock %></td>
+     <% order.ordered_products.each do |ord| %>
+        <td><%= ord.stock %></td>
+     <% end %>
      <td><%= order.status %></td>
     </tr>
     <% end %>
