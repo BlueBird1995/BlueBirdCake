@@ -28,6 +28,19 @@
       <li class="nav-item p-2 btn-light rounded">
         <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "text-decoration-none text-secondary" %>
       </li>
+
+      <%# adminのヘッダー %>
+      <% elsif admin_signed_in? %>
+      <li class="nav-item p-2 mr-5 btn-light rounded">
+        <%= link_to '商品一覧', admins_products_path, class: "text-decoration-none text-secondary" %></li>
+      <li class="nav-item p-2 mr-5 btn-light rounded">
+        <%= link_to '会員一覧', admins_users_path, class: "text-decoration-none text-secondary" %></li>
+      <li class="nav-item p-2 mr-5 btn-light rounded">
+        <%= link_to '注文履歴一覧', admins_orders_path, class: "text-decoration-none text-secondary px-2" %></li>
+      <li class="nav-item p-2 btn-light rounded">
+        <%= link_to 'ジャンル管理', admins_genres_path, class: "text-decoration-none text-secondary" %>
+      </li>
+
       <% else %>
       <li class="nav-item p-2 mr-5 btn-light rounded">
         <%= link_to '商品一覧', products_path, class: "text-decoration-none text-secondary" %></li>
@@ -40,7 +53,7 @@
   </header>
 
   <%= yield %>
-  <footer class="bg-dark p-5 text-white mt-5">フッターです。  
+  <footer class="bg-dark p-5 text-white mt-5">フッターです。
   </footer>
 </body>
 

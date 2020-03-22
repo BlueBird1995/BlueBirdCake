@@ -1,14 +1,20 @@
 <div class="container">
   <div class="row">
-    <div class="col-3">
-    <!-- ジャンル検索 -->
-      <div class="border border-dark text-center">
-        <p class="border-bottom border-dark"><strong>ジャンル検索</strong></p>
-        <% @genres.each do |genre| %>
-          <p><%= genre.name %></p>
-        <% end %>
-      </div>
+      <div class="col-md-3">
+    <table class="table">
+    <th class="bg-light">ジャンル検索</th>
+      <% @genres.each do |f|%>
+      <% if f.status == true %>
+    <tr>
+      <td>
+      <%# ジャンルが無効なら表示しない %>
+      <%= link_to f.name, genre_path(f.id) %>
+      <% end %></td>
+    </tr>
+      <% end %>
+    </table>
     </div>
+
     <div class="col-9">
       <div class="jumbotron">
         <p>

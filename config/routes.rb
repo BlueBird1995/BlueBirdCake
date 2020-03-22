@@ -21,6 +21,8 @@ Rails.application.routes.draw do
 
   resource :carts,only:[:show,:create,:update,:destroy]
 
+  resources :genres
+
 
 
 
@@ -41,9 +43,12 @@ Rails.application.routes.draw do
     end
 
   put "/users/:id/hide" => "users#hide", as: 'users_hide'
+
   resources :products,only:[:index,:show]
+
   get '/orders/success' => 'orders#success'
   post '/orders/success' => 'orders#success'
+
   resources :orders, only: [:create, :index, :show] do
     collection do
       post :confirm
