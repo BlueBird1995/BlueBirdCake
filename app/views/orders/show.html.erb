@@ -49,17 +49,17 @@
  <h4>注文内容</h4>
   <tr>
     <th>商品</th>
-    <td>仮注文商品・商品ID</td>
+    <td><%= @ordered_product.product.name %></td>
   </tr>
 
   <tr>
     <th>単価(税込)</th>
-	<td>仮注文商品・税込ヘルパー？</td>
+	  <td>仮注文商品・税込ヘルパー？</td>
   </tr>
 
   <tr>
     <th>個数</th>
-    <td>仮注文商品・数量</td>
+    <td><%= @ordered_product.stock %></td>
   </tr>
 
   <tr>
