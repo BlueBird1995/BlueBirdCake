@@ -2,7 +2,6 @@
   <h2>商品詳細画面</h2>
     <div class="row">
   	  <div class="col-md-3">
-    
 	    <!-- 商品画像 -->
 	    <%= attachment_image_tag @product, :product_image, format: 'jpeg', fallback: "no_image.jpg", size: "200x100" %>
 	  </div>
@@ -13,7 +12,7 @@
 
 		ジャンル<%= @product.genre.name %><br>
 
-<span>税込価格（税抜価格）¥<%= @product.price.to_s(:delimited) %>(¥<%= @product.tax_included.to_s(:delimited) %>)<br>
+		<span>税込価格（税抜価格）¥<%= @product.price.to_s(:delimited) %>(¥<%= @product.tax_included.to_s(:delimited) %>)<br>
 
 販売ステータス<% if @product.status %>
 		      	  <span>販売中</span>
