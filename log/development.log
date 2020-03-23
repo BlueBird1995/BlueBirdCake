@@ -3054,3 +3054,124 @@ Processing by Admins::OrdersController#index as HTML
 Completed 200 OK in 2195ms (Views: 2116.4ms | ActiveRecord: 29.2ms)
 
 
+Started GET "/admins/orders" for 10.0.2.2 at 2020-03-23 09:46:08 +0000
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Admins::OrdersController#index as HTML
+  Rendering admins/orders/index.html.erb within layouts/application
+  Rendered admins/orders/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 112ms (ActiveRecord: 2.3ms)
+
+
+  
+SyntaxError (/vagrant/BlueBirdCake/app/views/admins/orders/index.html.erb:14: unknown type of %string
+...r.created_at.strftime(“%Y/%m/%d”));@output_buffer.safe_a...
+...                            ^~~
+/vagrant/BlueBirdCake/app/views/admins/orders/index.html.erb:14: syntax error, unexpected end-of-input
+...r.created_at.strftime(“%Y/%m/%d”));@output_buffer.safe_a...
+...                            ^~~):
+  
+app/views/admins/orders/index.html.erb:14: unknown type of %string
+app/views/admins/orders/index.html.erb:14: syntax error, unexpected end-of-input
+Started GET "/admins/orders" for 10.0.2.2 at 2020-03-23 09:48:16 +0000
+Processing by Admins::OrdersController#index as HTML
+  Rendering admins/orders/index.html.erb within layouts/application
+  Rendered admins/orders/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 87ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/vagrant/BlueBirdCake/app/views/admins/orders/index.html.erb:28: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...th(order.id) ,class: “btn btn-primary” );@output_buffer....
+...                            ^~~):
+  
+app/views/admins/orders/index.html.erb:28: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+Started GET "/admins/orders" for 10.0.2.2 at 2020-03-23 09:49:30 +0000
+Processing by Admins::OrdersController#index as HTML
+  Rendering admins/orders/index.html.erb within layouts/application
+  Rendered admins/orders/index.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 87ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/vagrant/BlueBirdCake/app/views/admins/orders/index.html.erb:28: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...th(order.id), class: “btn btn-primary” );@output_buffer....
+...                            ^~~):
+  
+app/views/admins/orders/index.html.erb:28: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+Started GET "/admins/orders" for 10.0.2.2 at 2020-03-23 09:56:10 +0000
+Processing by Admins::OrdersController#index as HTML
+  Rendering admins/orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (1.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."created_at" DESC[0m
+  ↳ app/views/admins/orders/index.html.erb:12
+  [1m[36mOrderedProduct Load (1.4ms)[0m  [1m[34mSELECT "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."order_id" = ?[0m  [["order_id", 2]]
+  ↳ app/views/admins/orders/index.html.erb:21
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "products"."name" FROM "products" WHERE "products"."id" IS NULL[0m
+  ↳ app/views/admins/orders/index.html.erb:23
+  [1m[36mOrderedProduct Load (1.0ms)[0m  [1m[34mSELECT "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."order_id" = ?[0m  [["order_id", 1]]
+  ↳ app/views/admins/orders/index.html.erb:21
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT "products"."name" FROM "products" WHERE "products"."id" IS NULL[0m
+  ↳ app/views/admins/orders/index.html.erb:23
+  Rendered admins/orders/index.html.erb within layouts/application (130.6ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+Completed 200 OK in 2170ms (Views: 2121.1ms | ActiveRecord: 20.0ms)
+
+
+Started GET "/admins/orders" for 10.0.2.2 at 2020-03-23 09:56:51 +0000
+Processing by Admins::OrdersController#index as HTML
+  Rendering admins/orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (1.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."created_at" DESC[0m
+  ↳ app/views/admins/orders/index.html.erb:12
+  [1m[36mOrderedProduct Load (2.1ms)[0m  [1m[34mSELECT "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."order_id" = ?[0m  [["order_id", 2]]
+  ↳ app/views/admins/orders/index.html.erb:21
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "products"."name" FROM "products" WHERE "products"."id" IS NULL[0m
+  ↳ app/views/admins/orders/index.html.erb:22
+  [1m[36mOrderedProduct Load (1.4ms)[0m  [1m[34mSELECT "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."order_id" = ?[0m  [["order_id", 1]]
+  ↳ app/views/admins/orders/index.html.erb:21
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT "products"."name" FROM "products" WHERE "products"."id" IS NULL[0m
+  ↳ app/views/admins/orders/index.html.erb:22
+  Rendered admins/orders/index.html.erb within layouts/application (23.9ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+Completed 200 OK in 507ms (Views: 472.2ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/admins/orders" for 10.0.2.2 at 2020-03-23 09:57:58 +0000
+Processing by Admins::OrdersController#index as HTML
+  Rendering admins/orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (1.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."created_at" DESC[0m
+  ↳ app/views/admins/orders/index.html.erb:12
+  [1m[36mOrderedProduct Load (1.6ms)[0m  [1m[34mSELECT "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."order_id" = ?[0m  [["order_id", 2]]
+  ↳ app/views/admins/orders/index.html.erb:21
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "products"."name" FROM "products" WHERE "products"."id" IS NULL[0m
+  ↳ app/views/admins/orders/index.html.erb:22
+  [1m[36mOrderedProduct Load (1.7ms)[0m  [1m[34mSELECT "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."order_id" = ?[0m  [["order_id", 1]]
+  ↳ app/views/admins/orders/index.html.erb:21
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "products"."name" FROM "products" WHERE "products"."id" IS NULL[0m
+  ↳ app/views/admins/orders/index.html.erb:22
+  Rendered admins/orders/index.html.erb within layouts/application (19.7ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+Completed 200 OK in 525ms (Views: 492.1ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/admins/orders" for 10.0.2.2 at 2020-03-23 10:01:01 +0000
+Processing by Admins::OrdersController#index as HTML
+  Rendering admins/orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (1.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."created_at" DESC[0m
+  ↳ app/views/admins/orders/index.html.erb:12
+  [1m[36mOrderedProduct Load (2.4ms)[0m  [1m[34mSELECT "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."order_id" = ?[0m  [["order_id", 2]]
+  ↳ app/views/admins/orders/index.html.erb:21
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "products"."name" FROM "products" WHERE "products"."id" IS NULL[0m
+  ↳ app/views/admins/orders/index.html.erb:22
+  [1m[36mOrderedProduct Load (1.1ms)[0m  [1m[34mSELECT "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."order_id" = ?[0m  [["order_id", 1]]
+  ↳ app/views/admins/orders/index.html.erb:21
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "products"."name" FROM "products" WHERE "products"."id" IS NULL[0m
+  ↳ app/views/admins/orders/index.html.erb:22
+  Rendered admins/orders/index.html.erb within layouts/application (17.6ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+Completed 200 OK in 479ms (Views: 440.6ms | ActiveRecord: 6.7ms)
+
+
