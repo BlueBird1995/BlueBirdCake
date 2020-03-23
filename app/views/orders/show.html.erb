@@ -36,12 +36,12 @@
 
   <tr>
     <th>配送料</th>
-	<td><%= @order.postage %></td>
+	<td><%= @order.postage.to_s(:delimited) %></td>
   </tr>
 
   <tr>
     <th>ご請求額</th>
-    <td><%= @order.total_price %></td>
+    <td>¥<%= @order.total_price.to_s(:delimited) %></td>
   </tr>
 </table>
 
@@ -64,7 +64,7 @@
 
   <tr>
     <th>小計</th>
-    <td><%= @order.total_price %></td>
+    <td>¥<%= @order.total_price.to_s(:delimited) %></td>
   </tr>
 </table>
 
