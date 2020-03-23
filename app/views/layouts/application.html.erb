@@ -15,8 +15,12 @@
   <header class="navbar navbar-expand-md bg-dark mb-5">
     <%# 他の要素とスペースを開けるためにヘッダーにマージンを設定しています。（ほりゆう） %>
     <ul class="navbar-nav border my-3 px-3">
-      <li class="text-white h3 shop-name pt-2">Nagano Cake</li>
+      <%= link_to root_path ,class: "text-decoration-none" do %>
+      <li class="text-white h3 shop-name pt-2">Nagano Cake
+        </li>
+        <% end %>
     </ul>
+  </div>
     <ul class="navbar-nav ml-auto my-3">
       <% if user_signed_in? %>
       <li class="nav-item p-2 mr-5 btn-light rounded">

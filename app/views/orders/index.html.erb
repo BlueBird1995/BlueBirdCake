@@ -14,18 +14,24 @@
   </tr>
 
 
-  	<% @orders.each do |f| %>
+  	<% @orders.each do |order| %>
     <tr>
-     <td><%= f.created_at.strftime("%Y/%m/%d")%></td>
-     <td><%= f.postal_code %>
-    	<%= f.address %>
-    	<%= f.name %></td>
-      <td></td>
-     <td><%= f.total_price %></td>
-     <td><%= f.status %></td>
+      <td><%= order.created_at.strftime("%Y/%m/%d")%></td>
+      <td>
+          <%= order.postal_code %><br>
+          <%= order.address %><br>
+          <%= order.name %>
+      </td>
 
-     <td><%= link_to '表示する', order_path(f.id) ,class: "btn btn-primary"%></td>
-     </tr>
+      <td>
+      <% order.ordered_products.each do |ord| %>
+        <%= Product.where(id: ord.product_id).pluck(:name).join %><br>
+      <% end %>
+      </td>
+      <td><%= order.total_price %></td>
+      <td><%= order.status %></td>
+      <td><%= link_to '表示する', order_path(order.id) ,class: "btn btn-primary"%></td>
+    </tr>
     <% end %>
 
 </table>
