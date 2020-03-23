@@ -15,9 +15,9 @@ Rails.application.routes.draw do
   end
 
   root 'homes#top'
-  
+
   get '/admins' => 'admins/orders#top'
- 
+
 
   resource :carts,only:[:show,:create,:update,:destroy]
 
