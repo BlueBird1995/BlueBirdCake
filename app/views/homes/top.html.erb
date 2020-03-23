@@ -35,7 +35,8 @@
                   <%= attachment_image_tag product, :product_image,　format: 'jpeg', fallback: "no_image.jpg", size: "200x100" %>
                   <% end %><br>
                   <%= product.name %><br>
-                  <%= product.price %>円
+                  <%= product.price.to_s(:delimited) %>
+
                 </td>
               </tr>
             </table>

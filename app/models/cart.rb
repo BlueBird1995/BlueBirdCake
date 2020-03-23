@@ -13,4 +13,8 @@ class Cart < ApplicationRecord
 		(product.price*stock*1.1).round
 	end
 
+	def total_stock
+		(product.stock).sum
+	end
+
 end

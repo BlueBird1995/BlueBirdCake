@@ -8,8 +8,16 @@ class OrdersController < ApplicationController
 
   def confirm #注文確認画面を表示する
     @order = Order.new(order_params)
+    #fields_forで使用
     @order.ordered_products.build
+
     @carts = current_user.carts
+
+    # @carts.each do |f|
+    #   @pdi = f.product_id
+    #   binding.pry
+    #   @stk = f.stock
+    end
 
     if params[:address_button] == "my_address" #ご自身の住所
       @order.postal_code = current_user.postal_code
@@ -33,6 +41,7 @@ class OrdersController < ApplicationController
 
   def create #注文情報を作成する
     @order = Order.new(order_params)
+    binding.pry
     if @order.save
       redirect_to orders_success_path
     else
@@ -66,6 +75,6 @@ private
                                   :total_price,
                                   :postage,
                                   :status,
-                                  ordered_products_attributes: [:price, :stock])
+                                  ordered_products_attributes: [:price, :stock, :product_id])
  end
 end
