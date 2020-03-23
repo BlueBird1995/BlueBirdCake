@@ -21,3 +21,4 @@
 //= require bootstrap-sprockets
 
 // ログインボタンが更新しないと押せなくなるので、turbolinks消しました（ほりゆう）
+

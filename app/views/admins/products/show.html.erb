@@ -1,12 +1,17 @@
-<h2>商品詳細画面</h2>
-<!-- 商品画像 -->
-<%= attachment_image_tag @product, :product_image,　format: 'jpeg', fallback: "no_image.jpg", size: "100x100" %>
+<div class="container">
+  <h2>商品詳細画面</h2>
+    <div class="row">
+  	  <div class="col-md-3">
+    
+	    <!-- 商品画像 -->
+	    <%= attachment_image_tag @product, :product_image,　format: 'jpeg', fallback: "no_image.jpg", size: "200x100" %>
+	  </div>
+      <div class="col-md-9">
+	    商品名<%= @product.name %><br>
 
-商品名<%= @product.name %><br>
+		商品説明<%= @product.description %><br>
 
-商品説明<%= @product.description %><br>
-
-ジャンル<%= @product.genre.name %><br>
+		ジャンル<%= @product.genre.name %><br>
 
 <span>税込価格（税抜価格）¥<%= @product.price.to_s(:delimited) %>(¥<%= @product.tax_included.to_s(:delimited) %>)<br>
 
@@ -17,4 +22,7 @@
 		      	<% end %>
 
 <!-- 編集ボタン -->
-<%= link_to "編集する",edit_admins_product_path(@product),class: 'btn-sm btn-primary' %>
+        <%= link_to "編集する",edit_admins_product_path(@product),class: 'btn-sm btn-primary' %>
+    </div>
+  </div>
+</div>
