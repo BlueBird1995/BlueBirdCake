@@ -25,26 +25,26 @@
     <div class="col-md-4">
       <table class="table table-bordered">
         <%= form_for(@order, url: orders_path)do |f| %>
-          <%# OrderedProductに送信 %>
-          <%= f.fields_for :ordered_products do |ord| %>
-              <%= ord.hidden_field :stock, :value => @total_stock %>
-              <%= ord.hidden_field :price, :value => @total_price %>
-          <% end %>
-            <tr>
-              <th class="bg-light">送料</th>
-              <td><%= @order.postage %></td>
-            </tr>
+        <%# OrderedProductに送信 %>
 
-            <tr>
-              <th class="bg-light">商品合計</th>
-              <!-- 商品合計金額。個数ではないのでは？ -->
-              <td><%= @total_stock %></td>
-            </tr>
 
-            <tr>
-              <th class="bg-light">請求金額</th>
-              <td><%= @total_price %></td>
-            </tr>
+        <%= hidden_field_tag :hidden, @carts %>
+
+        <tr>
+          <th class="bg-light">送料</th>
+          <td><%= @order.postage %></td>
+        </tr>
+
+        <tr>
+          <th class="bg-light">商品合計</th>
+          <!-- 商品合計金額。個数ではないのでは？ -->
+          <td><%= @total_stock %></td>
+        </tr>
+
+        <tr>
+          <th class="bg-light">請求金額</th>
+          <td><%= @total_price %></td>
+        </tr>
       </table>
     </div>
 

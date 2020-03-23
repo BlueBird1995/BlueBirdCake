@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
 	has_many :carts, dependent: :destroy
-	belongs_to :ordered_product
+	has_many :ordered_products, dependent: :destroy
     def tax_included
     	(price*1.1).round
     end

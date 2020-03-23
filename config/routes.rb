@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :show, :edit, :update]
     resources :orders, only: [:index, :show, :update]
     resources :genres
+    resources :products
   end
 
   root 'homes#top'
@@ -36,11 +37,6 @@ Rails.application.routes.draw do
     end
   end
 
-
-  resources :products,only:[:index,:show]
-    namespace :admins do
-      resources :products
-    end
 
   put "/users/:id/hide" => "users#hide", as: 'users_hide'
 

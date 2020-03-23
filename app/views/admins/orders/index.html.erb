@@ -1,34 +1,31 @@
-
-<div class="container">
-
-  <h3>注文一覧画面</h3>
-
-  <table class="table table-bordered">
-  <tr class="bg-light">
-    <td>購入日時</td>
-    <td>購入者</td>
-    <td>注文個数</td>
-    <td>注文ステータス</td>
+<div class=“container”>
+<h2>注文履歴一覧</h2>
+<table class=“table table-bordered”>
+  <tr class=“bg-light”>
+    <td>注文日</td>
+    <td>配送先</td>
+    <td>注文商品</td>
+    <td>支払金額</td>
+    <td>ステータス</td>
+    <td>注文詳細</td>
   </tr>
-
-
-  	<% @orders.each do |order| %>
+    <% @orders.each do |order| %>
     <tr>
-     <td><%= link_to admins_order_path(order) do %>
-           <%= order.created_at.strftime("%Y/%m/%d %H:%M:%S") %>
-         <% end %>
-     </td>
-     <td><%= order.user.name %></td>
-     <% order.ordered_products.each do |ord| %>
-        <td><%= ord.stock %></td>
-     <% end %>
-     <td><%= order.status %></td>
+      <td><%#= order.created_at.strftime(“%Y/%m/%d”)%></td>
+      <td>
+          <%= order.postal_code %><br>
+          <%= order.address %><br>
+          <%= order.name %>
+      </td>
+      <td>
+      <% order.ordered_products.each do |ord| %>
+        <%= Product.where(id: ord.product_id) %><br>
+      <% end %>
+      </td>
+      <td><%= order.total_price %></td>
+      <td><%= order.status %></td>
+      <td><%#= link_to ‘表示する’, order_path(order.id) ,class: “btn btn-primary”%></td>
     </tr>
     <% end %>
-
 </table>
-
-
-
-
 </div>
