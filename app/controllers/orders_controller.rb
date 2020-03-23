@@ -29,6 +29,9 @@ class OrdersController < ApplicationController
     @carts.each do |f|
       @total_price += f.subtotal
     end
+
+    #送料込みの合計金額
+    @postage_total_price = @total_price + 800
   end
 
   def create #注文情報を作成する
@@ -53,6 +56,12 @@ class OrdersController < ApplicationController
   def show #注文履歴詳細を表示する
     @order = Order.find(params[:id])
     @ordered_products = OrderedProduct.all
+    @carts = current_user.carts
+    @total_price = 0
+    @carts.each do |f|
+      @total_price += f.subtotal
+    end
+    @postage_total_price = @total_price + 800
   end
 
 

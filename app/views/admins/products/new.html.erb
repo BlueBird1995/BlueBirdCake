@@ -2,13 +2,13 @@
   <h2>商品新規登録画面</h2>
     <div class="row">
   	  <div class = "col-md-4">
-  	
+
 	    <%= form_for @product,:url => {action:"create"} do |f| %>
 		<!-- 画像選択 --><!-- 画像選択ボタン -->
 		<%= attachment_image_tag @product, :product_image,　format: 'jpeg', fallback: "no_image.jpg", size: "100x100" %><br>
 		<%= f.label :product_image, "画像選択", class: "btn-sm btn-primary" %>
         <%= f.file_field :product_image, class: "image_form" %>
-		
+
 	</div>
 
     <div class = "col-md-4">
@@ -19,7 +19,8 @@
 		<%= f.text_area :description %>
 
 		<h4>ジャンル</h4>
-		<%= f.select :genre_id, [['ケーキ',1],['プリン',2],['焼き菓子',3],['キャンディー',4]], {include_blank: '--選択してください--'} %>
+		<%= select_tag "select", options_from_collection_for_select(@genres,  :id, :name) %>
+		<%= f.hidden_field :genre => @product.genre %>
 
 		<h4>税抜価格</h4>
 		<%= f.text_field :price %>
