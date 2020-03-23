@@ -13,10 +13,6 @@ class OrdersController < ApplicationController
 
     @carts = current_user.carts
 
-    # @carts.each do |f|
-    #   @pdi = f.product_id
-    #   binding.pry
-    #   @stk = f.stock
     end
 
     if params[:address_button] == "my_address" #ご自身の住所

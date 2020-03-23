@@ -2987,3 +2987,70 @@ Processing by OrdersController#show as HTML
 Completed 200 OK in 588ms (Views: 539.0ms | ActiveRecord: 9.3ms)
 
 
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/users/1" for 10.0.2.2 at 2020-03-23 09:33:18 +0000
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+Completed 200 OK in 10475ms (Views: 10416.8ms | ActiveRecord: 11.5ms)
+
+
+Started GET "/admins/" for 10.0.2.2 at 2020-03-23 09:34:30 +0000
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Admins::OrdersController#top as HTML
+  [1m[36mOrder Load (2.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/controllers/admins/orders_controller.rb:5
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders"[0m
+  ↳ app/controllers/admins/orders_controller.rb:6
+  Rendering admins/orders/top.html.erb within layouts/application
+  Rendered admins/orders/top.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+Completed 200 OK in 2484ms (Views: 2409.6ms | ActiveRecord: 17.2ms)
+
+
+Started GET "/admins/orders" for 10.0.2.2 at 2020-03-23 09:34:54 +0000
+Processing by Admins::OrdersController#index as HTML
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 2.0ms)
+
+
+  
+NameError (undefined local variable or method `　　' for #<Class:0x00007f2d08087938>):
+  
+app/models/cart.rb:11:in `<class:Cart>'
+app/models/cart.rb:1:in `<top (required)>'
+app/controllers/admins/orders_controller.rb:15:in `index'
+Started GET "/admins/orders" for 10.0.2.2 at 2020-03-23 09:38:40 +0000
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Admins::OrdersController#index as HTML
+  Rendering admins/orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (2.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."created_at" DESC[0m
+  ↳ app/views/admins/orders/index.html.erb:12
+  [1m[36mOrderedProduct Load (1.8ms)[0m  [1m[34mSELECT "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."order_id" = ?[0m  [["order_id", 2]]
+  ↳ app/views/admins/orders/index.html.erb:21
+  [1m[36mOrderedProduct Load (1.3ms)[0m  [1m[34mSELECT "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."order_id" = ?[0m  [["order_id", 1]]
+  ↳ app/views/admins/orders/index.html.erb:21
+  Rendered admins/orders/index.html.erb within layouts/application (74.9ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+Completed 200 OK in 2195ms (Views: 2116.4ms | ActiveRecord: 29.2ms)
+
+
