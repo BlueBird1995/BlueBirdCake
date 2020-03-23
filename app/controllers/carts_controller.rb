@@ -44,6 +44,7 @@ class CartsController < ApplicationController
     redirect_to request.referer
   end
 
+
 #カートを空にする
   def destroy_all
     @carts = current_user.carts
