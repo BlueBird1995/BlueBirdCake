@@ -1,6 +1,6 @@
 class Admins::ProductsController < ApplicationController
   def index
-    @products = Product.page(params[:page], per_page: 10)
+    @products = Product.all.page(params[:page]).per(10)
   end
 
   def show
@@ -9,10 +9,12 @@ class Admins::ProductsController < ApplicationController
 
   def new
   	@product = Product.new
+  	@genres = Genre.all
   end
 
   def edit
   	@product = Product.find(params[:id])
+  	@genres = Genre.all
   end
 
   def create

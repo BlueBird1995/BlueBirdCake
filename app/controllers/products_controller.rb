@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
   def index
-  	@products = Product.page(params[:page])
+  	@products = Product.all.page(params[:page]).per(4)
+  	@genres = Genre.all
+    # ジャンルの表示
   end
 
   def show

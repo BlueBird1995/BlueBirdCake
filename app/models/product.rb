@@ -1,6 +1,8 @@
 class Product < ApplicationRecord
 	has_many :carts, dependent: :destroy
-	belongs_to :ordered_product
+	has_many :ordered_products
+
+	#商品の税込み単価
     def tax_included
     	(price*1.1).round
     end
