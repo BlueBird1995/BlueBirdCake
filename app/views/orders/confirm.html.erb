@@ -39,23 +39,15 @@
             </tr>
 
 
-        <%= hidden_field_tag :hidden, @carts %>
+            <tr>
+              <th class="bg-light">商品合計</th>
+              <td><%= @total_price %></td>
+            </tr>
 
-        <tr>
-          <th class="bg-light">送料</th>
-          <td><%= @order.postage %></td>
-        </tr>
-
-        <tr>
-          <th class="bg-light">商品合計</th>
-          <!-- 商品合計金額。個数ではないのでは？ -->
-          <td><%= @total_stock %></td>
-        </tr>
-
-        <tr>
-          <th class="bg-light">請求金額</th>
-          <td><%= @total_price %></td>
-        </tr>
+            <tr>
+              <th class="bg-light">請求金額</th>
+              <td><%= @postage_total_price %></td>
+            </tr>
       </table>
     </div>
 

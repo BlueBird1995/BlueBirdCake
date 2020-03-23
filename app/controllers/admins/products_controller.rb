@@ -8,7 +8,7 @@ class Admins::ProductsController < ApplicationController
   end
 
   def new
-    @product = Product.new
+  	@product = Product.new
     @genres = Genre.all
   end
 

@@ -8,6 +8,5 @@ class Product < ApplicationRecord
     end
 
     attachment :product_image
-
     belongs_to :genre
 end
