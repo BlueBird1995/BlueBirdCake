@@ -6,6 +6,22 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Genre.create!(
+  name: "焼き菓子",
+  status: true
+)
+Genre.create!(
+  name: "ケーキ",
+  status: true
+)
+Genre.create!(
+  name: "キャンデー",
+  status: true
+)
+Genre.create!(
+  name: "プリン",
+  status: true
+)
 Product.create!(
   genre_id: 1,
   product_image_id: 1,
@@ -14,7 +30,6 @@ Product.create!(
   description: "おいしいよ",
   status: false
 )
-
 Product.create!(
   genre_id: 1,
   product_image_id: 2,
@@ -22,22 +37,4 @@ Product.create!(
   price: 200,
   description: "まずいよ",
   status: false
-)
-
-#初期のジャンル追加
-Genre.create!(
-    name: "焼き菓子",
-    status: true
-)
-Genre.create!(
-    name: "ケーキ",
-    status: true
-)
-Genre.create!(
-    name: "キャンデー",
-    status: true
-)
-Genre.create!(
-    name: "プリン",
-    status: true
 )
