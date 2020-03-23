@@ -22,9 +22,10 @@
           <%= order.address %><br>
           <%= order.name %>
       </td>
+
       <td>
       <% order.ordered_products.each do |ord| %>
-        <%= Product.where(id: ord.product_id).name %><br>
+        <%= Product.where(id: ord.product_id).pluck(:name).join %><br>
       <% end %>
       </td>
       <td><%= order.total_price %></td>
