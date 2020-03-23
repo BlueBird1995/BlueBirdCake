@@ -4,7 +4,7 @@
   	  <div class = "col-md-4">
 		<%= form_for @product,:url => {action:"update"} do |f| %>
 		<!-- 画像選択 --><!-- 画像選択ボタン -->
-		<%= attachment_image_tag @product, :product_image,　format: 'jpeg', fallback: "no_image.jpg", size: "200x100" %><br>
+		<%= attachment_image_tag @product, :product_image, format: 'jpeg', fallback: "no_image.jpg", size: "200x100" %><br>
 		<%= f.label :product_image, "画像選択", class: "btn-sm btn-primary" %>
 		<%= f.file_field :product_image, class: "image_form" %>
 		<!-- labelでボタンを好きなデザインに設定。cssでデフォルトのファイル選択ボタンを消しています -->
