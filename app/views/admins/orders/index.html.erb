@@ -11,7 +11,7 @@
   </tr>
     <% @orders.each do |order| %>
     <tr>
-      <td><%#= order.created_at.strftime(“%Y/%m/%d”)%></td>
+      <td><%= order.created_at.strftime("%Y/%m/%d")%></td>
       <td>
           <%= order.postal_code %><br>
           <%= order.address %><br>
@@ -19,7 +19,7 @@
       </td>
       <td>
       <% order.ordered_products.each do |ord| %>
-        <%= Product.where(id: ord.product_id).name %><br>
+        <%= Product.where(id: ord.product_id).pluck(:name).join %><br>
       <% end %>
       </td>
       <td><%= order.total_price %></td>
