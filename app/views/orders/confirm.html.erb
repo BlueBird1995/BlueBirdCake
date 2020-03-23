@@ -25,7 +25,18 @@
     <div class="col-md-4">
       <table class="table table-bordered">
         <%= form_for(@order, url: orders_path)do |f| %>
-        <%# OrderedProductに送信 %>
+          <%# OrderedProductに送信 %>
+          <% @carts.each do |cart| %>
+            <%= f.fields_for :ordered_products do |ord| %>
+                <%= ord.hidden_field :product_id, :value => cart.product.id %>
+                <%= ord.hidden_field :stock, :value => cart.stock %>
+                <%= ord.hidden_field :price, :value => cart.subtotal %>
+            <% end %>
+          <% end %>
+            <tr>
+              <th class="bg-light">送料</th>
+              <td><%= @order.postage %></td>
+            </tr>
 
 
         <%= hidden_field_tag :hidden, @carts %>
