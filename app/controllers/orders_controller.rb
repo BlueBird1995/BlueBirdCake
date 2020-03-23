@@ -17,8 +17,6 @@ class OrdersController < ApplicationController
     #   @pdi = f.product_id
     #   binding.pry
     #   @stk = f.stock
-    end
-
     if params[:address_button] == "my_address" #ご自身の住所
       @order.postal_code = current_user.postal_code
       @order.address = current_user.address
@@ -44,7 +42,6 @@ class OrdersController < ApplicationController
 
   def create #注文情報を作成する
     @order = Order.new(order_params)
-    binding.pry
     if @order.save
       redirect_to orders_success_path
     else
