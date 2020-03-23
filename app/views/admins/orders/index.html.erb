@@ -1,7 +1,7 @@
-<div class=“container”>
+<div class="container">
 <h2>注文履歴一覧</h2>
-<table class=“table table-bordered”>
-  <tr class=“bg-light”>
+<table class="table table-bordered">
+  <tr class="bg-light">
     <td>注文日</td>
     <td>配送先</td>
     <td>注文商品</td>
@@ -10,21 +10,22 @@
     <td>注文詳細</td>
   </tr>
     <% @orders.each do |order| %>
-    <tr>
-      <td><%= order.created_at.strftime("%Y/%m/%d")%></td>
-      <td>
+
+  <tr>
+    <td><%= order.created_at.strftime("%Y/%m/%d %H:%M:%S")  %></td>
+    <td>
           <%= order.postal_code %><br>
           <%= order.address %><br>
           <%= order.name %>
-      </td>
-      <td>
+    </td>
+    <td>
       <% order.ordered_products.each do |ord| %>
         <%= Product.where(id: ord.product_id).pluck(:name).join %><br>
       <% end %>
-      </td>
+    </td>
       <td><%= order.total_price %></td>
       <td><%= order.status %></td>
-      <td><%#= link_to ‘表示する’, order_path(order.id) ,class: “btn btn-primary”%></td>
+      <td><%= link_to '表示する', order_path(order.id), class: "btn btn-primary" %></td>
     </tr>
     <% end %>
 </table>
