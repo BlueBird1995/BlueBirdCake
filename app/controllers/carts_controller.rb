@@ -14,7 +14,7 @@ class CartsController < ApplicationController
     @cart = Cart.new(cart_params)
     @user = User.find(params[:user_id])
     @findcart = current_user.carts
-    
+
     if @findcart.find_by(product_id: params[:cart][:product_id]).present?
       # もし、クリックされた商品のIDがカートモデルに存在していたら数量を増やすだけのコード
       @cart = Cart.find_by(product_id: params[:cart][:product_id],user_id: params[:user_id])
