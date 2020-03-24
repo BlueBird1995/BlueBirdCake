@@ -2,14 +2,64 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+
+    .order-title {
+        background:#FFEED5;
+        border-left:20px solid tan;
+        margin-bottom: 24px;
+    }
+
+
 #order-container{
   padding: 200px 0px;
 }
 
-.confirm-container {
+.new-container {
 	padding: 0 200px;
+	font-family: serif;
+    .submit {
+        text-align: center;
+    }
+	.order-btn {
+	    border:1px solid #79A1D4;
+	    color: #79A1D4;
+	    &:hover {
+	        background: #79A1D4;
+	        opacity: 0.8;
+	        color: #ffff;
+	    }
+	}
 }
 
-.submit {
-    text-align: center;
+.confirm-container {
+	font-family: serif;
+	.order-btn {
+	    border:1px solid #79A1D4;
+	    color: #79A1D4;
+	    &:hover {
+	        background: #79A1D4;
+	        opacity: 0.8;
+	        color: #ffff;
+	    }
+	}
+
+	.tablehead {
+       background: #FFEED5;
+	}
 }
+
+
+.show-container {
+	font-family: serif;
+
+	.tablehead {
+       background: #FFEED5;
+	}
+}
+
+
+
+
+
+
