@@ -19,7 +19,6 @@ class Admins::ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    binding.pry
     @product.genre_id = params[:product][:genre][:genre_id]
     if @product.save
     redirect_to admins_products_path

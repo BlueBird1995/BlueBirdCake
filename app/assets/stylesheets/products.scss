@@ -6,3 +6,36 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.product-index {
+  padding: 0 30px;
+  background: #FFEED5;
+  border-left: 20px solid tan;
+}
+
+.btn-product{
+  width:200px;
+  text-align:center;
+  border:1px solid #79A1D4;
+  color: #79A1D4;
+  border-radius:5px;
+  &:hover {
+    background: #79A1D4;
+    opacity: 0.8;
+    color: #ffff;
+    }
+}
+
+.genre-th {
+    background-color: #915932;
+    color: white;
+}
+tr.genre-tr td{
+    background-color: #CEAA72;
+}
+tr.genre-tr td:hover {
+    background-color: rgb(204, 179, 138);
+}
+td.genre-td a{
+    color: white !important;
+}
