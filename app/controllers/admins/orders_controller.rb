@@ -15,7 +15,7 @@ class Admins::OrdersController < ApplicationController
 	end
 
 	def show
-		@order = Order.find(params[:id])
+		@order = Order.find(params[:id]) 
 	end
 
 	def update #注文ステータスの更新

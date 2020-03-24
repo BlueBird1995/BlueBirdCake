@@ -8,9 +8,8 @@ class Cart < ApplicationRecord
     	(product.price*1.1).round
 	end
 
-
-    #小計
-    def subtotal
+ #小計
+  def subtotal
 		(product.price*stock*1.1).round
 	end
 
