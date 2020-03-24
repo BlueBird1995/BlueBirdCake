@@ -1,15 +1,16 @@
-<div class="container">
-
-  <h4 class="row ml-5 bg-light d-inline">注文情報確認</h4>
+<div class="container confirm-container">
+ <div class="order-title">
+  <h4 class="row ml-5 d-inline">注文情報確認</h4>
+ </div>
 
   <div class="row mt-3">
     <div class="col-md-7">
       <table class="table table-bordered">
-        <tr class="bg-light">
-          <td>商品名</td>
-          <td>単価（税込）</td>
-          <td>数量</td>
-          <td>小計</td>
+        <tr class="tablehead">
+          <th>商品名</th>
+          <th>単価（税込）</th>
+          <th>数量</th>
+          <th>小計</th>
         </tr>
         <% @carts.each do |cart| %>
         <tr>
@@ -34,18 +35,18 @@
             <% end %>
           <% end %>
             <tr>
-              <th class="bg-light">送料</th>
+              <th class="tablehead">送料</th>
               <td><%= @order.postage %></td>
             </tr>
 
 
             <tr>
-              <th class="bg-light">商品合計</th>
+              <th class="tablehead">商品合計</th>
               <td><%= @total_price %></td>
             </tr>
 
             <tr>
-              <th class="bg-light">請求金額</th>
+              <th class="tablehead">請求金額</th>
               <td><%= @postage_total_price %></td>
             </tr>
       </table>
@@ -86,7 +87,7 @@
 
   <div class="row">
     <div class="col-md-3 offset-4 mt-3">
-      <%= f.submit '購入を確定する', class: "btn btn-success px-5" %>
+      <%= f.submit '購入を確定する', class: "btn order-btn" %>
     </div>
   </div>
   <% end %>

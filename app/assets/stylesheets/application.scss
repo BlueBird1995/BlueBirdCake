@@ -21,8 +21,33 @@
   margin-left: 200px;
 }
 
-.shop-name {
-    font-family: "Gill Sans", sans-serif;
-
+*{
+    font-family: serif;
 }
 
+.shop-name {
+    font-family: "Monotype Corsiva", fantasy;
+    color: #e9bc00;
+    font-size: 30px;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.logo {
+	background-color: white;
+}
+
+
+header,footer {
+	background-color: #622d18;
+}
+
+header {
+    .nav-item {
+      background-color: #ead7a4;
+    }
+    .nav-text {
+      font-family: sans-serif;
+      color: black;
+    }
+}

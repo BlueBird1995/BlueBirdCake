@@ -12,52 +12,55 @@
 
 <body>
 
-  <header class="navbar navbar-expand-md bg-dark mb-5">
+  <header class="navbar navbar-expand-md mb-5">
     <%# 他の要素とスペースを開けるためにヘッダーにマージンを設定しています。（ほりゆう） %>
-    <ul class="navbar-nav border my-3 px-3">
+   <div class="logo rounded-circle ml-5">
+    <ul class="navbar-nav my-2 px-2">
       <%= link_to root_path ,class: "text-decoration-none" do %>
-      <li class="text-white h3 shop-name pt-2">Nagano Cake
+      <li class="h3 shop-name pt-2">Nagano
+        <div class="shop-name pl-3">Cake</div>
         </li>
         <% end %>
     </ul>
+   </div>
   </div>
     <ul class="navbar-nav ml-auto my-3">
       <% if user_signed_in? %>
-      <li class="nav-item p-2 mr-5 btn-light rounded">
-        <%= link_to 'マイページ', user_path(current_user.id), class: "text-decoration-none text-secondary" %></li>
-      <li class="nav-item p-2 mr-5 btn-light rounded">
-        <%= link_to '商品一覧', products_path, class: "text-decoration-none text-secondary" %></li>
-      <li class="nav-item p-2 mr-5 btn-light rounded">
-        <%= link_to 'カート', user_carts_path(current_user.id), class: "text-decoration-none text-secondary px-2" %></li>
-      <li class="nav-item p-2 btn-light rounded">
-        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "text-decoration-none text-secondary" %>
+      <li class="nav-item p-2 mr-5 rounded ">
+        <%= link_to 'マイページ', user_path(current_user.id), class: "text-decoration-none nav-text" %></li>
+      <li class="nav-item p-2 mr-5 rounded">
+        <%= link_to '商品一覧', products_path, class: "text-decoration-none nav-text" %></li>
+      <li class="nav-item p-2 mr-5 rounded">
+        <%= link_to 'カート', user_carts_path(current_user.id), class: "text-decoration-none px-2 nav-text" %></li>
+      <li class="nav-item p-2 mr-5 rounded">
+        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "text-decoration-none nav-text" %>
       </li>
 
       <%# adminのヘッダー %>
       <% elsif admin_signed_in? %>
-      <li class="nav-item p-2 mr-5 btn-light rounded">
-        <%= link_to '商品一覧', admins_products_path, class: "text-decoration-none text-secondary" %></li>
-      <li class="nav-item p-2 mr-5 btn-light rounded">
-        <%= link_to '会員一覧', admins_users_path, class: "text-decoration-none text-secondary" %></li>
-      <li class="nav-item p-2 mr-5 btn-light rounded">
-        <%= link_to '注文履歴一覧', admins_orders_path, class: "text-decoration-none text-secondary px-2" %></li>
-      <li class="nav-item p-2 btn-light rounded">
-        <%= link_to 'ジャンル管理', admins_genres_path, class: "text-decoration-none text-secondary" %>
+      <li class="nav-item p-2 mr-5 rounded">
+        <%= link_to '商品一覧', admins_products_path, class: "text-decoration-none nav-text" %></li>
+      <li class="nav-item p-2 mr-5 rounded">
+        <%= link_to '会員一覧', admins_users_path, class: "text-decoration-non nav-text" %></li>
+      <li class="nav-item p-2 mr-5 rounded">
+        <%= link_to '注文履歴一覧', admins_orders_path, class: "text-decoration-none px-2 nav-text" %></li>
+      <li class="nav-item p-2 rounded">
+        <%= link_to 'ジャンル管理', admins_genres_path, class: "text-decoration-none nav-text" %>
       </li>
 
       <% else %>
       <li class="nav-item p-2 mr-5 btn-light rounded">
-        <%= link_to '商品一覧', products_path, class: "text-decoration-none text-secondary" %></li>
+        <%= link_to '商品一覧', products_path, class: "text-decoration-none nav-text" %></li>
       <li class="nav-item p-2 mr-5 btn-light rounded">
-        <%= link_to '新規登録', new_user_registration_path, class: "text-decoration-none text-secondary" %></li>
+        <%= link_to '新規登録', new_user_registration_path, class: "text-decoration-none nav-text" %></li>
       <li class="nav-item p-2 mr-5 btn-light rounded">
-        <%= link_to 'ログイン', new_user_session_path, class: "text-decoration-none text-secondary" %></li>
+        <%= link_to 'ログイン', new_user_session_path, class: "text-decoration-none nav-text" %></li>
       <% end %>
     </ul>
   </header>
 
   <%= yield %>
-  <footer class="bg-dark p-5 text-white mt-5">フッターです。
+  <footer class="p-5 text-white mt-5">フッターです。
   </footer>
 </body>
 
