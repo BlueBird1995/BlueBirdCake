@@ -1,14 +1,13 @@
 <!-- ジャンル検索部分テンプレート -->
-<%# 追加しておきました。 %>
 <div class="container">
   <div class="row">
     <div class="col-md-2">
-      <table class="table">
-        <th class="bg-light">ジャンル検索</th>
+      <table class="table table-bordered">
+        <th class="genre-th">Genre</th>
         <% @genres.each do |f|%>
         <% if f.status == true %>
-        <tr>
-          <td>
+        <tr class="genre-tr">
+          <td class="genre-td">
             <%# ジャンルが無効なら表示しない %>
             <%= link_to f.name, genre_path(f.id) %>
             <% end %></td>
@@ -33,9 +32,8 @@
         <%= f.hidden_field :product_id, value: @product.id %>
         <%= f.hidden_field :user_id, value: @user.id %>
         <%= f.select :stock, options_for_select((1..10).to_a), include_blank: "個数選択" %>
-        <%= f.submit "カートに入れる",class: 'btn-sm btn-primary' %>
+        <%= f.submit "カートに入れる",class: 'btn-product' %>
       <% end %>
     </div>
   </div>
-
 </div>

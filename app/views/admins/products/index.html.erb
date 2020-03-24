@@ -1,6 +1,9 @@
 <div class="container">
+  <div class="box-product">
+  <p>商品一覧画面</p>
+  </div>
 	<div class="row">
-		<h2>商品一覧画面</h2>
+
 
 		<div class="push-real-btn">
 		<a href="/admins/products/new" class="btn-real"></a>
@@ -35,12 +38,10 @@
 			</tbody>
 		</table>
 	</div>
+
+<%= paginate @products, class: "paginate" %>
+
+    </div>
+  </div>
 </div>
-
-
-<div class="pagination">
-	<p>・</p>
-	<p>・</p>
-	<p>・</p>
-	<p>・</p>
 </div>
