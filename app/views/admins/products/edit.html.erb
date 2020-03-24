@@ -1,11 +1,11 @@
 <div class="container">
-  <h2>商品編集画面</h2>
+  <h3 class="product-title">商品編集画面</h3>
     <div class="row">
   	  <div class = "col-md-4">
 		<%= form_for @product,:url => {action:"update"} do |f| %>
 		<!-- 画像選択 --><!-- 画像選択ボタン -->
-		<%= attachment_image_tag @product, :product_image,format: 'jpeg', fallback: "no_image.jpg", size: "200x100" %><br>
-		<%= f.label :product_image, "画像選択", class: "btn-sm btn-primary" %>
+		<%= attachment_image_tag @product, :product_image,format: 'jpeg', fallback: "no_image.jpg", size: "300x200" %><br>
+		<%= f.label :product_image, "画像選択", class: "btn-product" %>
 		<%= f.file_field :product_image, class: "image_form" %>
 		<!-- labelでボタンを好きなデザインに設定。cssでデフォルトのファイル選択ボタンを消しています -->
 	  </div>
@@ -30,7 +30,7 @@
 	  </div>
       <div class = "col-md-2 offset-10">
 	  <!-- 変更を保存ボタン -->
-	    <%= f.submit '変更を保存',class: 'btn-sm btn-primary' %>
+	    <%= f.submit '変更を保存',class: 'btn-product' %>
       <% end %>
       </div>
   </div>

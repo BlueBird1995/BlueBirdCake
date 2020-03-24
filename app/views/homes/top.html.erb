@@ -1,49 +1,79 @@
+<%# スタートアニメーション %>
+<div class="start">
+  <p><img src="/assets/rogo.png" alt=""></p>
+</div>
+
+<div class="container">
+<ul class="msr_newslist01">
+  <li>
+    <a href="#">
+    <div>
+      <time datetime="2016-1-1">2020.03.18</time>
+      <p class="cat02">cat02</p>
+    </div>
+    <p> 新型コロナウイルスに関わる対応 </p>
+    </a>
+  </li>
+  <li>
+    <a href="#">
+    <div>
+      <time datetime="2016-1-1">2020.03.15</time>
+      <p class="cat01">cat01</p>
+    </div>
+    <p> 新商品のお知らせ </p>
+    </a>
+  </li>
+</ul>
+</div>
+
 <div class="container">
   <div class="row">
-      <div class="col-md-3">
-    <table class="table">
-    <th class="bg-light">ジャンル検索</th>
-      <% @genres.each do |f|%>
-      <% if f.status == true %>
-    <tr>
-      <td>
-      <%# ジャンルが無効なら表示しない %>
-      <%= link_to f.name, genre_path(f.id) %>
-      <% end %></td>
-    </tr>
-      <% end %>
-    </table>
+    <div class="col-md-2">
+      <table class="table table-bordered">
+        <th class="genre-th">Genre</th>
+        <% @genres.each do |f|%>
+        <% if f.status == true %>
+        <tr class="genre-tr">
+          <td class="genre-td">
+            <%# ジャンルが無効なら表示しない %>
+            <%= link_to f.name, genre_path(f.id) %>
+            <% end %></td>
+        </tr>
+        <% end %>
+      </table>
     </div>
 
-    <div class="col-9">
-      <div class="jumbotron">
-        <p>
-          ようこそ、長野ケーキへ！<br>
-          このサイトは、ケーキ販売のECサイトになります。<br>
-          会員でないかたも商品の閲覧ができますが、<br>
-          購入には会員登録が必要になります。
-        </p>
-      </div>
-      <div class="recomend-products">
-        <h2>おすすめ商品</h2>
-        <div class="d-flex flex-row">
-          <% @products.each do |product| %>
-            <table>
-              <tr>
-                <td class="pr-2">
-                  <%= link_to product_path(product) do %>
-                  <%= attachment_image_tag product, :product_image, format: 'jpeg', fallback: "no_image.jpg", size: "200x100" %>
-                  <% end %><br>
-                  <%= product.name %><br>
-                  <%= product.price.to_s(:delimited) %>
-
-                </td>
-              </tr>
-            </table>
-          <% end %>
-        </div>
-        <%= link_to "もっと見る>", products_path, class: "nav justify-content-end" %>
+    <div class="col-md-10 viewer-border">
+      <div class="viewer">
+        <ul class="slideArea-ul">
+          <li><img src="/assets/cake1.jpg" /></li>
+          <li><img src="/assets/cake2.jpg" /></li>
+          <li><img src="/assets/cake3.jpg" /></li>
+        </ul>
       </div>
     </div>
   </div>
+
+  <h3 class="page-title">おすすめ商品</h3>
+  <div class="row">
+    <div class="recomend-products col-md-6">
+      <div class="d-flex flex-row">
+        <% @products.each do |product| %>
+        <table>
+          <tr>
+            <td class="pr-2">
+              <%= link_to product_path(product) do %>
+              <%= attachment_image_tag product, :product_image, format: 'jpeg', fallback: "no_image.jpg", size: "200x100" %>
+              <% end %><br>
+              <b><%= product.name %></b>
+              ¥<%= product.price.to_s(:delimited) %>(税込)
+            </td>
+          </tr>
+        </table>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <%= link_to "もっと見る>", products_path , class: "nav justify-content-end text-right text-muted" %>
+
 </div>

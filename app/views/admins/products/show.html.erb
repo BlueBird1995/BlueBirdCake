@@ -1,5 +1,7 @@
 <div class="container">
-  <h2>商品詳細画面</h2>
+  <div class="box-product">
+  <p>商品詳細画面</p>
+  </div>
     <div class="row">
   	  <div class="col-md-3">
 	    <!-- 商品画像 -->
@@ -21,7 +23,7 @@
 		      	<% end %>
 
 <!-- 編集ボタン -->
-        <%= link_to "編集する",edit_admins_product_path(@product),class: 'btn-sm btn-primary' %>
+        <%= button_to "編集する",edit_admins_product_path(@product),class: 'btn-product',method: :get %>
     </div>
   </div>
 </div>

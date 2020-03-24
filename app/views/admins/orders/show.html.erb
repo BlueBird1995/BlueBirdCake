@@ -33,7 +33,7 @@
 
     <% @ordered_products.each do |ordered_product| %>
     <tr>
-      <td><%= ordered_product.product.name %></td>
+      <td><%= Product.where(id: ord.product_id).pluck(:name).join %></td>
       <td><%= ordered_product.product.price.to_s(:delimited) %></td>
       <td><%= ordered_product.stock %></td>
       <td><%= ordered_product.price.to_s(:delimited) %></td>
