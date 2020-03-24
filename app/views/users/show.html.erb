@@ -1,49 +1,50 @@
 <div class="profile-page">
 
     <div class="row">
-        <h4 class="text-center col-6">マイページ</h4>
+        <h3 class="col-4 page-title">My Page</h3>
     </div>
 
     <div class="row my-3">
         <strong class="col-2">登録情報</strong>
-        <%= link_to "編集する", edit_user_path(@user), class:"btn btn-primary col-3 mr-2" %>
-        <%= link_to "パスワードを変更する", new_user_password_path(@user), class:"btn btn-primary col-4"%>
+        <%= link_to "編集する", edit_user_path(@user), class:"btn user-btn col-3 mr-2" %>
+        <%= link_to "パスワードを変更する", new_user_password_path(@user), class:"btn user-btn col-4"%>
     </div>
 
-    <table class="table">
+    <table class="table user-tabel">
         <tr class="row">
-            <td class="bg-light col-3">氏名</td>
-            <td class="col-9"><%= @user.first_name %><%= @user.last_name %></td>
+            <td class="label-color col-3">氏名</td>
+            <td class="col-9"><%= @user.name %></td>
         </tr>
         <tr class="row">
-            <td class="bg-light col-3">カナ</td>
-            <td class="col-9"><%= @user.first_kana %><%= @user.last_kana %></td>
+            <td class="label-color col-3">カナ</td>
+            <td class="col-9"><%= @user.kana %></td>
         </tr>
         <tr class="row">
-            <td class="bg-light col-3">郵便番号</td>
+            <td class="label-color col-3">郵便番号</td>
             <td class="col-9"><%= @user.postal_code %></td>
         </tr>
         <tr class="row">
-            <td class="bg-light col-3">住所</td>
+            <td class="label-color col-3">住所</td>
             <td class="col-9"><%= @user.address %></td>
         </tr>
         <tr class="row">
-            <td class="bg-light col-3">電話番号</td>
+            <td class="label-color col-3">電話番号</td>
             <td class="col-9"><%= @user.telephone_number %></td>
         </tr>
         <tr class="row">
-            <td class="bg-light col-3">メールアドレス</td>
+            <td class="label-color col-3">メールアドレス</td>
             <td class="col-9"><%= @user.email %></td>
         </tr>
     </table>
 
     <div class="row my-3">
         <strong class="col-2">配送先</strong>
-        <%= link_to "一覧を見る", user_deliveries_path(@user), class:"btn btn-primary col-4" %>
+        <%= link_to "一覧を見る", user_deliveries_path(@user), class:"btn user-btn col-4" %>
     </div>
 
     <div class="row my-3">
         <strong class="col-2">注文履歴</strong>
-        <%= link_to "一覧を見る", order_path(@user), class:"btn btn-primary col-4" %>
+        <%= link_to "詳細をみる", orders_path(@user), class:"btn user-btn col-4" %>
     </div>
+
 </div>

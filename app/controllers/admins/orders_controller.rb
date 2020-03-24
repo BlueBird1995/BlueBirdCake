@@ -16,15 +16,17 @@ class Admins::OrdersController < ApplicationController
 
 	def show
 		@order = Order.find(params[:id])
+		@ordered_products = OrderedProduct.where(id: params[:id])
 	end
 
 	def update #注文ステータスの更新
 		@order = Order.find(params[:id])
 		@order.update(order_params)
+		redirect_back(fallback_location: root_path)
 	end
 
 private
  def order_params
-   params.permit(:status)
+   params.require(:order).permit(:status)
  end
 end

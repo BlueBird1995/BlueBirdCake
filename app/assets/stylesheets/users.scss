@@ -2,28 +2,93 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//カラーの変数を定義
+$main-color: #FFEED5;
+$success-color: #79A1D4;
+$danger-color: #F99292;
+
+//共通の部品を定義してるよ
+//ページタイトルの部品
+@mixin page_title {
+    background: $main-color;
+    border-left: 20px solid tan;
+}
+//ボタン部品
+@mixin success_btn {
+    border:1px solid;
+    color: $success-color;
+    &:hover {
+        background: $success-color;
+        opacity: 0.8;
+        color: #ffff;
+    }
+}
+@mixin danger_btn {
+    border:1px solid $danger-color;
+    color: $danger-color;
+    &:hover {
+        background: $danger-color;
+        opacity: 0.8;
+        color: #ffff;
+    }
+}
+
 //マイページ
 .profile-page {
     width: 60%;
     margin-left: 5%;
-    .profile-table {
-        border: 1px solid #000000;
+    .page-title {
+        @include page_title
+    }
+    .user-table {
+        background:#E9E9E9;
+    }
+    .user-btn {
+        @include success_btn
+    }
+    .label-color {
+        background: $main-color;
     }
 }
 //ユーザー情報編集ページ
 .profile-edit {
-    width: 80%;
-    margin-left: 5%;
+    width: 90%;
+    margin: 0 auto;
+    .page-title {
+        @include page_title
+    }
+    .card {
+        text-align: center;
+        padding: 20px 0;
+        .label-color {
+            background: $main-color;
+        }
+        .save-btn {
+            @include success_btn
+        }
+        .delete-btn {
+            @include danger_btn
+        }
+    }
 }
 //ユーザー退会確認ページ
 .withdraw-box {
     width: 100%;
-	height: 690px;
+	height: 500px;
 	display: flex;
 	align-items: center;
     justify-content: center;
     .withdraw {
         width: 50%;
-	    height: 50%;
+        height: 50%;
+        .withdraw-text {
+            color: #ff0000;
+        }
+        .save-btn {
+            @include success_btn
+        }
+        .delete-btn {
+            @include danger_btn
+        }
     }
 }
