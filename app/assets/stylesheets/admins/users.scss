@@ -1,3 +1,41 @@
 // Place all the styles related to the admins::users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "../users";
+
+//ユーザー詳細（管理者用）
+.profile-page-admin {
+    width: 80%;
+    margin: 0 auto;
+    .user-table {
+        width: 100%;
+    }
+    .page-title {
+        @include page_title
+    }
+    .true-user {
+        @include success_btn
+    }
+    .not-user {
+        @include danger_btn
+    }
+}
+
+//ユーザー編集（管理者用）
+.profile-edit-admin {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    .page-title {
+        @include page_title
+    }
+    .card {
+        width: 100%;
+        padding: 20px;
+    }
+    .edit-btn {
+        margin-left: 10px;
+        @include success_btn
+    }
+}

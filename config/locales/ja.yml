@@ -16,6 +16,7 @@ ja:
         last_name: 名前
         first_kana: フリガナ（セイ）
         last_kana: フリガナ（メイ）
+        email: メールアドレス
         telephone_number: 電話番号
       genre:
         status:
@@ -31,7 +32,6 @@ ja:
       payment:
         creditcard: "クレジットカード"
         bank: "銀行振込"
-  
   views:
     pagination:
       first: "&laquo; 最初"
@@ -39,3 +39,7 @@ ja:
       previous: "&lsaquo; 前"
       next: "次 &rsaquo;"
       truncate: "..."
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
+      short: "%Y/%m/%d"

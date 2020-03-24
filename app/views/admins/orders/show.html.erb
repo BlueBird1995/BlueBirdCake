@@ -17,8 +17,8 @@
   <h4>注文ステータス</h4>
 
   <%= form_for @order, :url => { action: "update" } do |f| %>
-  <%= f.select :status, ['入金待ち', '入金確認', '製作中', '発送準備中', '発送済み'] %>
-  <%= f.submit "更新" %>
+    <%= f.select :status, ['入金待ち', '入金確認', '製作中', '発送準備中', '発送済み'] %>
+    <%= f.submit "更新" %>
   <% end %>
 
   <table class="table table-bordered">
@@ -37,7 +37,7 @@
       <td><%= ordered_product.product.price.to_s(:delimited) %></td>
       <td><%= ordered_product.stock %></td>
       <td><%= ordered_product.price.to_s(:delimited) %></td>
-      <td> <%= form_for ordered_product, :url => { action: "update" } do |f| %>
+      <td> <%= form_for @order  do |f| %>
         <%= f.select :status, ['着手不可', '製作待ち', '製作中', '製作完了'] %>
         <%= f.submit "更新" %>
         <% end %></td>

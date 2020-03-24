@@ -1,18 +1,18 @@
-<div class="profile-page">
+<div class="profile-page-admin">
 
     <div class="row">
-        <h4 class="text-center col-6">会員詳細</h4>
+        <h4 class="col-3 page-title">会員詳細</h4>
     </div>
 
-    <table class="w-100">
+    <table class="user-table">
         <tr class="row my-3">
             <td class="col-3">顧客ID</td>
             <td class="col-9">
                 <%= @user.id %>
                 <% if @user.status == true %>
-                    <span class="bg-primary rounded p-1 ml-3">有効会員</span>
+                    <span class="btn true-user p-1 ml-3">有効会員</span>
                 <% else %>
-                    <span class="bg-danger rounded p-1 ml-3">退会済みユーザー</span>
+                    <span class="btn not-user p-1 ml-3">退会済みユーザー</span>
                 <% end %>
             </td>
         </tr>
@@ -22,7 +22,7 @@
         </tr>
         <tr class="row my-3">
             <td class="col-3">カナ</td>
-            <td class="col-9"><%= @user.first_kana %><%= @user.last_kana %></td>
+            <td class="col-9"><%= @user.kana %></td>
         </tr>
         <tr class="row my-3">
             <td class="col-3">郵便番号</td>
@@ -43,7 +43,7 @@
     </table>
 
     <div class="row my-3">
-        <%= link_to "編集する", edit_admins_user_path(@user), class:"btn btn-primary col-4" %>
-        <%= link_to "注文履歴を見る", admins_order_path(@user), class:"btn btn-primary col-4 ml-3" %>
+        <%= link_to "編集する", edit_admins_user_path(@user), class:"btn true-user col-4" %>
+        <%= link_to "注文履歴を見る", admins_order_path(@user), class:"btn true-user col-4 ml-3" %>
     </div>
 </div>

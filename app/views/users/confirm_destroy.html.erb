@@ -1,6 +1,6 @@
 <div class="withdraw-box">
     <div class="withdraw text-center">
-        <h2>本当に退会しますか？</h2>
+        <h2 class="withdraw-text">本当に退会しますか？</h2>
 
         <p class="my-4">
             退会すると、会員登録情報や<br/>
@@ -8,7 +8,7 @@
             退会する場合は、「退会する」をクリックしてください。
         </p>
 
-        <%= link_to "戻る", :back, class: "btn btn-primary col-3 mr-3" %>
-        <%= link_to "退会する", users_hide_path(@user), method: :put, class: "btn btn-danger col-3" %>
+        <%= link_to "戻る", :back, class: "btn save-btn col-3 mr-3" %>
+        <%= link_to "退会する", users_hide_path(@user), method: :put, class: "btn delete-btn col-3" %>
     </div>
 </div>
