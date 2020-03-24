@@ -8,6 +8,8 @@
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+
 </head>
 
 <body>
@@ -24,6 +26,7 @@
     </ul>
    </div>
   </div>
+
     <ul class="navbar-nav ml-auto my-3">
       <% if user_signed_in? %>
       <li class="nav-item p-2 mr-5 rounded ">
@@ -60,7 +63,37 @@
   </header>
 
   <%= yield %>
-  <footer class="p-5 text-white mt-5">フッターです。
+
+  <footer class="p-5 mt-5">
+
+    <div class="container text-white">
+      <div class="row">
+        <div class="col-md-3">
+          <h3 id="title2" class="text-center">Nagano Cake</h3>
+          <p class="text-center">長野県No.1のケーキ屋さん</p><br>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3">
+          <p>製造・販売元</p>
+          <p><u>株式会社BlueBird</u></p>
+          <u>東京都渋谷区神南E101 3F</u>
+        </div>
+
+
+        <div class="col-md-4">
+          <p>▶︎BlueBird    ▶︎誕生秘話    ▶︎店舗一覧</p>
+          <p>▶︎会社概要            ▶︎社員の声    ▶︎採用情報</p>
+          <p>▶︎お知らせ            ▶︎CAKECAMP</p>
+        </div>
+
+        <div class="col-md-5">
+        <img id="ban1" src="/assets/banner1.png" alt=""/>
+        </div>
+      </div>
+    </div>
+        <p class="text-center">Copyright © 2020 Bluebird All Rights Reserved.</p>
   </footer>
 </body>
 
