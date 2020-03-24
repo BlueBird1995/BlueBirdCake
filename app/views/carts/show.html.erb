@@ -1,13 +1,16 @@
 <div class="container">
   <div class="row">
-  	<h2>ショッピングカート</h2>
-<!-- カートを空にするボタン -->
-<%= button_to "カートを空にする", destroy_all_path, class: 'btn-sm btn-danger', method: :delete %>
+  	<div class = "col-md-5">
+  	  <h3 class="cart-title">ショッピングカート</h3></div>
+  	<div class = "col-md-2 offset-5">
+      <!-- カートを空にするボタン -->
+      <%= button_to "カートを空にする", destroy_all_path, class: 'btn-kara', method: :delete %>
+    </div>
 
-<table class = "table">
+<table class = "table table-bordered">
 	<thead>
 		<tr>
-			<th>商品名</th>
+			<th class = "th-p1">商品名</th>
 			<th>単価（税込）</th>
 			<th>数量</th>
 			<th>小計</th>
@@ -17,38 +20,46 @@
 	<tbody>
 	  <% @carts.each do |cart| %>
 		<tr>
-		  <td><%= cart.product.name %></td>
+		  <td><%= attachment_image_tag @product, :product_image, format: 'jpeg', fallback: "no_image.jpg", size: "40x20" %><%= cart.product.name %></td>
 		  <td><%= cart.tax_included %></td>
 
 		  <td>
 			<%= form_for(cart, url: user_carts_path, html: {method: "patch"}) do |f| %>
-			<%= f.text_field :stock, class: "form-control" %>
+			<%= f.text_field :stock, class: "stock-form" %>
 			<%# これだけだと商品の特定ができないので、hidden %>
 			<%= f.hidden_field :product_id, :value => cart.product_id %>
-			<%= f.submit "変更",class: 'btn-sm btn-primary' %>
+			<%= f.submit "変更",class: 'btn-zougen' %>
 			<% end %>
 		  </td>
 		  <td><%= cart.subtotal %></td>
-		  <td><%= link_to "削除する",user_carts_path(cart), class: 'btn-sm btn-danger', method: :delete %></td>
+		  <td><div class= "button_chuuou"><%= button_to "削除する",user_carts_path(cart), class: 'btn-destroy', method: :delete %></div></td>
         </tr>
       <% end %>
 	</tbody>
 </table>
-
+</div>
 <!-- 合計金額表示 -->
-<table>
-	<tr>
-	  <th>合計金額</th>
-	  <td><%= @total_price %></td>
-	</tr>
-</table>
 
-<!-- 買い物を続けるボタン -->
-	<%= link_to "買い物を続ける",products_path,class: 'btn-sm btn-primary' %>
+	<div class="row">
+	  <div class = "col-md-4">
+	    <!-- 買い物を続けるボタン -->
+		<%= button_to "買い物を続ける",{controller: 'products', action: 'index'}, {method: :get, class: 'btn-cart'} %>
+	  </div>
+	  <div class = "col-md-3 offset-5">
+	    <table class = "table table-bordered">
+		  <tr>
+		    <th>合計金額</th>
+		    <td><%= @total_price %></td>
+		  </tr>
+	    </table>
+	  </div>
+	</div>
 
+    <div class= "button_chuuou">
 	<!-- 情報入力に進むボタン -->
-	<%= link_to "情報入力画面に進む",new_order_path(current_user.id),class: 'btn-sm btn-success' %>
- </div>
+	<%= button_to "情報入力画面に進む",new_order_path(current_user.id),class: 'btn-go-order',method: :get %>
+</div>
+
 </div>
 
 

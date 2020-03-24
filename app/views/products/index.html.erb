@@ -2,12 +2,12 @@
 <div class="container">
   <div class="row">
     <div class="col-md-2">
-      <table class="table">
-        <th class="bg-light">ジャンル検索</th>
+      <table class="table table-bordered">
+        <th class="genre-th">Genre</th>
         <% @genres.each do |f|%>
         <% if f.status == true %>
-        <tr>
-          <td>
+        <tr class="genre-tr">
+          <td class="genre-td">
             <%# ジャンルが無効なら表示しない %>
             <%= link_to f.name, genre_path(f.id) %>
             <% end %></td>
@@ -17,7 +17,7 @@
     </div>
 
   <div class="col-md-10">
-    <h2>商品一覧（全<%= @products.count %>件）</h2>
+    <h3 class="product-index">商品一覧（全<%= @products.count %>件）</h3>
     <div id="product">
     <% @products.each do |product| %>
       <div class="col-md-3">

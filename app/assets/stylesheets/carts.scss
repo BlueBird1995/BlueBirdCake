@@ -2,3 +2,97 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.btn-kara {
+  width:150px;
+  text-align:center;
+  border:1px solid #F99292;
+  color: #F99292;
+  border-radius:5px;
+  &:hover {
+    background: #F99292;
+    opacity: 0.8;
+    color: #ffff;
+    }
+}
+
+.btn-destroy {
+  text-align:center;
+  border:1px solid #F99292;
+  color: #F99292;
+  border-radius:5px;
+  &:hover {
+    background: #F99292;
+    opacity: 0.8;
+    color: #ffff;
+    text-decoration: none;
+    }
+}
+
+.btn-zougen{
+  width:50px;
+  text-align:center;
+  border:1px solid #79A1D4;
+  color: #79A1D4;
+  border-radius:5px;
+  &:hover {
+    background: #79A1D4;
+    opacity: 0.8;
+    color: #ffff;
+    }
+}
+
+.btn-cart{
+  width:150px;
+  text-align:center;
+  border:1px solid #79A1D4;
+  color: #79A1D4;
+  border-radius:5px;
+  &:hover {
+    background: #79A1D4;
+    opacity: 0.8;
+    color: #ffff;
+    text-decoration: none;
+    }
+}
+
+.btn-go-order{
+  width:200px;
+  text-align:center;
+  border:1px solid #a5c272;
+  color: #a5c272;
+  border-radius:5px;
+  &:hover {
+    background: #a5c272;
+    opacity: 0.8;
+    color: #ffff;
+    text-decoration: none;
+    }
+}
+
+.cart-title {
+  padding:0 30px;
+  background: #FFEED5;
+  border-left: 20px solid tan;
+}
+
+.stock-form {
+  width:50px;
+  text-align:center;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.th-p1 {
+  width:300px;
+}
+
+th {
+  background: #FFEED5;
+  width:100px;
+}
+
+.button_chuuou {
+	text-align:center;
+}
