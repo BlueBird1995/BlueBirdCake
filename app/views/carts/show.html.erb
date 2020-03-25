@@ -1,11 +1,21 @@
 <div class="container cart-page">
   <div class="row">
     <h3 class="cart-title">ショッピングカート</h3>
+
+
   	<div class = "col-md-2 offset-6">
       <!-- カートを空にするボタン -->
       <%= button_to "カートを空にする", destroy_all_path, class:"btn btn-kara", method: :delete %>
     </div>
 
+        <% if @cart.errors.any? %>
+         <h3><%= @cart.errors.count %>個のエラーがあります。</h3>
+           <% @cart.errors.full_messages.each do |message| %>
+         <ul>
+          <li><%= message %></li>
+         </ul>
+          <% end %>
+        <% end %>
 <table class = "table table-bordered">
 	<thead>
 		<tr>

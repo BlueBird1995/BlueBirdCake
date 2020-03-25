@@ -15,7 +15,7 @@ class Admins::OrdersController < ApplicationController
 
 	def show
 		@order = Order.find(params[:id])
-		@ordered_products = OrderedProduct.where(order_id: params[:id]
+		@ordered_products = OrderedProduct.where(order_id: params[:id])
 	end
 
 	def update #注文ステータスの更新

@@ -2,6 +2,8 @@ class Cart < ApplicationRecord
 	belongs_to :user
 	belongs_to :product
 
+	validates :stock, :numericality => { :less_than => 10 }
+
 
 	#商品の税込み単価
     def tax_included

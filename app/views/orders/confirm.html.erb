@@ -15,9 +15,9 @@
         <% @carts.each do |cart| %>
         <tr>
           <td><%= cart.product.name %></td>
-          <td><%= cart.tax_included %></td>
+          <td><%= cart.tax_included.to_s(:delimited) %>円</td>
           <td><%= cart.stock %></td>
-          <td><%= cart.subtotal %></td>
+          <td><%= cart.subtotal.to_s(:delimited) %>円</td>
         </tr>
         <% end %>
       </table>
@@ -36,16 +36,16 @@
           <% end %>
             <tr>
               <th class="tablehead">送料</th>
-              <td><%= @order.postage %></td>
+              <td><%= @order.postage.to_s(:delimited) %>円</td>
             </tr>
             <tr>
               <th class="tablehead">商品合計</th>
-              <td><%= @total_price %></td>
+              <td><%= @total_price.to_s(:delimited) %>円</td>
             </tr>
 
             <tr>
               <th class="tablehead">請求金額</th>
-              <td><%= @postage_total_price %></td>
+              <td><%= @postage_total_price.to_s(:delimited) %>円</td>
             </tr>
       </table>
     </div>
