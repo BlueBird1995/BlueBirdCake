@@ -65,8 +65,8 @@
               <%= link_to product_path(product) do %>
               <%= attachment_image_tag product, :product_image, format: 'jpeg', fallback: "no_image.jpg", size: "200x100" %>
               <% end %><br>
-              <b><%= product.name %></b>
-              ¥<%= product.price.to_s(:delimited) %>(税込)
+              <b><%= product.name %></b><br>
+              <%= product.price.to_s(:delimited) %>円(税込)
             </td>
           </tr>
         </table>

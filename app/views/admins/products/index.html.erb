@@ -22,7 +22,7 @@
 				<tr>
 					<td><%= product.id %></td>
 					<td><%= link_to product.name,admins_product_path(product) %></td>
-					<td>¥<%= product.price.to_s(:delimited) %></td>
+					<td><%= product.price.to_s(:delimited) %>円</td>
 					<td><%= product.genre.name %></td>
 					<td>
 						<% if product.status %>
