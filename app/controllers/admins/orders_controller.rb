@@ -1,5 +1,6 @@
 class Admins::OrdersController < ApplicationController
-
+  before_action :authenticate_admin!
+  
 	def top #今日の注文件数を表示
 		@orders = Order.all
 		if @orders.where([:created_at].to_s.match(/#{Date.today.to_s}.+/)).present?

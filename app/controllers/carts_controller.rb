@@ -1,5 +1,6 @@
 class CartsController < ApplicationController
   before_action :authenticate_user!
+  before_action :correct_user
 
   def show
     @cart = Cart.new
@@ -64,5 +65,12 @@ class CartsController < ApplicationController
   private
   def cart_params
     params.require(:cart).permit(:product_id,:stock,:user_id)
+  end
+
+  def correct_user
+    user = User.find(params[:user_id])
+    if current_user != user
+      redirect_to root_path
+    end
   end
 end
