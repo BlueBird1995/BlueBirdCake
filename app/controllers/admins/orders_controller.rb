@@ -11,12 +11,11 @@ class Admins::OrdersController < ApplicationController
 
 	def index #注文一覧画面を表示
 		@orders = Order.all.order(created_at: :desc)
-		@carts = Cart.all
 	end
 
 	def show
 		@order = Order.find(params[:id])
-		@ordered_products = OrderedProduct.where(id: params[:id])
+		@ordered_products = OrderedProduct.where(order_id: params[:id]
 	end
 
 	def update #注文ステータスの更新
@@ -27,6 +26,7 @@ class Admins::OrdersController < ApplicationController
 
 private
  def order_params
-   params.require(:order).permit(:status)
+   params.require(:order).permit(:status,
+								 ordered_products_attributes: [:status] )
  end
 end

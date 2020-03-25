@@ -25,7 +25,7 @@ class User < ApplicationRecord
   def name
     [first_name,last_name].join(' ')
   end
-  # 注文の際に使います
+
   def kana
     [first_kana,last_kana].join(' ')
   end
