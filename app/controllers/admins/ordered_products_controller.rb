@@ -3,7 +3,8 @@ class Admins::OrderedProductsController < ApplicationController
 	def update #製作ステータスの更新
 		@ordered_product = OrderedProduct.find(params[:id])
 		@ordered_product.update(ordered_product_params)
-    end
+		redirect_back(fallback_location: root_path)
+  end
 
 private
  def ordered_product_params

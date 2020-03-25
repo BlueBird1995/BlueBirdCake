@@ -14,7 +14,7 @@
 
 		ジャンル<%= @product.genre.name %><br>
 
-		<span>税込価格（税抜価格）¥<%= @product.price.to_s(:delimited) %>(¥<%= @product.tax_included.to_s(:delimited) %>)<br>
+		<span>税込価格（税抜価格）¥<%= @product.price.to_s(:delimited) %><%= @product.tax_included.to_s(:delimited) %>円<br>
 
 販売ステータス<% if @product.status %>
 		      	  <span>販売中</span>

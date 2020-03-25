@@ -21,7 +21,7 @@
 	  <% @carts.each do |cart| %>
 		<tr>
 		  <td><%= attachment_image_tag @product, :product_image, format: 'jpeg', fallback: "no_image.jpg", size: "40x20" %><%= cart.product.name %></td>
-		  <td><%= cart.tax_included %></td>
+		  <td><%= cart.tax_included.to_s(:delimited) %>円</td>
 
 		  <td>
 			<%= form_for(cart, url: user_carts_path, html: {method: "patch"}) do |f| %>
@@ -31,7 +31,7 @@
 			<%= f.submit "変更",class: 'btn-zougen' %>
 			<% end %>
 		  </td>
-		  <td><%= cart.subtotal %></td>
+		  <td><%= cart.subtotal.to_s(:delimited) %>円</td>
 		  <td><div class= "button_chuuou"><%= button_to "削除する",user_carts_path(cart), class: 'btn-destroy', method: :delete %></div></td>
         </tr>
       <% end %>
@@ -49,7 +49,7 @@
     <table class = "table table-bordered">
     <tr>
       <th>合計金額</th>
-      <td><%= @total_price %></td>
+      <td><%= @total_price.to_s(:delimited) %>円</td>
     </tr>
     </table>
   </div>

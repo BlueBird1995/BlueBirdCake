@@ -24,7 +24,7 @@
           <%= attachment_image_tag f, :product_image, format: 'jpeg', fallback: "no_image.jpg", size: "200x100" %><br>
           <%= f.name %><br>
           <% end %>
-          <span>¥</span><%= f.tax_included.to_s(:delimited) %>
+          <%= f.tax_included.to_s(:delimited) %>円
         </div>
           <% end %>
       </div>

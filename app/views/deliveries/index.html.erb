@@ -8,8 +8,8 @@
 <% end %>
 <% end %>
 
-<div class="container">
-  <h4 class="row ml-5  bg-light d-inline">配送先登録／一覧</h4>
+<div class="container delivery-page">
+  <h4 class="row ml-5  d-inline order-title">配送先登録／一覧</h4>
   <div class="row mt-3 mb-2">
     <div class="col-md-3">
       <span>郵便番号（ハイフンなし）</span>
@@ -37,16 +37,17 @@
     </div>
 
     <div class="col-md-4 offset-3">
-      <%= f.submit "登録する", class: "btn btn-success pr-5 pl-5" %>
+      <%= f.submit "登録する", class: "btn do-btn pr-5 pl-5" %>
     </div>
   </div>
   </tr>
 </div>
 <% end %>
 
-<div class="container mb-4">
+<div class="container mb-4  delivery-page">
   <div class="row">
-    <table class="table-bordered">
+  <div class="col-md-10">
+    <table class="table table-bordered">
       <thead class="bg-light">
         <th class="py-3 pr-3">郵便番号</th>
         <th class="py-3 pr-3">住所</th>
@@ -59,9 +60,10 @@
         <td class="py-3 pr-3"><%= f.postal_code %></td>
         <td class="py-3 pr-3"><%= f.address %></td>
         <td class="py-3 pr-3"><%= f.name %></td>
-        <td class="p-3"><%= link_to '編集する', edit_user_delivery_path(f.user_id,f.id), class: "btn btn-primary" %> <%= link_to '削除する', user_delivery_path(f.user_id,f.id), method: :delete, class: "btn btn-danger"%></td>
+        <td class="p-3"><%= link_to '編集する', edit_user_delivery_path(f.user_id,f.id), class: "btn db-btn ml-5" %><%= link_to '削除する', user_delivery_path(f.user_id,f.id), method: :delete, class: "btn dd-btn ml-5"%></td>
       </tr>
       <% end %>
     </table>
+    </div>
   </div>
 </div>

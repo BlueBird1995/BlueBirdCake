@@ -30,34 +30,34 @@
     <ul class="navbar-nav ml-auto my-3">
       <% if user_signed_in? %>
       <li class="nav-item p-2 mr-5 rounded ">
-        <%= link_to 'マイページ', user_path(current_user.id), class: "text-decoration-none nav-text" %></li>
+        <i class="fas fa-user"></i><%= link_to ' マイページ', user_path(current_user.id), class: "text-decoration-none nav-text" %></li>
       <li class="nav-item p-2 mr-5 rounded">
-        <%= link_to '商品一覧', products_path, class: "text-decoration-none nav-text" %></li>
+       <i class="fas fa-birthday-cake"></i><%= link_to ' 商品一覧', products_path, class: "text-decoration-none nav-text" %></li>
       <li class="nav-item p-2 mr-5 rounded">
-        <%= link_to 'カート', user_carts_path(current_user.id), class: "text-decoration-none px-2 nav-text" %></li>
+        <i class="fas fa-shopping-cart"></i><%= link_to ' カート', user_carts_path(current_user.id), class: "text-decoration-none nav-text" %></li>
       <li class="nav-item p-2 mr-5 rounded">
-        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "text-decoration-none nav-text" %>
+        <i class="fas fa-key"></i><%= link_to ' ログアウト', destroy_user_session_path, method: :delete, class: "text-decoration-none nav-text" %>
       </li>
 
       <%# adminのヘッダー %>
       <% elsif admin_signed_in? %>
       <li class="nav-item p-2 mr-5 rounded">
-        <%= link_to '商品一覧', admins_products_path, class: "text-decoration-none nav-text" %></li>
+        <i class="fas fa-birthday-cake"></i><%= link_to ' 商品一覧', admins_products_path, class: "text-decoration-none nav-text" %></li>
       <li class="nav-item p-2 mr-5 rounded">
         <%= link_to '会員一覧', admins_users_path, class: "text-decoration-non nav-text" %></li>
       <li class="nav-item p-2 mr-5 rounded">
-        <%= link_to '注文履歴一覧', admins_orders_path, class: "text-decoration-none px-2 nav-text" %></li>
+        <%= link_to '注文履歴一覧', admins_orders_path, class: "text-decoration-none nav-text" %></li>
       <li class="nav-item p-2 rounded">
         <%= link_to 'ジャンル管理', admins_genres_path, class: "text-decoration-none nav-text" %>
       </li>
 
       <% else %>
-      <li class="nav-item p-2 mr-5 btn-light rounded">
-        <%= link_to '商品一覧', products_path, class: "text-decoration-none nav-text" %></li>
-      <li class="nav-item p-2 mr-5 btn-light rounded">
-        <%= link_to '新規登録', new_user_registration_path, class: "text-decoration-none nav-text" %></li>
-      <li class="nav-item p-2 mr-5 btn-light rounded">
-        <%= link_to 'ログイン', new_user_session_path, class: "text-decoration-none nav-text" %></li>
+      <li class="nav-item p-2 mr-5 rounded">
+        <i class="fas fa-birthday-cake"></i><%= link_to ' 商品一覧', products_path, class: "text-decoration-none nav-text" %></li>
+      <li class="nav-item p-2 mr-5 rounded">
+       <i class="fas fa-user"></i> <%= link_to ' 新規登録', new_user_registration_path, class: "text-decoration-none nav-text" %></li>
+      <li class="nav-item p-2 mr-5 rounded">
+        <i class="fas fa-key"></i><%= link_to ' ログイン', new_user_session_path, class: "text-decoration-none nav-text" %></li>
       <% end %>
     </ul>
   </header>
@@ -89,11 +89,11 @@
         </div>
 
         <div class="col-md-5">
-        <img id="ban1" src="/assets/banner1.png" alt=""/>
+        <img id="ban1" src="/assets/CAKECAMP.png" alt=""/>
         </div>
       </div>
     </div>
-        <p class="text-center">Copyright © 2020 Bluebird All Rights Reserved.</p>
+        <p class="text-center pt-3">Copyright © 2020 Bluebird All Rights Reserved.</p>
   </footer>
 </body>
 
