@@ -1,6 +1,13 @@
-
 <div class="new-container">
-
+  <% if @order.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <ul>
+        <% @order.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <div class="order-title">
    <h3 class="row ml-5 d-inline">注文情報入力</h3>
   </div>
@@ -9,7 +16,8 @@
     <div class="col-md-12">
       <h5 class="border-bottom">支払方法</h5>
        <div  class="row">
-         <%= form_for @order, url: confirm_orders_path do |f| %>
+
+       <%= form_for @order, url: confirm_orders_path do |f| %>
          <div class="col-md-12 ml-4"> <!-- 縦にしてる -->
           <%= f.radio_button :payment, :creditcard, checked: true %>
           <%= f.label :payment, "クレジットカード", {value: :creditcard} %>
@@ -29,14 +37,16 @@
           <input type="radio" name="address_button" value="my_address" checked="checked" class="ml-4">ご自身の住所
         </div>
        </div>
-       <div class="row">
-        <div class="col-md-5 mb-2">
-          <input type="radio" name="address_button" value="deliveries_address" class="mb-3 ml-4">登録済住所から選択
-          <div class="col-md-7 mb-2 ml-4">
-            <%= select_tag "select", options_from_collection_for_select(@user.deliveries,  :id, :full_address) %>
+       <% unless current_user.deliveries.empty? %>
+         <div class="row">
+          <div class="col-md-5 mb-2">
+            <input type="radio" name="address_button" value="deliveries_address" class="mb-3 ml-4">登録済住所から選択
+            <div class="col-md-7 mb-2 ml-4">
+              <%= select_tag "select", options_from_collection_for_select(@user.deliveries,  :id, :full_address) %>
+            </div>
           </div>
-        </div>
-       </div>
+         </div>
+       <% end %>
        <div class="row">
         <div class="col-md-12"> <!-- 親 -->
           <input type="radio" name="address_button" value="new_address" class="mb-2 ml-4">新しいお届け先

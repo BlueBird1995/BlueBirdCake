@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  before_action :not_null_cart, only: [:confirm, :new]
 
   def new #注文者情報を入力する
     # test
@@ -36,9 +37,10 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     if @order.save
+      @carts = current_user.carts
+      @carts.destroy_all
       redirect_to orders_success_path
     else
-      @order = Order.new
       @order.user_id = current_user.id
       @user = current_user
       render :new
@@ -76,4 +78,12 @@ class OrdersController < ApplicationController
                                       :status,
                                       ordered_products_attributes: [:price, :stock, :product_id])
     end
+
+    #カートがNullであればredirect_back
+    def not_null_cart
+      flash.now[:alert] = "カートに商品を入れてください"
+      redirect_back(fallback_location: root_path) if current_user.carts.empty?
+    end
+
+    #送られてきた配送情報が空ならリダイレクトさせる
 end

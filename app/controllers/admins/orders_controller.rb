@@ -7,7 +7,7 @@ class Admins::OrdersController < ApplicationController
 		else
 			@data = "注文なし！"
 		end
-    end
+  end
 
 	def index #注文一覧画面を表示
 		@orders = Order.all.order(created_at: :desc)
@@ -15,7 +15,7 @@ class Admins::OrdersController < ApplicationController
 
 	def show
 		@order = Order.find(params[:id])
-		@ordered_products = OrderedProduct.where(order_id: params[:id]
+		@ordered_products = OrderedProduct.where(order_id: params[:id])
 	end
 
 	def update #注文ステータスの更新
@@ -25,8 +25,8 @@ class Admins::OrdersController < ApplicationController
 	end
 
 private
- def order_params
-   params.require(:order).permit(:status,
-								 ordered_products_attributes: [:status] )
- end
+	 def order_params
+	   params.require(:order).permit(:status,
+									 ordered_products_attributes: [:status] )
+	 end
 end

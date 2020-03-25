@@ -1,4 +1,13 @@
 <div class="profile-edit">
+    <% if @user.errors.any? %>
+      <div id="error_explanation" class="alert alert-danger">
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
     <div class="row">
         <h3 class="page-title col-3">登録情報編集</h3>
     </div>

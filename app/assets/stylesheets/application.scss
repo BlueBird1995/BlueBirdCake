@@ -14,7 +14,6 @@
  *= require_self
  */
 @import "bootstrap";
-
 // Devise-ログイン画面のフォームを中央に寄せるために使用（ほりゆう）
 .all-view {
   margin-top: 100px;
@@ -140,9 +139,7 @@ header,footer {
   width: 50px;
 }
 .msr_newslist01 li .cat02 {
-  
   background-color: #622D18;
-}
 }
 
 .pagination{

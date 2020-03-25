@@ -4,8 +4,8 @@ class Cart < ApplicationRecord
 
 
 	#商品の税込み単価
-    def tax_included
-    	(product.price*1.1).round
+  def tax_included
+  	(product.price*1.1).round
 	end
 
  #小計
