@@ -1,29 +1,32 @@
 <div class="container">
-  <div class="box-product">
-  <p>商品詳細画面</p>
+  <div class="row">
+  <h3 class="product-title">商品詳細画面</h3>
   </div>
     <div class="row">
-  	  <div class="col-md-3">
+  	  <div class="col-md-4">
 	    <!-- 商品画像 -->
 	    <%= attachment_image_tag @product, :product_image, format: 'jpeg', fallback: "no_image.jpg", size: "200x100" %>
 	  </div>
-      <div class="col-md-9">
-	    商品名<%= @product.name %><br>
+      <div class="col-md-6">
+	    <span>商品名  <%= @product.name %><br>
 
-		商品説明<%= @product.description %><br>
+		<span>商品説明  <%= @product.description %><br>
 
-		ジャンル<%= @product.genre.name %><br>
+		<span>ジャンル  <%= @product.genre.name %><br>
 
-		<span>税込価格（税抜価格）¥<%= @product.price.to_s(:delimited) %>(¥<%= @product.tax_included.to_s(:delimited) %>)<br>
+		<span>税込価格（税抜価格）  <%= @product.price.to_s(:delimited) %>円(<%= @product.tax_included.to_s(:delimited) %>円)<br>
 
-販売ステータス<% if @product.status %>
-		      	  <span>販売中</span>
-		      	<% else %>
-		      	  <span>販売停止中</span>
-		      	<% end %>
-
-<!-- 編集ボタン -->
+        <span>販売ステータス  
+        	<% if @product.status %>
+		      <span>販売中</span>
+		    <% else %>
+		      <span>販売停止中</span>
+		    <% end %>
+		</span>
+      <div class = "col-md-2 offset-10">
+        <!-- 編集ボタン -->
         <%= button_to "編集する",edit_admins_product_path(@product),class: 'btn-product',method: :get %>
+      </div>
     </div>
   </div>
 </div>
