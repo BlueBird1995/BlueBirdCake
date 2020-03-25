@@ -1,3 +1,14 @@
+			<% if @product.present? %>
+				<% if @product.errors.any? %>
+				<h3><%= @product.errors.count %>個のエラーがあります。</h3>
+				<% @product.errors.full_messages.each do |message| %>
+				<ul>
+					<li><%= message %></li>
+				</ul>
+				<% end %>
+				<% end %>
+			<% end %>
+			
 <div class="container">
   <h3 class="product-title">商品新規登録画面</h3>
     <div class="row">

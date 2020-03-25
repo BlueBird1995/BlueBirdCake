@@ -25,6 +25,7 @@ class Admins::ProductsController < ApplicationController
     if @product.save
     redirect_to admins_products_path
     else
+    @genres = Genre.all 
     render :new
     end
   end
