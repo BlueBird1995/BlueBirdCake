@@ -7,7 +7,7 @@ class Admins::OrdersController < ApplicationController
 		else
 			@data = "注文なし！"
 		end
-    end
+  end
 
 	def index #注文一覧画面を表示
 		@orders = Order.all.order(created_at: :desc)

@@ -36,6 +36,7 @@ class CartsController < ApplicationController
     @cart = Cart.find_by(product_id: params[:cart][:product_id],user_id: params[:user_id])
     @cart.stock = params[:cart][:stock]
     if @cart.save
+
     redirect_to user_carts_path
     else
     @carts = current_user.carts
@@ -43,6 +44,7 @@ class CartsController < ApplicationController
     @carts.each do |f|
       @total_price += f.subtotal
     end
+
       render :show
     end
   end
