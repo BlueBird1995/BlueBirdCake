@@ -7,7 +7,7 @@
 
   <div class="row">
     <div class="col-md-12">
-      <h5>支払方法</h5>
+      <h5 class="border-bottom">支払方法</h5>
        <div  class="row">
          <%= form_for @order, url: confirm_orders_path do |f| %>
          <div class="col-md-12 ml-4"> <!-- 縦にしてる -->
@@ -23,7 +23,7 @@
     </div>
   <div class="row">
     <div class="col-md-12">
-      <h5>お届け先</h5>
+      <h5 class="border-bottom mt-2">お届け先</h5>
        <div class="row">
         <div class="col-md-12 mb-2">
           <input type="radio" name="address_button" value="my_address" checked="checked" class="ml-4">ご自身の住所
