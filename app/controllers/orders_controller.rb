@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :not_null_cart, only: [:confirm, :new]
+  before_action :authenticate_user!
 
   def new #注文者情報を入力する
     # test

@@ -2,6 +2,7 @@ class CartsController < ApplicationController
   before_action :authenticate_user!
 
   def show
+    @cart = Cart.new
     @carts = current_user.carts
     @total_price = 0
     @carts.each do |f|
@@ -34,8 +35,18 @@ class CartsController < ApplicationController
   def update
     @cart = Cart.find_by(product_id: params[:cart][:product_id],user_id: params[:user_id])
     @cart.stock = params[:cart][:stock]
-    @cart.save
+    if @cart.save
+
     redirect_to user_carts_path
+    else
+    @carts = current_user.carts
+    @total_price = 0
+    @carts.each do |f|
+      @total_price += f.subtotal
+    end
+
+      render :show
+    end
   end
 
   def destroy
