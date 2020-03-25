@@ -1,64 +1,76 @@
-<div class="container cart-page">
-  <div class="row">
-    <h3 class="cart-title">ショッピングカート</h3>
-  	<div class = "col-md-2 offset-6">
-      <!-- カートを空にするボタン -->
-      <%= button_to "カートを空にする", destroy_all_path, class:"btn btn-kara", method: :delete %>
-    </div>
-
-<table class = "table table-bordered">
-	<thead>
-		<tr>
-			<th class = "th-p1">商品名</th>
-			<th>単価（税込）</th>
-			<th>数量</th>
-			<th>小計</th>
-			<th></th>
-		</tr>
-	</thead>
-	<tbody>
-	  <% @carts.each do |cart| %>
-		<tr>
-		  <td><%= attachment_image_tag @product, :product_image, format: 'jpeg', fallback: "no_image.jpg", size: "40x20" %><%= cart.product.name %></td>
-		  <td><%= cart.tax_included.to_s(:delimited) %>円</td>
-
-		  <td>
-			<%= form_for(cart, url: user_carts_path, html: {method: "patch"}) do |f| %>
-			<%= f.text_field :stock, class: "stock-form" %>
-			<%# これだけだと商品の特定ができないので、hidden %>
-			<%= f.hidden_field :product_id, :value => cart.product_id %>
-			<%= f.submit "変更",class: 'btn-zougen' %>
+			<% if @cart.present? %>
+				<% if @cart.errors.any? %>
+				<h3><%= @cart.errors.count %>個のエラーがあります。</h3>
+				<% @cart.errors.full_messages.each do |message| %>
+				<ul>
+					<li><%= message %></li>
+				</ul>
+				<% end %>
+				<% end %>
 			<% end %>
-		  </td>
-		  <td><%= cart.subtotal.to_s(:delimited) %>円</td>
-		  <td><div class= "button_chuuou"><%= button_to "削除する",user_carts_path(cart), class: 'btn-destroy', method: :delete %></div></td>
-        </tr>
-      <% end %>
-	</tbody>
-</table>
+<div class="container cart-page">
+	<div class="row">
+		<h3 class="cart-title">ショッピングカート</h3>
+		<div class="col-md-2 offset-6">
+			<!-- カートを空にするボタン -->
+			<%= button_to "カートを空にする", destroy_all_path, class:"btn btn-kara", method: :delete %>
+		</div>
+
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th class="th-p1">商品名</th>
+					<th>単価（税込）</th>
+					<th>数量</th>
+					<th>小計</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @carts.each do |cart| %>
+				<tr>
+					<td>
+						<%= attachment_image_tag @product, :product_image, format: 'jpeg', fallback: "no_image.jpg", size: "40x20" %><%= cart.product.name %>
+					</td>
+					<td><%= cart.tax_included.to_s(:delimited) %>円</td>
+
+					<td>
+						<%= form_for(cart, url: user_carts_path, html: {method: "patch"}) do |f| %>
+						<%= f.number_field :stock, class: "stock-form" %>
+						<%# これだけだと商品の特定ができないので、hidden %>
+						<%= f.hidden_field :product_id, :value => cart.product_id %>
+						<%= f.submit "変更",class: 'btn-zougen' %>
+						<% end %>
+					</td>
+					<td><%= cart.subtotal.to_s(:delimited) %>円</td>
+					<td>
+						<div class="button_chuuou">
+							<%= button_to "削除する",user_carts_path(cart), class: 'btn-destroy', method: :delete %></div>
+					</td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+	<!-- 合計金額表示 -->
+
+	<div class="row">
+		<div class="col-md-4">
+			<!-- 買い物を続けるボタン -->
+			<%= link_to "買い物を続ける",products_path, class:"btn btn-cart" %>
+		</div>
+		<div class="col-md-3 offset-5">
+			<table class="table table-bordered">
+				<tr>
+					<th>合計金額</th>
+					<td><%= @total_price.to_s(:delimited) %>円</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<div class="button_chuuou">
+		<!-- 情報入力に進むボタン -->
+		<%= link_to "情報入力画面に進む",new_order_path(current_user.id), class:"btn btn-go-order" %>
+	</div>
 </div>
-<!-- 合計金額表示 -->
-
-<div class="row">
-  <div class = "col-md-4">
-    <!-- 買い物を続けるボタン -->
-  <%= link_to "買い物を続ける",products_path, class:"btn btn-cart" %>
-  </div>
-  <div class = "col-md-3 offset-5">
-    <table class = "table table-bordered">
-    <tr>
-      <th>合計金額</th>
-      <td><%= @total_price.to_s(:delimited) %>円</td>
-    </tr>
-    </table>
-  </div>
-</div>
-
-    <div class= "button_chuuou">
-	<!-- 情報入力に進むボタン -->
-	<%= link_to "情報入力画面に進む",new_order_path(current_user.id), class:"btn btn-go-order" %>
-     </div>
-</div>
-
-
-

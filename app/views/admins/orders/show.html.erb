@@ -26,9 +26,10 @@
       <td>数量</td>
       <td>小計</td>
       <td>製作ステータス</td>
+      <td></td>
     </tr>
 
-    <% @ordered_products.each do |ord| %>
+    <% @ordered_products.each do |ordered_product| %>
     <tr>
       <td><%= Product.where(id: ordered_product.product_id).pluck(:name).join %></td>
       <td><%= ordered_product.product.price.to_s(:delimited) %></td>
