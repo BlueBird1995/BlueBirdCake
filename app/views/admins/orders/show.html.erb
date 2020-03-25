@@ -18,7 +18,6 @@
   <%= form_for @order, :url => { action: "update" } do |f| %>
     <%= f.select :status, ['入金待ち', '入金確認', '製作中', '発送準備中', '発送済み'] %>
     <%= f.submit "更新" %>
-  <% end %>
 
   <table class="table table-bordered">
     <tr class="bg-light">
@@ -27,10 +26,9 @@
       <td>数量</td>
       <td>小計</td>
       <td>製作ステータス</td>
-      <td></td>
     </tr>
 
-    <% @ordered_products.each do |ordered_product| %>
+    <% @ordered_products.each do |ord| %>
     <tr>
       <td><%= Product.where(id: ordered_product.product_id).pluck(:name).join %></td>
       <td><%= ordered_product.product.price.to_s(:delimited) %></td>
@@ -43,5 +41,6 @@
            <% end %>
     <% end %>
   </table>
+  <% end %>
 
 </div>

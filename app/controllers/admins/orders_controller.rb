@@ -26,6 +26,7 @@ class Admins::OrdersController < ApplicationController
 
 private
  def order_params
-   params.require(:order).permit(:status)
+   params.require(:order).permit(:status,
+								 ordered_products_attributes: [:status] )
  end
 end

@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
     @user = current_user
   end
 
-  def confirm #注文確認画面を表示する
+  def confirm
     @order = Order.new(order_params)
     @order.ordered_products.build
 
@@ -22,21 +22,18 @@ class OrdersController < ApplicationController
       @order.address = Delivery.find(params[:select]).address
       @order.name = Delivery.find(params[:select]).name
     end
-    # 合計個数機能
+
     @cart = current_user.carts
     @total_stock = @cart.sum(:stock)
 
-    # 合計金額
-    @total_price = 0 #初期化している
+    @total_price = 0
     @carts.each do |f|
       @total_price += f.subtotal
     end
-
-    #送料込みの合計金額
     @postage_total_price = @total_price + 800
   end
 
-  def create #注文情報を作成する
+  def create
     @order = Order.new(order_params)
     if @order.save
       redirect_to orders_success_path
@@ -48,14 +45,14 @@ class OrdersController < ApplicationController
     end
   end
 
-  def success #完了画面を表示する（お礼）
+  def success
   end
 
-  def index #注文履歴一覧を表示する
+  def index
     @orders = Order.all.order(created_at: :desc)
   end
 
-  def show #注文履歴詳細を表示する
+  def show
     @order = Order.find(params[:id])
     @ordered_products = OrderedProduct.all
     @carts = current_user.carts
@@ -68,15 +65,15 @@ class OrdersController < ApplicationController
 
 
   private
-  def order_params
-    params.require(:order).permit( :user_id,
-                                    :name,
-                                    :postal_code,
-                                    :address,
-                                    :payment,
-                                    :total_price,
-                                    :postage,
-                                    :status,
-                                    ordered_products_attributes: [:price, :stock, :product_id])
-  end
+    def order_params
+      params.require(:order).permit(  :user_id,
+                                      :name,
+                                      :postal_code,
+                                      :address,
+                                      :payment,
+                                      :total_price,
+                                      :postage,
+                                      :status,
+                                      ordered_products_attributes: [:price, :stock, :product_id])
+    end
 end

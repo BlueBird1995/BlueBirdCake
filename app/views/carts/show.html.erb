@@ -21,7 +21,6 @@
 			<tr>
 			  <td><%= attachment_image_tag @product, :product_image, format: 'jpeg', fallback: "no_image.jpg", size: "40x20" %><%= cart.product.name %></td>
 			  <td><%= cart.tax_included %></td>
-
 			  <td>
 				<%= form_for(cart, url: user_carts_path, html: {method: "patch"}) do |f| %>
 				<%= f.text_field :stock, class:"stock-form" %>
@@ -58,7 +57,6 @@
 	<!-- 情報入力に進むボタン -->
 	<%= link_to "情報入力画面に進む",new_order_path(current_user.id), class:"btn btn-go-order" %>
      </div>
-
 </div>
 
 
