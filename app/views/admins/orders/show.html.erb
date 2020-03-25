@@ -26,15 +26,16 @@
       <td>数量</td>
       <td>小計</td>
       <td>製作ステータス</td>
+      <td></td>
     </tr>
 
-    <% @ordered_products.each do |ord| %>
+    <% @ordered_products.each do |ordered_product| %>
     <tr>
       <td><%= Product.where(id: ordered_product.product_id).pluck(:name).join %></td>
       <td><%= ordered_product.product.price.to_s(:delimited) %></td>
       <td><%= ordered_product.stock %></td>
       <td><%= ordered_product.price.to_s(:delimited) %></td>
-      <td> <%= form_for(ordered_product, url: admins_ordered_product_path, html: {method: "patch"})  do |f| %>
+      <td><%= form_for(ordered_product, url: admins_ordered_product_path, html: {method: "patch"})  do |f| %>
              <%= f.select :status, ['着手不可', '製作待ち', '製作中', '製作完了'] %></td>
            <td><%= f.submit "更新" %></td>
     </tr>
