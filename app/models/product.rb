@@ -11,6 +11,7 @@ class Product < ApplicationRecord
     validates :updated_at, presence: true 
 
 
+
 	#商品の税込み単価
     def tax_included
     	(price*1.1).round

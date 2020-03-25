@@ -62,6 +62,7 @@ class CartsController < ApplicationController
     @carts.destroy_all
     redirect_to request.referer
   end
+  
   private
   def cart_params
     params.require(:cart).permit(:product_id,:stock,:user_id)

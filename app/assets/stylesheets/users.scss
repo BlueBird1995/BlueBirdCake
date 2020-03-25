@@ -8,7 +8,7 @@ $success-color: #79A1D4;
 $danger-color: #F99292;
 
 //共通の部品を定義してるよ
-//ページタイトルの部品
+//ページタイトルの部品Toggle Git Tab
 @mixin page_title {
     background: $main-color;
     border-left: 20px solid tan;
@@ -91,5 +91,5 @@ $danger-color: #F99292;
             @include danger_btn
         }
     }
-    
+
 }
