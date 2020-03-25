@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-
+  before_action :authenticate_user!
   def new #注文者情報を入力する
     # test
     @order = Order.new
