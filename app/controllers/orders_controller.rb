@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
 
-  def new
+  def new #注文者情報を入力する
+    # test
     @order = Order.new
     @order.user_id = current_user.id
     @user = current_user

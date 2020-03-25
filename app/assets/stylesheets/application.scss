@@ -50,6 +50,7 @@ header {
       font-family: sans-serif;
       color: black;
     }
+}
 
 *{
   font-family: serif;
@@ -133,5 +134,29 @@ header,footer {
   width: 50px;
 }
 .msr_newslist01 li .cat02 {
-  background-color:#622D18;
-}}
+  
+  background-color: #622D18;
+}
+}
+
+.pagination{
+  .page-item{
+    .page-link{
+      border-radius:50%;
+      color:#622D18;
+      margin:5px;
+      &:hover{
+      background:#E9BC00;
+      color: #fff;
+      }
+    }
+  }
+  .active{
+    .page-link{
+      background:#E9BC00;
+      border-color:#E9BC00;
+      border-radius:50%;
+      color: #fff;
+    }
+  }
+}

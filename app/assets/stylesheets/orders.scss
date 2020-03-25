@@ -15,6 +15,22 @@
   padding: 200px 0px;
 }
 
+.index-container {
+	.tablehead {
+       background: #FFEED5;
+	}
+
+	.order-btn {
+	    border:1px solid #79A1D4;
+	    color: #79A1D4;
+	    &:hover {
+	        background: #79A1D4;
+	        opacity: 0.8;
+	        color: #ffff;
+	    }
+	}
+}
+
 .new-container {
 	padding: 0 200px;
 	font-family: serif;
@@ -30,6 +46,11 @@
 	        color: #ffff;
 	    }
 	}
+
+	.border-bottom {
+	     border-bottom: solid　3px #ffc778;
+	     position: relative;
+	    }
 }
 
 .confirm-container {

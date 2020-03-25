@@ -3,7 +3,7 @@
   <h3>注文詳細画面</h3>
 
   <h4>購入者</h4>
-  <p><%= @order.name %></p><br>
+  <p><%= @order.user.name %></p><br>
 
   <h4>配送先</h4>
   <p><%= @order.postal_code %></p>
@@ -30,17 +30,15 @@
 
     <% @ordered_products.each do |ord| %>
     <tr>
-      <td><%= Product.where(id: ord.product_id).pluck(:name).join %></td>
-      <td><%= ord.product.price.to_s(:delimited) %></td>
-      <td><%= ord.stock %></td>
-      <td><%= ord.price.to_s(:delimited) %></td>
-      <td>
-        <%= f.fields_for :ordered_product, :url => { action: "update" } do |ord_form| %>
-          <%= ord_form.select :status, ['着手不可', '製作待ち', '製作中', '製作完了'] %>
-          <%= ord_form.submit "更新" %>
-        <% end %>
-      </td>
+      <td><%= Product.where(id: ordered_product.product_id).pluck(:name).join %></td>
+      <td><%= ordered_product.product.price.to_s(:delimited) %></td>
+      <td><%= ordered_product.stock %></td>
+      <td><%= ordered_product.price.to_s(:delimited) %></td>
+      <td> <%= form_for(ordered_product, url: admins_ordered_product_path, html: {method: "patch"})  do |f| %>
+             <%= f.select :status, ['着手不可', '製作待ち', '製作中', '製作完了'] %></td>
+           <td><%= f.submit "更新" %></td>
     </tr>
+           <% end %>
     <% end %>
   </table>
   <% end %>

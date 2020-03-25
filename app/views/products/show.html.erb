@@ -16,7 +16,7 @@
       </table>
     </div>
 
-    <div class = "col-md-4">
+    <div class = "col-md-3">
     <!-- 商品画像 -->
       <%= attachment_image_tag @product, :product_image, format: 'jpeg', fallback: "no_image.jpg", size: "200x100" %>
     </div>
@@ -27,13 +27,15 @@
       <%= @product.description %><br>
       <!-- 価格 -->
       <%= @product.tax_included %>円<br>
+
       <!-- カートに入れるボタン -->
-      <%= form_for @cart ,url: user_carts_path(@user) do |f| %>
+      <div class = "pt-5">
+        <%= form_for @cart ,url: user_carts_path(@user) do |f| %>
         <%= f.hidden_field :product_id, value: @product.id %>
         <%= f.hidden_field :user_id, value: @user.id %>
         <%= f.select :stock, options_for_select((1..10).to_a), include_blank: "個数選択" %>
         <%= f.submit "カートに入れる",class: 'btn-product' %>
-      <% end %>
+      <% end %></div>
     </div>
   </div>
 </div>
