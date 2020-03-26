@@ -19518,3 +19518,160 @@ Processing by Admins::OrdersController#top as HTML
 Completed 200 OK in 478ms (Views: 450.6ms | ActiveRecord: 2.3ms)
 
 
+Started GET "/" for 10.0.2.2 at 2020-03-26 06:05:44 +0000
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by HomesController#top as HTML
+  [1m[36mProduct Load (2.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 4]]
+  ↳ app/controllers/homes_controller.rb:4
+  Rendering homes/top.html.erb within layouts/application
+  [1m[36mGenre Load (1.7ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/homes/top.html.erb:34
+Started GET "/" for 10.0.2.2 at 2020-03-26 06:05:46 +0000
+Processing by HomesController#top as HTML
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 4]]
+  ↳ app/controllers/homes_controller.rb:4
+  Rendering homes/top.html.erb within layouts/application
+  [1m[36mGenre Load (1.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/homes/top.html.erb:34
+  Rendered homes/top.html.erb within layouts/application (4823.2ms)
+  Rendered homes/top.html.erb within layouts/application (3451.2ms)
+  [1m[36mAdmin Load (3.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:52
+  [1m[36mAdmin Load (1.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:52
+Completed 200 OK in 6067ms (Views: 5965.1ms | ActiveRecord: 22.4ms)
+
+
+Completed 200 OK in 4507ms (Views: 4491.2ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/attachments/4e7d4bb3ff5e3903df9d722298a47cdf048b546f/store/2/product_image.jpeg" for 10.0.2.2 at 2020-03-26 06:05:51 +0000
+Started GET "/attachments/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" for 10.0.2.2 at 2020-03-26 06:05:51 +0000
+Refile::App: Could not find attachment by id: 1
+Refile::App: Could not find attachment by id: 2
+Refile::App: [2020-03-26 06:05:51 +0000] GET "/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" 404 44.9ms
+
+Refile::App: [2020-03-26 06:05:51 +0000] GET "/4e7d4bb3ff5e3903df9d722298a47cdf048b546f/store/2/product_image.jpeg" 404 25.2ms
+
+Started GET "/admins/genres" for 10.0.2.2 at 2020-03-26 06:20:51 +0000
+Processing by Admins::GenresController#index as HTML
+  [1m[36mAdmin Load (2.6ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering admins/genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (2.5ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/admins/genres/index.html.erb:33
+  Rendered admins/genres/index.html.erb within layouts/application (193.1ms)
+Completed 200 OK in 692ms (Views: 658.8ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/admins/genres" for 10.0.2.2 at 2020-03-26 06:21:05 +0000
+Processing by Admins::GenresController#index as HTML
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering admins/genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/admins/genres/index.html.erb:33
+  Rendered admins/genres/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 416ms (Views: 401.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/admins/genres" for 10.0.2.2 at 2020-03-26 06:21:18 +0000
+Processing by Admins::GenresController#index as HTML
+  [1m[36mAdmin Load (1.5ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering admins/genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (1.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/admins/genres/index.html.erb:33
+  Rendered admins/genres/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 569ms (Views: 547.8ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/admins/" for 10.0.2.2 at 2020-03-26 06:34:43 +0000
+Processing by Admins::OrdersController#top as HTML
+  [1m[36mAdmin Load (3.4ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (3.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/controllers/admins/orders_controller.rb:6
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders"[0m
+  ↳ app/controllers/admins/orders_controller.rb:7
+  Rendering admins/orders/top.html.erb within layouts/application
+  Rendered admins/orders/top.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 421ms (Views: 360.5ms | ActiveRecord: 14.2ms)
+
+
+Started GET "/admins/products" for 10.0.2.2 at 2020-03-26 06:34:46 +0000
+Processing by Admins::ProductsController#index as HTML
+  [1m[36mAdmin Load (1.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering admins/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (2.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/admins/products/index.html.erb:21
+  [1m[36mGenre Load (2.1ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/products/index.html.erb:26
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/products/index.html.erb:26
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/products/index.html.erb:26
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/products/index.html.erb:26
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/admins/products/index.html.erb:42
+  Rendered admins/products/index.html.erb within layouts/application (66.8ms)
+Completed 200 OK in 396ms (Views: 374.6ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/admins/products/1" for 10.0.2.2 at 2020-03-26 06:34:48 +0000
+Processing by Admins::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (1.5ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/products_controller.rb:9
+  Rendering admins/products/show.html.erb within layouts/application
+  [1m[36mGenre Load (0.9ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/products/show.html.erb:16
+  Rendered admins/products/show.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 371ms (Views: 347.8ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/attachments/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" for 10.0.2.2 at 2020-03-26 06:34:48 +0000
+Refile::App: Could not find attachment by id: 1
+Refile::App: [2020-03-26 06:34:48 +0000] GET "/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" 404 3.6ms
+
+Started GET "/admins/products/1" for 10.0.2.2 at 2020-03-26 06:38:37 +0000
+Processing by Admins::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (1.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/products_controller.rb:9
+  Rendering admins/products/show.html.erb within layouts/application
+  [1m[36mGenre Load (1.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/products/show.html.erb:16
+  Rendered admins/products/show.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 381ms (Views: 363.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/attachments/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" for 10.0.2.2 at 2020-03-26 06:38:38 +0000
+Refile::App: Could not find attachment by id: 1
+Refile::App: [2020-03-26 06:38:38 +0000] GET "/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" 404 7.2ms
+
+Started GET "/admins/products/1" for 10.0.2.2 at 2020-03-26 06:38:42 +0000
+Processing by Admins::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (1.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/products_controller.rb:9
+  Rendering admins/products/show.html.erb within layouts/application
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/products/show.html.erb:16
+  Rendered admins/products/show.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 246ms (Views: 231.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/attachments/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" for 10.0.2.2 at 2020-03-26 06:38:43 +0000
+Refile::App: Could not find attachment by id: 1
+Refile::App: [2020-03-26 06:38:43 +0000] GET "/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" 404 11.3ms
+
