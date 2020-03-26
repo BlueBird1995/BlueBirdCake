@@ -22,8 +22,8 @@
         <div class="col-md-3">
           <%= link_to product_path(f.id) do %>
           <%= attachment_image_tag f, :product_image, format: 'jpeg', fallback: "no_image.jpg", size: "200x100" %><br>
-          <%= f.name %><br>
           <% end %>
+          <%= f.name %><br>
           <%= f.tax_included.to_s(:delimited) %>円
         </div>
           <% end %>

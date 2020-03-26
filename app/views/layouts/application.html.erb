@@ -58,8 +58,11 @@
         <%= link_to '会員一覧', admins_users_path, class: "text-decoration-non nav-text" %></li>
       <li class="nav-item p-2 mr-5 rounded">
         <%= link_to '注文履歴一覧', admins_orders_path, class: "text-decoration-none nav-text" %></li>
-      <li class="nav-item p-2 rounded">
+      <li class="nav-item p-2 mr-5 rounded">
         <%= link_to 'ジャンル管理', admins_genres_path, class: "text-decoration-none nav-text" %>
+      </li>
+      <li class="nav-item p-2 rounded">
+        <%= link_to 'ログアウト',destroy_admin_session_path, method: :delete, class: "text-decoration-none nav-text" %>
       </li>
 
       <% else %>

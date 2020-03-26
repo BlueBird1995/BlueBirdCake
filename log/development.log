@@ -19675,3 +19675,2107 @@ Started GET "/attachments/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/produ
 Refile::App: Could not find attachment by id: 1
 Refile::App: [2020-03-26 06:38:43 +0000] GET "/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" 404 11.3ms
 
+Started GET "/admins/products" for 10.0.2.2 at 2020-03-26 07:04:20 +0000
+Processing by Admins::ProductsController#index as HTML
+  [1m[36mAdmin Load (2.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering admins/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (2.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/admins/products/index.html.erb:21
+  [1m[36mGenre Load (2.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/products/index.html.erb:26
+  [1m[36mCACHE Genre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/products/index.html.erb:26
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/products/index.html.erb:26
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/products/index.html.erb:26
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/admins/products/index.html.erb:42
+  Rendered admins/products/index.html.erb within layouts/application (63.7ms)
+Completed 200 OK in 570ms (Views: 520.5ms | ActiveRecord: 14.8ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-03-26 07:04:23 +0000
+Processing by HomesController#top as HTML
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 4]]
+  ↳ app/controllers/homes_controller.rb:5
+  Rendering homes/top.html.erb within layouts/application
+  [1m[36mGenre Load (2.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/homes/top.html.erb:34
+  Rendered homes/top.html.erb within layouts/application (20.3ms)
+  [1m[36mAdmin Load (3.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:52
+Completed 200 OK in 355ms (Views: 333.8ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/attachments/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" for 10.0.2.2 at 2020-03-26 07:04:23 +0000
+Refile::App: Could not find attachment by id: 1
+Refile::App: [2020-03-26 07:04:23 +0000] GET "/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" 404 21.3ms
+
+Started GET "/attachments/4e7d4bb3ff5e3903df9d722298a47cdf048b546f/store/2/product_image.jpeg" for 10.0.2.2 at 2020-03-26 07:04:24 +0000
+Refile::App: Could not find attachment by id: 2
+Refile::App: [2020-03-26 07:04:24 +0000] GET "/4e7d4bb3ff5e3903df9d722298a47cdf048b546f/store/2/product_image.jpeg" 404 3.1ms
+
+Started GET "/" for 10.0.2.2 at 2020-03-26 07:24:15 +0000
+Processing by HomesController#top as HTML
+  [1m[36mProduct Load (2.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 4]]
+  ↳ app/controllers/homes_controller.rb:5
+  Rendering homes/top.html.erb within layouts/application
+  [1m[36mGenre Load (2.7ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/homes/top.html.erb:34
+  Rendered homes/top.html.erb within layouts/application (23.3ms)
+  [1m[36mAdmin Load (2.5ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:52
+Completed 200 OK in 628ms (Views: 601.3ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/attachments/4e7d4bb3ff5e3903df9d722298a47cdf048b546f/store/2/product_image.jpeg" for 10.0.2.2 at 2020-03-26 07:24:16 +0000
+Started GET "/attachments/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" for 10.0.2.2 at 2020-03-26 07:24:16 +0000
+Refile::App: Could not find attachment by id: 2
+Refile::App: [2020-03-26 07:24:17 +0000] GET "/4e7d4bb3ff5e3903df9d722298a47cdf048b546f/store/2/product_image.jpeg" 404 23.5ms
+
+Refile::App: Could not find attachment by id: 1
+Refile::App: [2020-03-26 07:24:17 +0000] GET "/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" 404 14.5ms
+
+Started GET "/admins/products" for 10.0.2.2 at 2020-03-26 09:09:36 +0000
+Processing by Admins::ProductsController#index as HTML
+  [1m[36mAdmin Load (2.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering admins/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (2.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/admins/products/index.html.erb:21
+  [1m[36mGenre Load (2.1ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/products/index.html.erb:26
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/products/index.html.erb:26
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/products/index.html.erb:26
+  [1m[36mCACHE Genre Load (0.1ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/products/index.html.erb:26
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/admins/products/index.html.erb:42
+  Rendered admins/products/index.html.erb within layouts/application (39.0ms)
+Completed 200 OK in 579ms (Views: 555.7ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-03-26 09:09:42 +0000
+Processing by HomesController#top as HTML
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 4]]
+  ↳ app/controllers/homes_controller.rb:5
+  Rendering homes/top.html.erb within layouts/application
+  [1m[36mGenre Load (1.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/homes/top.html.erb:34
+  Rendered homes/top.html.erb within layouts/application (17.6ms)
+  [1m[36mAdmin Load (1.5ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:52
+Completed 200 OK in 354ms (Views: 333.5ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/attachments/4e7d4bb3ff5e3903df9d722298a47cdf048b546f/store/2/product_image.jpeg" for 10.0.2.2 at 2020-03-26 09:09:43 +0000
+Started GET "/attachments/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" for 10.0.2.2 at 2020-03-26 09:09:43 +0000
+Refile::App: Could not find attachment by id: 2
+Refile::App: [2020-03-26 09:09:43 +0000] GET "/4e7d4bb3ff5e3903df9d722298a47cdf048b546f/store/2/product_image.jpeg" 404 14.0ms
+
+Refile::App: Could not find attachment by id: 1
+Refile::App: [2020-03-26 09:09:43 +0000] GET "/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" 404 33.0ms
+
+Started GET "/" for 10.0.2.2 at 2020-03-26 09:54:03 +0000
+Processing by HomesController#top as HTML
+  [1m[36mProduct Load (2.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 4]]
+  ↳ app/controllers/homes_controller.rb:5
+  Rendering homes/top.html.erb within layouts/application
+  [1m[36mGenre Load (2.9ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/homes/top.html.erb:34
+  Rendered homes/top.html.erb within layouts/application (21.8ms)
+  [1m[36mAdmin Load (3.3ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:52
+Completed 200 OK in 671ms (Views: 649.4ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/attachments/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" for 10.0.2.2 at 2020-03-26 09:54:04 +0000
+Started GET "/attachments/4e7d4bb3ff5e3903df9d722298a47cdf048b546f/store/2/product_image.jpeg" for 10.0.2.2 at 2020-03-26 09:54:04 +0000
+Refile::App: Could not find attachment by id: 2
+Refile::App: Could not find attachment by id: 1
+Refile::App: [2020-03-26 09:54:05 +0000] GET "/4e7d4bb3ff5e3903df9d722298a47cdf048b546f/store/2/product_image.jpeg" 404 15.5ms
+
+Refile::App: [2020-03-26 09:54:05 +0000] GET "/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" 404 22.9ms
+
+Started GET "/admins/products" for 10.0.2.2 at 2020-03-26 09:54:10 +0000
+Processing by Admins::ProductsController#index as HTML
+  [1m[36mAdmin Load (1.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering admins/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/admins/products/index.html.erb:21
+  [1m[36mGenre Load (4.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/products/index.html.erb:26
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/products/index.html.erb:26
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/products/index.html.erb:26
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/products/index.html.erb:26
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/admins/products/index.html.erb:42
+  Rendered admins/products/index.html.erb within layouts/application (47.0ms)
+Completed 200 OK in 378ms (Views: 349.6ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-03-26 09:54:19 +0000
+Processing by HomesController#top as HTML
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 4]]
+  ↳ app/controllers/homes_controller.rb:5
+  Rendering homes/top.html.erb within layouts/application
+  [1m[36mGenre Load (0.9ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/homes/top.html.erb:34
+  Rendered homes/top.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 352ms (Views: 337.8ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/attachments/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" for 10.0.2.2 at 2020-03-26 09:54:20 +0000
+Started GET "/attachments/4e7d4bb3ff5e3903df9d722298a47cdf048b546f/store/2/product_image.jpeg" for 10.0.2.2 at 2020-03-26 09:54:20 +0000
+Refile::App: Could not find attachment by id: 1
+Refile::App: [2020-03-26 09:54:20 +0000] GET "/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" 404 4.0ms
+
+Refile::App: Could not find attachment by id: 2
+Refile::App: [2020-03-26 09:54:20 +0000] GET "/4e7d4bb3ff5e3903df9d722298a47cdf048b546f/store/2/product_image.jpeg" 404 12.8ms
+
+Started GET "/products" for 10.0.2.2 at 2020-03-26 09:54:24 +0000
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mGenre Load (1.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/products/index.html.erb:7
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "products" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:20
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:22
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:39
+  Rendered products/index.html.erb within layouts/application (58.0ms)
+Completed 200 OK in 494ms (Views: 472.5ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/attachments/4e7d4bb3ff5e3903df9d722298a47cdf048b546f/store/2/product_image.jpeg" for 10.0.2.2 at 2020-03-26 09:54:25 +0000
+Started GET "/attachments/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" for 10.0.2.2 at 2020-03-26 09:54:25 +0000
+Refile::App: Could not find attachment by id: 2
+Refile::App: Could not find attachment by id: 1
+Refile::App: [2020-03-26 09:54:25 +0000] GET "/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" 404 10.1ms
+
+Refile::App: [2020-03-26 09:54:25 +0000] GET "/4e7d4bb3ff5e3903df9d722298a47cdf048b546f/store/2/product_image.jpeg" 404 13.0ms
+
+Started GET "/admins/sign_up" for 10.0.2.2 at 2020-03-26 09:54:46 +0000
+Processing by Admins::RegistrationsController#new as HTML
+  Rendering admins/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered admins/shared/_links.html.erb (1.2ms)
+  Rendered admins/registrations/new.html.erb within layouts/application (44.6ms)
+Completed 200 OK in 417ms (Views: 410.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admins" for 10.0.2.2 at 2020-03-26 09:54:54 +0000
+Processing by Admins::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dLrKMkEFFZqHhNlQXAjHFXroQlrnDnZXjhGB6aM+u6pjapkF0Jg1EUFD1108VYvYHW8J9/1ZMQH+EbXvxuAK6Q==", "admin"=>{"email"=>"aaaccaaa@aaaaaa.jp", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mAdmin Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "aaaccaaa@aaaaaa.jp"], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mAdmin Create (8.5ms)[0m  [1m[32mINSERT INTO "admins" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "aaaccaaa@aaaaaa.jp"], ["encrypted_password", "$2a$11$I0q71L5uHAI9Ii53.9JKw.EvPIJLljQ2QfvD0WUglI6SkeFgmf1ce"], ["created_at", "2020-03-26 09:54:54.899287"], ["updated_at", "2020-03-26 09:54:54.899287"]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (6.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/admins
+Completed 302 Found in 273ms (ActiveRecord: 17.1ms)
+
+
+Started GET "/admins" for 10.0.2.2 at 2020-03-26 09:54:54 +0000
+Processing by Admins::OrdersController#top as HTML
+  [1m[36mAdmin Load (1.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (2.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/controllers/admins/orders_controller.rb:6
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders"[0m
+  ↳ app/controllers/admins/orders_controller.rb:7
+  Rendering admins/orders/top.html.erb within layouts/application
+  Rendered admins/orders/top.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 323ms (Views: 275.9ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/admins/products" for 10.0.2.2 at 2020-03-26 09:54:56 +0000
+Processing by Admins::ProductsController#index as HTML
+  [1m[36mAdmin Load (1.4ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering admins/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (2.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/admins/products/index.html.erb:21
+  [1m[36mGenre Load (0.9ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/products/index.html.erb:26
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/products/index.html.erb:26
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/products/index.html.erb:26
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/products/index.html.erb:26
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/admins/products/index.html.erb:42
+  Rendered admins/products/index.html.erb within layouts/application (31.3ms)
+Completed 200 OK in 283ms (Views: 265.4ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/admins/products/new" for 10.0.2.2 at 2020-03-26 09:54:58 +0000
+Processing by Admins::ProductsController#new as HTML
+  [1m[36mAdmin Load (1.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering admins/products/new.html.erb within layouts/application
+  [1m[36mGenre Load (1.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/admins/products/new.html.erb:33
+  Rendered admins/products/new.html.erb within layouts/application (259.0ms)
+Completed 200 OK in 566ms (Views: 551.1ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/admins/products" for 10.0.2.2 at 2020-03-26 09:55:09 +0000
+Processing by Admins::ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1PmXoBhJxZSCbBHbk1moSUVjWNvQCysz5XWpMCl9UQjDKcSXidTlH0SrH9bzBOSEIuQTdspcbGWVdZ02TKPgSw==", "product"=>{"product_image"=>#<ActionDispatch::Http::UploadedFile:0x00007fc76c7d3f80 @tempfile=#<Tempfile:/tmp/RackMultipart20200326-4103-1la5ccg.jpg>, @original_filename="sp_image2.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"product[product_image]\"; filename=\"sp_image2.jpg\"\r\nContent-Type: image/jpeg\r\n">, "name"=>"sss", "description"=>"sssss", "genre"=>{"genre_id"=>"1"}, "price"=>"55555", "status"=>"true"}, "commit"=>"新規登録"}
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Unpermitted parameter: :genre
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins/products_controller.rb:25
+  [1m[36mGenre Load (1.1ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/products_controller.rb:25
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/admins/products_controller.rb:25
+  Rendering admins/products/new.html.erb within layouts/application
+  [1m[36mGenre Load (1.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/admins/products/new.html.erb:33
+  Rendered admins/products/new.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 393ms (Views: 364.8ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/attachments/d50bb12aada27d86c76bf1db928d7621650fe933/cache/6f5ec3861b2f7a08b51514710b73f8cb0f87d926c71ca71ecf94052a350c/sp_image2.jpeg" for 10.0.2.2 at 2020-03-26 09:55:10 +0000
+Refile::App: [2020-03-26 09:55:10 +0000] GET "/d50bb12aada27d86c76bf1db928d7621650fe933/cache/6f5ec3861b2f7a08b51514710b73f8cb0f87d926c71ca71ecf94052a350c/sp_image2.jpeg" 200 33.6ms
+
+Started POST "/admins/products" for 10.0.2.2 at 2020-03-26 09:55:52 +0000
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by Admins::ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1PmXoBhJxZSCbBHbk1moSUVjWNvQCysz5XWpMCl9UQjDKcSXidTlH0SrH9bzBOSEIuQTdspcbGWVdZ02TKPgSw==", "product"=>{"product_image"=>#<ActionDispatch::Http::UploadedFile:0x0000558768cfdb28 @tempfile=#<Tempfile:/tmp/RackMultipart20200326-4641-4wt34w.jpg>, @original_filename="sp_image2.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"product[product_image]\"; filename=\"sp_image2.jpg\"\r\nContent-Type: image/jpeg\r\n">, "name"=>"sss", "description"=>"sssss", "genre"=>{"genre_id"=>"1"}, "price"=>"55555", "status"=>"true"}, "commit"=>"新規登録"}
+  [1m[36mAdmin Load (1.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Unpermitted parameter: :genre
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins/products_controller.rb:25
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/products_controller.rb:25
+  [1m[36mProduct Create (3.4ms)[0m  [1m[32mINSERT INTO "products" ("genre_id", "product_image_id", "price", "description", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["genre_id", 1], ["product_image_id", "1d803c1087642892672fef6dced1e16ad26725dabc08e422b9cae0a767b3"], ["price", 55555], ["description", "sssss"], ["name", "sss"], ["created_at", "2020-03-26 09:55:53.596361"], ["updated_at", "2020-03-26 09:55:53.596361"]]
+  ↳ app/controllers/admins/products_controller.rb:25
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins/products_controller.rb:25
+Redirected to http://localhost:3000/admins/products
+Completed 302 Found in 167ms (ActiveRecord: 13.9ms)
+
+
+Started GET "/admins/products" for 10.0.2.2 at 2020-03-26 09:55:53 +0000
+Processing by Admins::ProductsController#index as HTML
+  [1m[36mAdmin Load (0.9ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering admins/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (2.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/admins/products/index.html.erb:21
+  [1m[36mGenre Load (1.1ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/products/index.html.erb:26
+  [1m[36mCACHE Genre Load (0.1ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/products/index.html.erb:26
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/products/index.html.erb:26
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/products/index.html.erb:26
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/products/index.html.erb:26
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/admins/products/index.html.erb:42
+  Rendered admins/products/index.html.erb within layouts/application (949.5ms)
+Started POST "/admins/products" for 10.0.2.2 at 2020-03-26 09:55:57 +0000
+Processing by Admins::ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9wT6XVp4ypADQuF6nxNuyl2S0SqZuDy1AwKQv1ldf2Pg1Klqy+XqG8WF73f/TiIHOhWah4Pve+NzAqS5PIPOIA==", "product"=>{"name"=>"sss", "description"=>"sssss", "genre"=>{"genre_id"=>""}, "price"=>"55555", "status"=>"true"}, "commit"=>"新規登録"}
+  [1m[36mAdmin Load (1.3ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Unpermitted parameter: :genre
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins/products_controller.rb:25
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/admins/products_controller.rb:25
+  Rendering admins/products/new.html.erb within layouts/application
+Completed 200 OK in 4790ms (Views: 4767.9ms | ActiveRecord: 5.8ms)
+
+
+  [1m[36mGenre Load (1.6ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/admins/products/new.html.erb:33
+  Rendered admins/products/new.html.erb within layouts/application (1649.7ms)
+Completed 200 OK in 1958ms (Views: 1933.4ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/admins/products" for 10.0.2.2 at 2020-03-26 09:56:11 +0000
+Processing by Admins::ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CZaO/l99Rp1LXNH0c+/otaR1FjtXiaJF4zP8yXKfWpceRt3JzuBmFo2b3/kTsqR4w/Jdlk3e5ROTM8jPF0Hr1A==", "product"=>{"product_image"=>#<ActionDispatch::Http::UploadedFile:0x00007f2f980bf080 @tempfile=#<Tempfile:/tmp/RackMultipart20200326-4641-os9u6k.jpg>, @original_filename="sp_image2.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"product[product_image]\"; filename=\"sp_image2.jpg\"\r\nContent-Type: image/jpeg\r\n">, "name"=>"sss", "description"=>"sssss", "genre"=>{"genre_id"=>"1"}, "price"=>"55555", "status"=>"true"}, "commit"=>"新規登録"}
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Unpermitted parameter: :genre
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins/products_controller.rb:25
+  [1m[36mGenre Load (1.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/products_controller.rb:25
+  [1m[36mProduct Create (3.8ms)[0m  [1m[32mINSERT INTO "products" ("genre_id", "product_image_id", "price", "description", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["genre_id", 1], ["product_image_id", "95a7ed41ed2f5920a3aa41baca949f02576f464b994000ae6483505af372"], ["price", 55555], ["description", "sssss"], ["name", "sss"], ["created_at", "2020-03-26 09:56:11.173034"], ["updated_at", "2020-03-26 09:56:11.173034"]]
+  ↳ app/controllers/admins/products_controller.rb:25
+  [1m[35m (12.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins/products_controller.rb:25
+Redirected to http://localhost:3000/admins/products
+Completed 302 Found in 51ms (ActiveRecord: 19.3ms)
+
+
+Started GET "/admins/products" for 10.0.2.2 at 2020-03-26 09:56:11 +0000
+Processing by Admins::ProductsController#index as HTML
+  [1m[36mAdmin Load (1.9ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering admins/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/admins/products/index.html.erb:21
+  [1m[36mGenre Load (1.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/products/index.html.erb:26
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/products/index.html.erb:26
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/products/index.html.erb:26
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/products/index.html.erb:26
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/products/index.html.erb:26
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/products/index.html.erb:26
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/admins/products/index.html.erb:42
+  Rendered admins/products/index.html.erb within layouts/application (53.3ms)
+Completed 200 OK in 391ms (Views: 356.1ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/admins/products/6" for 10.0.2.2 at 2020-03-26 09:56:16 +0000
+Processing by Admins::ProductsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdmin Load (1.5ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/admins/products_controller.rb:9
+  Rendering admins/products/show.html.erb within layouts/application
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/products/show.html.erb:16
+  Rendered admins/products/show.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 302ms (Views: 277.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/attachments/954630565ae3a70c6fd01d99898b9dda64b52dc7/store/95a7ed41ed2f5920a3aa41baca949f02576f464b994000ae6483505af372/product_image.jpeg" for 10.0.2.2 at 2020-03-26 09:56:16 +0000
+Refile::App: [2020-03-26 09:56:16 +0000] GET "/954630565ae3a70c6fd01d99898b9dda64b52dc7/store/95a7ed41ed2f5920a3aa41baca949f02576f464b994000ae6483505af372/product_image.jpeg" 200 237.5ms
+
+Started GET "/admins/products" for 10.0.2.2 at 2020-03-26 09:56:18 +0000
+Processing by Admins::ProductsController#index as HTML
+  [1m[36mAdmin Load (1.3ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering admins/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/admins/products/index.html.erb:21
+  [1m[36mGenre Load (1.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/products/index.html.erb:26
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/products/index.html.erb:26
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/products/index.html.erb:26
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/products/index.html.erb:26
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/products/index.html.erb:26
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/products/index.html.erb:26
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/admins/products/index.html.erb:42
+  Rendered admins/products/index.html.erb within layouts/application (44.8ms)
+Completed 200 OK in 327ms (Views: 311.0ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/admins/products" for 10.0.2.2 at 2020-03-26 09:56:26 +0000
+Processing by Admins::ProductsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admins/sign_in" for 10.0.2.2 at 2020-03-26 09:56:26 +0000
+Processing by Admins::SessionsController#new as HTML
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (1.8ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (42.6ms)
+Completed 200 OK in 316ms (Views: 309.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for 10.0.2.2 at 2020-03-26 09:56:30 +0000
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mGenre Load (6.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/products/index.html.erb:7
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "products" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:20
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:22
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:39
+  Rendered products/index.html.erb within layouts/application (85.3ms)
+Completed 200 OK in 390ms (Views: 366.7ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/attachments/ca13ec88f4709a52b8983dfd3bee35241e446b02/store/1d803c1087642892672fef6dced1e16ad26725dabc08e422b9cae0a767b3/product_image.jpeg" for 10.0.2.2 at 2020-03-26 09:56:30 +0000
+Started GET "/attachments/4e7d4bb3ff5e3903df9d722298a47cdf048b546f/store/2/product_image.jpeg" for 10.0.2.2 at 2020-03-26 09:56:30 +0000
+Started GET "/attachments/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" for 10.0.2.2 at 2020-03-26 09:56:31 +0000
+Refile::App: Could not find attachment by id: 2
+Refile::App: [2020-03-26 09:56:31 +0000] GET "/4e7d4bb3ff5e3903df9d722298a47cdf048b546f/store/2/product_image.jpeg" 404 8.5ms
+
+Refile::App: Could not find attachment by id: 1
+Refile::App: [2020-03-26 09:56:31 +0000] GET "/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" 404 18.5ms
+
+Refile::App: [2020-03-26 09:56:31 +0000] GET "/ca13ec88f4709a52b8983dfd3bee35241e446b02/store/1d803c1087642892672fef6dced1e16ad26725dabc08e422b9cae0a767b3/product_image.jpeg" 200 26.9ms
+
+Started GET "/products" for 10.0.2.2 at 2020-03-26 09:59:10 +0000
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.9ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/products/index.html.erb:7
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "products" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:20
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:22
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:39
+  Rendered products/index.html.erb within layouts/application (47.9ms)
+Completed 200 OK in 505ms (Views: 492.1ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/attachments/4e7d4bb3ff5e3903df9d722298a47cdf048b546f/store/2/product_image.jpeg" for 10.0.2.2 at 2020-03-26 09:59:11 +0000
+Started GET "/attachments/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" for 10.0.2.2 at 2020-03-26 09:59:11 +0000
+Refile::App: Could not find attachment by id: 1
+Refile::App: [2020-03-26 09:59:11 +0000] GET "/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" 404 15.8ms
+
+Refile::App: Could not find attachment by id: 2
+Refile::App: [2020-03-26 09:59:11 +0000] GET "/4e7d4bb3ff5e3903df9d722298a47cdf048b546f/store/2/product_image.jpeg" 404 15.5ms
+
+Started GET "/admins/sign_up" for 10.0.2.2 at 2020-03-26 09:59:18 +0000
+Processing by Admins::RegistrationsController#new as HTML
+  Rendering admins/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered admins/shared/_links.html.erb (1.8ms)
+  Rendered admins/registrations/new.html.erb within layouts/application (30.0ms)
+Completed 200 OK in 434ms (Views: 432.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admins" for 10.0.2.2 at 2020-03-26 09:59:27 +0000
+Processing by Admins::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LUQKy7kqo0ImIQmtWl9OAC21QYHEsqZ+WvoWKuTtKsM+5W4AhuotNqB2hNCZ585jBiSSwTmaFdBN0nwpFFx9Qw==", "admin"=>{"email"=>"usear@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mAdmin Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "usear@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mAdmin Create (6.2ms)[0m  [1m[32mINSERT INTO "admins" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "usear@gmail.com"], ["encrypted_password", "$2a$11$O1xb7p4hIbcueaXpoOrhcOCGsTIUBc6.Kl8stnsyNT/qCaZ5l4zXa"], ["created_at", "2020-03-26 09:59:27.856664"], ["updated_at", "2020-03-26 09:59:27.856664"]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/admins
+Completed 302 Found in 298ms (ActiveRecord: 11.5ms)
+
+
+Started GET "/admins" for 10.0.2.2 at 2020-03-26 09:59:27 +0000
+Processing by Admins::OrdersController#top as HTML
+  [1m[36mAdmin Load (1.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (1.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/controllers/admins/orders_controller.rb:6
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders"[0m
+  ↳ app/controllers/admins/orders_controller.rb:7
+  Rendering admins/orders/top.html.erb within layouts/application
+  Rendered admins/orders/top.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 330ms (Views: 290.7ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/admins/orders" for 10.0.2.2 at 2020-03-26 09:59:29 +0000
+Processing by Admins::OrdersController#index as HTML
+  [1m[36mAdmin Load (1.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering admins/orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."created_at" DESC[0m
+  ↳ app/views/admins/orders/index.html.erb:12
+  [1m[36mOrderedProduct Load (1.9ms)[0m  [1m[34mSELECT "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."order_id" = ?[0m  [["order_id", 9]]
+  ↳ app/views/admins/orders/index.html.erb:22
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "products"."name" FROM "products" WHERE "products"."id" = ?[0m  [["id", 1]]
+  ↳ app/views/admins/orders/index.html.erb:23
+  Rendered admins/orders/index.html.erb within layouts/application (54.1ms)
+Completed 200 OK in 383ms (Views: 350.6ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/admins/orders/9" for 10.0.2.2 at 2020-03-26 09:59:32 +0000
+Processing by Admins::OrdersController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mAdmin Load (4.8ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (0.8ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:18
+  Rendering admins/orders/show.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/admins/orders/show.html.erb:6
+  [1m[36mOrderedProduct Load (0.6ms)[0m  [1m[34mSELECT "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."order_id" = ?[0m  [["order_id", 9]]
+  ↳ app/views/admins/orders/show.html.erb:33
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "products"."name" FROM "products" WHERE "products"."id" = ?[0m  [["id", 1]]
+  ↳ app/views/admins/orders/show.html.erb:36
+  [1m[36mProduct Load (1.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/orders/show.html.erb:38
+  Rendered admins/orders/show.html.erb within layouts/application (45.5ms)
+Completed 200 OK in 338ms (Views: 295.9ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/admins/orders" for 10.0.2.2 at 2020-03-26 10:02:15 +0000
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by Admins::OrdersController#index as HTML
+Completed 401 Unauthorized in 16ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admins/sign_in" for 10.0.2.2 at 2020-03-26 10:02:17 +0000
+Processing by Admins::SessionsController#new as HTML
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (2.7ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (50.5ms)
+Started GET "/admins/users" for 10.0.2.2 at 2020-03-26 10:02:18 +0000
+Completed 200 OK in 1875ms (Views: 1861.3ms | ActiveRecord: 2.2ms)
+
+
+Processing by Admins::UsersController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admins/sign_in" for 10.0.2.2 at 2020-03-26 10:02:19 +0000
+Processing by Admins::SessionsController#new as HTML
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (0.9ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 443ms (Views: 441.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for 10.0.2.2 at 2020-03-26 10:02:21 +0000
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mGenre Load (1.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/products/index.html.erb:7
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "products" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:20
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:22
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:39
+  Rendered products/index.html.erb within layouts/application (114.8ms)
+Completed 200 OK in 406ms (Views: 363.5ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/attachments/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" for 10.0.2.2 at 2020-03-26 10:02:21 +0000
+Started GET "/attachments/4e7d4bb3ff5e3903df9d722298a47cdf048b546f/store/2/product_image.jpeg" for 10.0.2.2 at 2020-03-26 10:02:21 +0000
+Refile::App: Could not find attachment by id: 1
+Refile::App: [2020-03-26 10:02:21 +0000] GET "/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" 404 72.9ms
+
+Refile::App: Could not find attachment by id: 2
+Refile::App: [2020-03-26 10:02:21 +0000] GET "/4e7d4bb3ff5e3903df9d722298a47cdf048b546f/store/2/product_image.jpeg" 404 107.3ms
+
+Started GET "/users/sign_in" for 10.0.2.2 at 2020-03-26 10:02:22 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 365ms (Views: 338.3ms | ActiveRecord: 5.7ms)
+
+
+Started POST "/users/sign_in" for 10.0.2.2 at 2020-03-26 10:02:27 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zNER5B0CaHMUG/dgpR14eS08SkxttIw1j9iJ43rHBLaIQQImb77rFfQi3fNjzgXT2Wg/1B1BUWTF3jOtZC4gVQ==", "user"=>{"email"=>"aaaaaa@aaaaaa.jp", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "aaaaaa@aaaaaa.jp"], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 20ms (ActiveRecord: 3.1ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zNER5B0CaHMUG/dgpR14eS08SkxttIw1j9iJ43rHBLaIQQImb77rFfQi3fNjzgXT2Wg/1B1BUWTF3jOtZC4gVQ==", "user"=>{"email"=>"aaaaaa@aaaaaa.jp", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 559ms (Views: 306.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 10.0.2.2 at 2020-03-26 10:02:30 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"H0pCZB8vBhJXgmLRUyBxhBKR7ebXvXPOxiYufIjm2X1b2lGmbZOFdLe7SEKV8wwu5sWYfqdIrp+MIJQylg/9ng==", "user"=>{"email"=>"aaaaaa@aaaaaa.jp", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "aaaaaa@aaaaaa.jp"], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 8ms (ActiveRecord: 1.4ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"H0pCZB8vBhJXgmLRUyBxhBKR7ebXvXPOxiYufIjm2X1b2lGmbZOFdLe7SEKV8wwu5sWYfqdIrp+MIJQylg/9ng==", "user"=>{"email"=>"aaaaaa@aaaaaa.jp", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 492ms (Views: 274.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 10.0.2.2 at 2020-03-26 10:02:40 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pZfUsQfzAeG+ksoCWAau4/mb2OLiG5ezm48Kyjr4QKThB8dzdU+Ch16r4JGe1dNJDc+tepLuSuLRibCEJBFkRw==", "user"=>{"email"=>"user@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (6.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 12ms (ActiveRecord: 6.8ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pZfUsQfzAeG+ksoCWAau4/mb2OLiG5ezm48Kyjr4QKThB8dzdU+Ch16r4JGe1dNJDc+tepLuSuLRibCEJBFkRw==", "user"=>{"email"=>"user@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 596ms (Views: 348.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 10.0.2.2 at 2020-03-26 10:02:42 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7wjaSgmszz97T/gdQiIgiWDHW1g87eWl6ZtQxfyUCVSrmMmIexBMWZt20o6E8V0jlJMuwEwYOPSjneqL4n0ttw==", "user"=>{"email"=>"user@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 10ms (ActiveRecord: 5.3ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7wjaSgmszz97T/gdQiIgiWDHW1g87eWl6ZtQxfyUCVSrmMmIexBMWZt20o6E8V0jlJMuwEwYOPSjneqL4n0ttw==", "user"=>{"email"=>"user@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 443ms (Views: 226.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 10.0.2.2 at 2020-03-26 10:02:44 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 328ms (Views: 325.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 10.0.2.2 at 2020-03-26 10:02:57 +0000
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OLRlMQc+akTG9ghO6QxC7xnl+bGyGeL2ueCqcAbRK/R8JHbzdYLpIibPIt0v3z9F7bGMKcLsP6fz5hA+GDgPFw==", "user"=>{"first_name"=>"s", "last_name"=>"s", "first_kana"=>"s", "last_kana"=>"s", "email"=>"sssss@aaaa.jp", "postal_code"=>"s", "address"=>"s", "telephone_number"=>"s", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"新規登録"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sssss@aaaa.jp"], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (3.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "first_name", "last_name", "first_kana", "last_kana", "postal_code", "address", "telephone_number", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "sssss@aaaa.jp"], ["encrypted_password", "$2a$11$UR4phZn8K.4h.sPN/ptrBeCRrGZszIHCmPwembfmxU6b5LNSi/UFu"], ["first_name", "s"], ["last_name", "s"], ["first_kana", "s"], ["last_kana", "s"], ["postal_code", "s"], ["address", "s"], ["telephone_number", "s"], ["created_at", "2020-03-26 10:02:57.875943"], ["updated_at", "2020-03-26 10:02:57.875943"]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 507ms (ActiveRecord: 10.1ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-03-26 10:02:58 +0000
+Processing by HomesController#top as HTML
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 4]]
+  ↳ app/controllers/homes_controller.rb:5
+  Rendering homes/top.html.erb within layouts/application
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/homes/top.html.erb:34
+  Rendered homes/top.html.erb within layouts/application (12.8ms)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:33
+Completed 200 OK in 286ms (Views: 269.2ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/attachments/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" for 10.0.2.2 at 2020-03-26 10:02:58 +0000
+Started GET "/attachments/4e7d4bb3ff5e3903df9d722298a47cdf048b546f/store/2/product_image.jpeg" for 10.0.2.2 at 2020-03-26 10:02:58 +0000
+Refile::App: Could not find attachment by id: 2
+Refile::App: Could not find attachment by id: 1
+Refile::App: [2020-03-26 10:02:58 +0000] GET "/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" 404 3.8ms
+
+Refile::App: [2020-03-26 10:02:58 +0000] GET "/4e7d4bb3ff5e3903df9d722298a47cdf048b546f/store/2/product_image.jpeg" 404 22.0ms
+
+Started GET "/users/4/carts" for 10.0.2.2 at 2020-03-26 10:03:15 +0000
+Processing by CartsController#show as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:73
+  [1m[36mCart Load (1.2ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/carts_controller.rb:9
+  Rendering carts/show.html.erb within layouts/application
+  Rendered carts/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 541ms (Views: 452.2ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/orders/4/new" for 10.0.2.2 at 2020-03-26 10:03:17 +0000
+  
+SyntaxError (/vagrant/team_development/BlueBirdCake/app/controllers/orders_controller.rb:39: syntax error, unexpected tIDENTIFIER, expecting end
+...l_price = @total_price + 800　
+...                            ^~~):
+  
+app/controllers/orders_controller.rb:39: syntax error, unexpected tIDENTIFIER, expecting end
+Started GET "/orders/4/new" for 10.0.2.2 at 2020-03-26 10:04:13 +0000
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by OrdersController#new as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:92
+  [1m[36mCart Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "carts" WHERE "carts"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:92
+Redirected to http://localhost:3000/users/4/carts
+Filter chain halted as :not_null_cart rendered or redirected
+Completed 302 Found in 106ms (ActiveRecord: 8.0ms)
+
+
+Started GET "/users/4/carts" for 10.0.2.2 at 2020-03-26 10:04:13 +0000
+Processing by CartsController#show as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:73
+  [1m[36mCart Load (0.9ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/carts_controller.rb:9
+  Rendering carts/show.html.erb within layouts/application
+  Rendered carts/show.html.erb within layouts/application (872.7ms)
+Started GET "/orders/4/new" for 10.0.2.2 at 2020-03-26 10:04:15 +0000
+Processing by OrdersController#new as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:92
+  [1m[36mCart Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "carts" WHERE "carts"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:92
+Redirected to http://localhost:3000/users/4/carts
+Filter chain halted as :not_null_cart rendered or redirected
+Completed 302 Found in 15ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/users/4/carts" for 10.0.2.2 at 2020-03-26 10:04:15 +0000
+Processing by CartsController#show as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:73
+  [1m[36mCart Load (1.0ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/carts_controller.rb:9
+  Rendering carts/show.html.erb within layouts/application
+  Rendered carts/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 1881ms (Views: 1856.6ms | ActiveRecord: 3.2ms)
+
+
+Completed 200 OK in 3311ms (Views: 3280.3ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/orders/4/new" for 10.0.2.2 at 2020-03-26 10:04:18 +0000
+Processing by OrdersController#new as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:92
+  [1m[36mCart Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "carts" WHERE "carts"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:92
+Redirected to http://localhost:3000/users/4/carts
+Filter chain halted as :not_null_cart rendered or redirected
+Completed 302 Found in 12ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/users/4/carts" for 10.0.2.2 at 2020-03-26 10:04:19 +0000
+Processing by CartsController#show as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:73
+  [1m[36mCart Load (0.9ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/carts_controller.rb:9
+  Rendering carts/show.html.erb within layouts/application
+  Rendered carts/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 324ms (Views: 304.3ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/orders/4/new" for 10.0.2.2 at 2020-03-26 10:04:20 +0000
+Processing by OrdersController#new as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:92
+  [1m[36mCart Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "carts" WHERE "carts"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:92
+Redirected to http://localhost:3000/users/4/carts
+Filter chain halted as :not_null_cart rendered or redirected
+Completed 302 Found in 14ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/users/4/carts" for 10.0.2.2 at 2020-03-26 10:04:20 +0000
+Processing by CartsController#show as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:73
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/carts_controller.rb:9
+  Rendering carts/show.html.erb within layouts/application
+  Rendered carts/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 292ms (Views: 275.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-03-26 10:04:22 +0000
+Processing by HomesController#top as HTML
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 4]]
+  ↳ app/controllers/homes_controller.rb:5
+  Rendering homes/top.html.erb within layouts/application
+  [1m[36mGenre Load (1.5ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/homes/top.html.erb:34
+  Rendered homes/top.html.erb within layouts/application (21.4ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:33
+Completed 200 OK in 343ms (Views: 292.3ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/attachments/4e7d4bb3ff5e3903df9d722298a47cdf048b546f/store/2/product_image.jpeg" for 10.0.2.2 at 2020-03-26 10:04:23 +0000
+Started GET "/attachments/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" for 10.0.2.2 at 2020-03-26 10:04:23 +0000
+Refile::App: Could not find attachment by id: 1
+Refile::App: Could not find attachment by id: 2
+Refile::App: [2020-03-26 10:04:23 +0000] GET "/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" 404 28.5ms
+
+Refile::App: [2020-03-26 10:04:23 +0000] GET "/4e7d4bb3ff5e3903df9d722298a47cdf048b546f/store/2/product_image.jpeg" 404 20.1ms
+
+Started GET "/products" for 10.0.2.2 at 2020-03-26 10:06:50 +0000
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mGenre Load (3.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/products/index.html.erb:7
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "products" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:20
+  [1m[36mProduct Load (2.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:22
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:39
+  Rendered products/index.html.erb within layouts/application (71.3ms)
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:33
+Completed 200 OK in 603ms (Views: 583.2ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/attachments/4e7d4bb3ff5e3903df9d722298a47cdf048b546f/store/2/product_image.jpeg" for 10.0.2.2 at 2020-03-26 10:06:51 +0000
+Started GET "/attachments/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" for 10.0.2.2 at 2020-03-26 10:06:51 +0000
+Refile::App: Could not find attachment by id: 1
+Refile::App: Could not find attachment by id: 2
+Refile::App: [2020-03-26 10:06:51 +0000] GET "/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" 404 10.9ms
+
+Refile::App: [2020-03-26 10:06:51 +0000] GET "/4e7d4bb3ff5e3903df9d722298a47cdf048b546f/store/2/product_image.jpeg" 404 21.4ms
+
+Started GET "/users/4/carts" for 10.0.2.2 at 2020-03-26 10:06:54 +0000
+Processing by CartsController#show as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:73
+  [1m[36mCart Load (0.8ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/carts_controller.rb:9
+  Rendering carts/show.html.erb within layouts/application
+  Rendered carts/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 354ms (Views: 335.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/products/5" for 10.0.2.2 at 2020-03-26 10:06:57 +0000
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:11
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/products/show.html.erb:7
+  Rendered products/show.html.erb within layouts/application (37.5ms)
+Completed 200 OK in 304ms (Views: 286.5ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/users/4/carts" for 10.0.2.2 at 2020-03-26 10:07:00 +0000
+Processing by CartsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"23Ct5ZvBHnasp6CQHvTCGRslJmtxG2Erf8458VS/hJCf4L4n6X2dEEyeigPYJ7+z73FT8wHuvHo1yIO/Slagcw==", "cart"=>{"product_id"=>"5", "user_id"=>"4", "stock"=>"2"}, "commit"=>"カートに入れる", "user_id"=>"4"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:73
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:17
+  [1m[36mCart Load (0.9ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = ? AND "carts"."product_id" = ? LIMIT ?[0m  [["user_id", 4], ["product_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/carts_controller.rb:30
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:30
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:30
+  [1m[36mCart Create (3.8ms)[0m  [1m[32mINSERT INTO "carts" ("user_id", "product_id", "stock", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["product_id", 5], ["stock", 2], ["created_at", "2020-03-26 10:07:00.762508"], ["updated_at", "2020-03-26 10:07:00.762508"]]
+  ↳ app/controllers/carts_controller.rb:30
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/carts_controller.rb:30
+Redirected to http://localhost:3000/users/4/carts
+Completed 302 Found in 59ms (ActiveRecord: 11.9ms)
+
+
+Started GET "/users/4/carts" for 10.0.2.2 at 2020-03-26 10:07:00 +0000
+Processing by CartsController#show as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:73
+  [1m[36mCart Load (0.9ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/carts_controller.rb:9
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/models/cart.rb:16
+  Rendering carts/show.html.erb within layouts/application
+  Rendered carts/show.html.erb within layouts/application (17.2ms)
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 3.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `product_image' for 5:Integer):
+    27:   				<% @carts.each do |cart| %>
+    28:   				<tr>
+    29:   					<td>
+    30:   						<%= attachment_image_tag cart.product_id, :product_image, format: 'jpeg', fallback: "no_image.jpg", size: "40x20" %><%= cart.product.name %>
+    31:   					</td>
+    32:   					<td><%= cart.tax_included.to_s(:delimited) %>円</td>
+    33:   					<td>
+  
+app/views/carts/show.html.erb:30:in `block in _app_views_carts_show_html_erb__1667986596133878535_70068202468680'
+app/views/carts/show.html.erb:27:in `_app_views_carts_show_html_erb__1667986596133878535_70068202468680'
+Started GET "/users/4/carts" for 10.0.2.2 at 2020-03-26 10:07:40 +0000
+Processing by CartsController#show as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:73
+  [1m[36mCart Load (0.6ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/carts_controller.rb:9
+  [1m[36mProduct Load (1.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/models/cart.rb:16
+  Rendering carts/show.html.erb within layouts/application
+  Rendered carts/show.html.erb within layouts/application (167.7ms)
+Completed 200 OK in 504ms (Views: 462.4ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-03-26 10:09:13 +0000
+Processing by HomesController#top as HTML
+  [1m[36mProduct Load (1.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 4]]
+  ↳ app/controllers/homes_controller.rb:5
+  Rendering homes/top.html.erb within layouts/application
+  [1m[36mGenre Load (0.8ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/homes/top.html.erb:34
+  Rendered homes/top.html.erb within layouts/application (15.5ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:33
+Completed 200 OK in 251ms (Views: 234.9ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/attachments/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" for 10.0.2.2 at 2020-03-26 10:09:14 +0000
+Started GET "/attachments/4e7d4bb3ff5e3903df9d722298a47cdf048b546f/store/2/product_image.jpeg" for 10.0.2.2 at 2020-03-26 10:09:14 +0000
+Refile::App: Could not find attachment by id: 2
+Refile::App: [2020-03-26 10:09:14 +0000] GET "/4e7d4bb3ff5e3903df9d722298a47cdf048b546f/store/2/product_image.jpeg" 404 9.8ms
+
+Refile::App: Could not find attachment by id: 1
+Refile::App: [2020-03-26 10:09:14 +0000] GET "/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" 404 16.5ms
+
+Started GET "/products" for 10.0.2.2 at 2020-03-26 10:09:53 +0000
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mGenre Load (1.5ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/products/index.html.erb:7
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "products" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:20
+  [1m[36mProduct Load (1.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:22
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:39
+  Rendered products/index.html.erb within layouts/application (38.4ms)
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:33
+Completed 200 OK in 374ms (Views: 357.4ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/attachments/4e7d4bb3ff5e3903df9d722298a47cdf048b546f/store/2/product_image.jpeg" for 10.0.2.2 at 2020-03-26 10:09:54 +0000
+Started GET "/attachments/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" for 10.0.2.2 at 2020-03-26 10:09:54 +0000
+Refile::App: Could not find attachment by id: 2
+Refile::App: [2020-03-26 10:09:54 +0000] GET "/4e7d4bb3ff5e3903df9d722298a47cdf048b546f/store/2/product_image.jpeg" 404 6.1ms
+
+Refile::App: Could not find attachment by id: 1
+Refile::App: [2020-03-26 10:09:54 +0000] GET "/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" 404 16.9ms
+
+Started GET "/users/4" for 10.0.2.2 at 2020-03-26 10:10:41 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:51
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 406ms (Views: 384.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-03-26 10:10:43 +0000
+Processing by HomesController#top as HTML
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 4]]
+  ↳ app/controllers/homes_controller.rb:5
+  Rendering homes/top.html.erb within layouts/application
+  [1m[36mGenre Load (1.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/homes/top.html.erb:34
+  Rendered homes/top.html.erb within layouts/application (16.9ms)
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:33
+Completed 200 OK in 323ms (Views: 305.1ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/attachments/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" for 10.0.2.2 at 2020-03-26 10:10:44 +0000
+Started GET "/attachments/4e7d4bb3ff5e3903df9d722298a47cdf048b546f/store/2/product_image.jpeg" for 10.0.2.2 at 2020-03-26 10:10:44 +0000
+Refile::App: Could not find attachment by id: 1
+Refile::App: [2020-03-26 10:10:44 +0000] GET "/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" 404 6.9ms
+
+Refile::App: Could not find attachment by id: 2
+Refile::App: [2020-03-26 10:10:44 +0000] GET "/4e7d4bb3ff5e3903df9d722298a47cdf048b546f/store/2/product_image.jpeg" 404 25.3ms
+
+Started GET "/genres/1" for 10.0.2.2 at 2020-03-26 10:10:47 +0000
+Processing by GenresController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering genres/show.html.erb within layouts/application
+  [1m[36mGenre Load (1.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/genres/show.html.erb:6
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."genre_id" = ?[0m  [["genre_id", 1]]
+  ↳ app/views/genres/show.html.erb:21
+  Rendered genres/show.html.erb within layouts/application (22.1ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:33
+Completed 200 OK in 355ms (Views: 343.8ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/attachments/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" for 10.0.2.2 at 2020-03-26 10:10:48 +0000
+Started GET "/attachments/4e7d4bb3ff5e3903df9d722298a47cdf048b546f/store/2/product_image.jpeg" for 10.0.2.2 at 2020-03-26 10:10:48 +0000
+Refile::App: Could not find attachment by id: 1
+Refile::App: Could not find attachment by id: 2
+Refile::App: [2020-03-26 10:10:48 +0000] GET "/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" 404 4.3ms
+
+Refile::App: [2020-03-26 10:10:48 +0000] GET "/4e7d4bb3ff5e3903df9d722298a47cdf048b546f/store/2/product_image.jpeg" 404 17.4ms
+
+Started GET "/products/6" for 10.0.2.2 at 2020-03-26 10:10:51 +0000
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mProduct Load (1.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:11
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mGenre Load (1.8ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/products/show.html.erb:7
+  Rendered products/show.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 361ms (Views: 329.4ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/users/4" for 10.0.2.2 at 2020-03-26 10:14:38 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:51
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 290ms (Views: 268.3ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/orders.4" for 10.0.2.2 at 2020-03-26 10:14:41 +0000
+Processing by OrdersController#index as 
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (2.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."created_at" DESC[0m
+  ↳ app/views/orders/index.html.erb:15
+  [1m[36mOrderedProduct Load (0.5ms)[0m  [1m[34mSELECT "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."order_id" = ?[0m  [["order_id", 9]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "products"."name" FROM "products" WHERE "products"."id" = ?[0m  [["id", 1]]
+  ↳ app/views/orders/index.html.erb:25
+  Rendered orders/index.html.erb within layouts/application (40.7ms)
+Completed 200 OK in 750ms (Views: 388.1ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/orders/9" for 10.0.2.2 at 2020-03-26 10:14:44 +0000
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (0.8ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:63
+  [1m[36mCart Load (1.7ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/orders_controller.rb:68
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/models/cart.rb:16
+  Rendering orders/show.html.erb within layouts/application
+  Rendered orders/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 373ms (Views: 337.9ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/users/4" for 10.0.2.2 at 2020-03-26 10:22:53 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:51
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 370ms (Views: 348.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/admins/sign_up" for 10.0.2.2 at 2020-03-26 10:23:03 +0000
+Processing by Admins::RegistrationsController#new as HTML
+  Rendering admins/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.9ms)
+  Rendered admins/shared/_links.html.erb (1.0ms)
+  Rendered admins/registrations/new.html.erb within layouts/application (47.0ms)
+Completed 200 OK in 420ms (Views: 401.5ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/admins" for 10.0.2.2 at 2020-03-26 10:23:10 +0000
+Processing by Admins::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XZPQyVK5ztIuDD64rSu+coPijLeTo/RwOfYaZEBge+54BD1ylqdUgtODaCS6De2T2MsUFsjYX+2oOCcYv0WGRA==", "admin"=>{"email"=>"aaaaassa@aaaaaa.jp", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mAdmin Exists (2.1ms)[0m  [1m[34mSELECT  1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "aaaaassa@aaaaaa.jp"], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mAdmin Create (4.0ms)[0m  [1m[32mINSERT INTO "admins" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "aaaaassa@aaaaaa.jp"], ["encrypted_password", "$2a$11$tGfFNJBceQ/CpuLtnEd7aeSYJVr/KAcH518SLqoHVaKUeD39tu0T."], ["created_at", "2020-03-26 10:23:10.613378"], ["updated_at", "2020-03-26 10:23:10.613378"]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/admins
+Completed 302 Found in 262ms (ActiveRecord: 9.4ms)
+
+
+Started GET "/admins" for 10.0.2.2 at 2020-03-26 10:23:10 +0000
+Processing by Admins::OrdersController#top as HTML
+  [1m[36mAdmin Load (1.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (2.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/controllers/admins/orders_controller.rb:6
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders"[0m
+  ↳ app/controllers/admins/orders_controller.rb:7
+  Rendering admins/orders/top.html.erb within layouts/application
+  Rendered admins/orders/top.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 1094ms (ActiveRecord: 4.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `destroy_admins_session_path' for #<#<Class:0x00007f74181020f0>:0x00007f741810bee8>
+Did you mean?  destroy_admin_session_path
+               destroy_admin_session_url
+               destroy_session_path
+               destroy_user_session_path):
+    62:         <%= link_to 'ジャンル管理', admins_genres_path, class: "text-decoration-none nav-text" %>
+    63:       </li>
+    64:       <li class="nav-item rounded">
+    65:         <%= link_to 'ログアウト',destroy_admins_session_path, method: :delete, class: "text-decoration-none nav-text" %>
+    66:       </li>
+    67: 
+    68:       <% else %>
+  
+app/views/layouts/application.html.erb:65:in `_app_views_layouts_application_html_erb___4411031883863250350_70068298352420'
+Started GET "/admins" for 10.0.2.2 at 2020-03-26 10:23:20 +0000
+Processing by Admins::OrdersController#top as HTML
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (0.9ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/controllers/admins/orders_controller.rb:6
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders"[0m
+  ↳ app/controllers/admins/orders_controller.rb:7
+  Rendering admins/orders/top.html.erb within layouts/application
+  Rendered admins/orders/top.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 275ms (Views: 252.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/admins" for 10.0.2.2 at 2020-03-26 10:23:41 +0000
+Processing by Admins::OrdersController#top as HTML
+  [1m[36mAdmin Load (0.8ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/controllers/admins/orders_controller.rb:6
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders"[0m
+  ↳ app/controllers/admins/orders_controller.rb:7
+  Rendering admins/orders/top.html.erb within layouts/application
+  Rendered admins/orders/top.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 278ms (Views: 260.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/admins" for 10.0.2.2 at 2020-03-26 10:23:46 +0000
+Processing by Admins::OrdersController#top as HTML
+  [1m[36mAdmin Load (1.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (0.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/controllers/admins/orders_controller.rb:6
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders"[0m
+  ↳ app/controllers/admins/orders_controller.rb:7
+  Rendering admins/orders/top.html.erb within layouts/application
+  Rendered admins/orders/top.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 379ms (Views: 357.2ms | ActiveRecord: 2.6ms)
+
+
+Started DELETE "/admins/sign_out" for 10.0.2.2 at 2020-03-26 10:23:48 +0000
+Processing by Admins::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Xu4xkbcaUnEOS3zCvYqy39ViGovsKyJM1MbO1wA3MQR7edwqcwTIIfPEKl6qrOE+jkuCKrdQidFFCPOr/xLMrg=="}
+  [1m[36mAdmin Load (1.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 28ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-03-26 10:23:48 +0000
+Processing by HomesController#top as HTML
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 4]]
+  ↳ app/controllers/homes_controller.rb:5
+  Rendering homes/top.html.erb within layouts/application
+  [1m[36mGenre Load (1.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/homes/top.html.erb:34
+  Rendered homes/top.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 260ms (Views: 247.3ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/attachments/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" for 10.0.2.2 at 2020-03-26 10:23:49 +0000
+Started GET "/attachments/4e7d4bb3ff5e3903df9d722298a47cdf048b546f/store/2/product_image.jpeg" for 10.0.2.2 at 2020-03-26 10:23:49 +0000
+Refile::App: Could not find attachment by id: 1
+Refile::App: [2020-03-26 10:23:49 +0000] GET "/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" 404 15.8ms
+
+Refile::App: Could not find attachment by id: 2
+Refile::App: [2020-03-26 10:23:49 +0000] GET "/4e7d4bb3ff5e3903df9d722298a47cdf048b546f/store/2/product_image.jpeg" 404 7.4ms
+
+Started GET "/users/sign_in" for 10.0.2.2 at 2020-03-26 10:24:36 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 475ms (Views: 473.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 10.0.2.2 at 2020-03-26 10:24:40 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"O/unCAWqAKuoiYis02XKVcDIXG+feeVtBZjVxKgOYM9ufwtJClyyIDGUqvlrxjOqpo++WEScgYkTI33QiZYE4Q==", "user"=>{"email"=>"aaaaaa@aaaaaa.jp", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (25.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "aaaaaa@aaaaaa.jp"], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 304ms (ActiveRecord: 25.4ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"O/unCAWqAKuoiYis02XKVcDIXG+feeVtBZjVxKgOYM9ufwtJClyyIDGUqvlrxjOqpo++WEScgYkTI33QiZYE4Q==", "user"=>{"email"=>"aaaaaa@aaaaaa.jp", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (3.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 465ms (Views: 289.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 10.0.2.2 at 2020-03-26 10:24:42 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (21.7ms)
+Completed 200 OK in 400ms (Views: 398.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 10.0.2.2 at 2020-03-26 10:24:52 +0000
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4BhoAtuxVeI4L/2lFYPI3jMq2BEcsTeLSxU0RfpU98i1nMRD1EfnaaEy3/CtIDEhVW06JsdUU29drpxR28yT5g==", "user"=>{"first_name"=>"sa", "last_name"=>"sa", "first_kana"=>"a", "last_kana"=>"a", "email"=>"aaaaaa@aaaaaa.jp", "postal_code"=>"a", "address"=>"aaa", "telephone_number"=>"a", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"新規登録"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "aaaaaa@aaaaaa.jp"], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (3.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "first_name", "last_name", "first_kana", "last_kana", "postal_code", "address", "telephone_number", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "aaaaaa@aaaaaa.jp"], ["encrypted_password", "$2a$11$H3CKXYwQXFpxxitH7orEeOp/0FqR3eCs4fWdD.U5kHmTkX3zyxeh6"], ["first_name", "sa"], ["last_name", "sa"], ["first_kana", "a"], ["last_kana", "a"], ["postal_code", "a"], ["address", "aaa"], ["telephone_number", "a"], ["created_at", "2020-03-26 10:24:52.356862"], ["updated_at", "2020-03-26 10:24:52.356862"]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 251ms (ActiveRecord: 7.7ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-03-26 10:24:52 +0000
+Processing by HomesController#top as HTML
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 4]]
+  ↳ app/controllers/homes_controller.rb:5
+  Rendering homes/top.html.erb within layouts/application
+  [1m[36mGenre Load (1.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/homes/top.html.erb:34
+  Rendered homes/top.html.erb within layouts/application (16.3ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:33
+Completed 200 OK in 294ms (Views: 277.5ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/attachments/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" for 10.0.2.2 at 2020-03-26 10:24:52 +0000
+Refile::App: Could not find attachment by id: 1
+Refile::App: [2020-03-26 10:24:53 +0000] GET "/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" 404 13.9ms
+
+Started GET "/attachments/4e7d4bb3ff5e3903df9d722298a47cdf048b546f/store/2/product_image.jpeg" for 10.0.2.2 at 2020-03-26 10:24:53 +0000
+Refile::App: Could not find attachment by id: 2
+Refile::App: [2020-03-26 10:24:53 +0000] GET "/4e7d4bb3ff5e3903df9d722298a47cdf048b546f/store/2/product_image.jpeg" 404 4.6ms
+
+Started GET "/products" for 10.0.2.2 at 2020-03-26 10:24:56 +0000
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mGenre Load (4.8ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/products/index.html.erb:7
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "products" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:20
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:22
+  [1m[35m (4.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:39
+  Rendered products/index.html.erb within layouts/application (74.7ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:33
+Completed 200 OK in 502ms (Views: 474.0ms | ActiveRecord: 12.8ms)
+
+
+Started GET "/attachments/4e7d4bb3ff5e3903df9d722298a47cdf048b546f/store/2/product_image.jpeg" for 10.0.2.2 at 2020-03-26 10:24:57 +0000
+Started GET "/attachments/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" for 10.0.2.2 at 2020-03-26 10:24:57 +0000
+Refile::App: Could not find attachment by id: 2
+Refile::App: [2020-03-26 10:24:57 +0000] GET "/4e7d4bb3ff5e3903df9d722298a47cdf048b546f/store/2/product_image.jpeg" 404 14.0ms
+
+Refile::App: Could not find attachment by id: 1
+Refile::App: [2020-03-26 10:24:57 +0000] GET "/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" 404 12.8ms
+
+Started GET "/products/5" for 10.0.2.2 at 2020-03-26 10:24:58 +0000
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:11
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mGenre Load (1.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/products/show.html.erb:7
+  Rendered products/show.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 256ms (Views: 241.0ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/users/5/carts" for 10.0.2.2 at 2020-03-26 10:25:00 +0000
+Processing by CartsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JzBO90wUrlskyegkoS5EyfCfnD4dGkLJq+ATchIW7PdytOK2Q+Ic0L3UynEZjb02lth+Ccb/Ji29W7tmM46I2Q==", "cart"=>{"product_id"=>"5", "user_id"=>"5", "stock"=>"3"}, "commit"=>"カートに入れる", "user_id"=>"5"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:73
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:17
+  [1m[36mCart Load (1.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = ? AND "carts"."product_id" = ? LIMIT ?[0m  [["user_id", 5], ["product_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/carts_controller.rb:30
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:30
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:30
+  [1m[36mCart Create (4.3ms)[0m  [1m[32mINSERT INTO "carts" ("user_id", "product_id", "stock", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 5], ["product_id", 5], ["stock", 3], ["created_at", "2020-03-26 10:25:00.943439"], ["updated_at", "2020-03-26 10:25:00.943439"]]
+  ↳ app/controllers/carts_controller.rb:30
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/carts_controller.rb:30
+Redirected to http://localhost:3000/users/5/carts
+Completed 302 Found in 44ms (ActiveRecord: 17.1ms)
+
+
+Started GET "/users/5/carts" for 10.0.2.2 at 2020-03-26 10:25:00 +0000
+Processing by CartsController#show as HTML
+  Parameters: {"user_id"=>"5"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:73
+  [1m[36mCart Load (0.9ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/carts_controller.rb:9
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/models/cart.rb:16
+  Rendering carts/show.html.erb within layouts/application
+  Rendered carts/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 304ms (Views: 277.4ms | ActiveRecord: 4.4ms)
+
+
+Started PATCH "/users/5/carts" for 10.0.2.2 at 2020-03-26 10:25:03 +0000
+Processing by CartsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dnNH3JB4i/FWxGmjJo7dfgT9Iz/IjZVeD8RoERca+X4j9+udn445es/ZS/aeLSSBYrrBCBNo8boZf8AFNoKdUA==", "cart"=>{"stock"=>"3", "product_id"=>"5"}, "commit"=>"変更", "user_id"=>"5"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:73
+  [1m[36mCart Load (1.0ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."product_id" = ? AND "carts"."user_id" = ? LIMIT ?[0m  [["product_id", 5], ["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:37
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[36mUser Load (6.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/carts_controller.rb:39
+Redirected to http://localhost:3000/users/5/carts
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 10.3ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/carts_controller.rb:48:in `update'
+Started GET "/users/5/carts" for 10.0.2.2 at 2020-03-26 10:27:48 +0000
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by CartsController#show as HTML
+  Parameters: {"user_id"=>"5"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:73
+  [1m[36mCart Load (1.0ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/carts_controller.rb:9
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/models/cart.rb:16
+  Rendering carts/show.html.erb within layouts/application
+  Rendered carts/show.html.erb within layouts/application (944.2ms)
+Completed 200 OK in 3108ms (Views: 2929.4ms | ActiveRecord: 13.1ms)
+
+
+Started PATCH "/users/5/carts" for 10.0.2.2 at 2020-03-26 10:27:55 +0000
+Processing by CartsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rCh179k/E9W2tXXk4e5Cjuxyblyh4fgGfUq9Iq/u8bz5rNmu1smhXi+oV7FZTbtxijWMa3oEnOJr8RU2jnaVkg==", "cart"=>{"stock"=>"4", "product_id"=>"5"}, "commit"=>"変更", "user_id"=>"5"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:73
+  [1m[36mCart Load (1.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."product_id" = ? AND "carts"."user_id" = ? LIMIT ?[0m  [["product_id", 5], ["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:37
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[36mCart Update (2.1ms)[0m  [1m[33mUPDATE "carts" SET "stock" = ?, "updated_at" = ? WHERE "carts"."id" = ?[0m  [["stock", 4], ["updated_at", "2020-03-26 10:27:55.995199"], ["id", 11]]
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/carts_controller.rb:39
+Redirected to http://localhost:3000/users/5/carts
+Completed 500 Internal Server Error in 108ms (ActiveRecord: 15.2ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/carts_controller.rb:48:in `update'
+Started PATCH "/users/5/carts" for 10.0.2.2 at 2020-03-26 10:28:46 +0000
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by CartsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rCh179k/E9W2tXXk4e5Cjuxyblyh4fgGfUq9Iq/u8bz5rNmu1smhXi+oV7FZTbtxijWMa3oEnOJr8RU2jnaVkg==", "cart"=>{"stock"=>"4", "product_id"=>"5"}, "commit"=>"変更", "user_id"=>"5"}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:73
+  [1m[36mCart Load (1.6ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."product_id" = ? AND "carts"."user_id" = ? LIMIT ?[0m  [["product_id", 5], ["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:37
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[36mProduct Load (1.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/carts_controller.rb:39
+Redirected to http://localhost:3000/users/5/carts
+Completed 302 Found in 166ms (ActiveRecord: 14.9ms)
+
+
+Started GET "/users/5/carts" for 10.0.2.2 at 2020-03-26 10:28:47 +0000
+Processing by CartsController#show as HTML
+  Parameters: {"user_id"=>"5"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:73
+  [1m[36mCart Load (1.0ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/carts_controller.rb:9
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/models/cart.rb:16
+  Rendering carts/show.html.erb within layouts/application
+  Rendered carts/show.html.erb within layouts/application (996.4ms)
+Started GET "/users/5/carts" for 10.0.2.2 at 2020-03-26 10:28:49 +0000
+Processing by CartsController#show as HTML
+  Parameters: {"user_id"=>"5"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:73
+  [1m[36mCart Load (1.3ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/carts_controller.rb:9
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/models/cart.rb:16
+  Rendering carts/show.html.erb within layouts/application
+  Rendered carts/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 1045ms (Views: 1011.4ms | ActiveRecord: 4.4ms)
+
+
+Completed 200 OK in 3684ms (Views: 3639.7ms | ActiveRecord: 5.4ms)
+
+
+Started POST "/users/5/carts" for 10.0.2.2 at 2020-03-26 10:28:53 +0000
+Processing by CartsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JzBO90wUrlskyegkoS5EyfCfnD4dGkLJq+ATchIW7PdytOK2Q+Ic0L3UynEZjb02lth+Ccb/Ji29W7tmM46I2Q==", "cart"=>{"product_id"=>"5", "user_id"=>"5", "stock"=>"5"}, "commit"=>"カートに入れる", "user_id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:73
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:17
+  [1m[36mCart Load (0.9ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = ? AND "carts"."product_id" = ? LIMIT ?[0m  [["user_id", 5], ["product_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:20
+  [1m[36mCart Load (1.0ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."product_id" = ? AND "carts"."user_id" = ? LIMIT ?[0m  [["product_id", 5], ["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/carts_controller.rb:26
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:26
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:26
+  [1m[36mCart Update (1.3ms)[0m  [1m[33mUPDATE "carts" SET "stock" = ?, "updated_at" = ? WHERE "carts"."id" = ?[0m  [["stock", 9], ["updated_at", "2020-03-26 10:28:53.524600"], ["id", 11]]
+  ↳ app/controllers/carts_controller.rb:26
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/carts_controller.rb:26
+Redirected to http://localhost:3000/users/5/carts
+Completed 302 Found in 38ms (ActiveRecord: 9.0ms)
+
+
+Started GET "/users/5/carts" for 10.0.2.2 at 2020-03-26 10:28:53 +0000
+Processing by CartsController#show as HTML
+  Parameters: {"user_id"=>"5"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:73
+  [1m[36mCart Load (1.1ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/carts_controller.rb:9
+  [1m[36mProduct Load (6.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/models/cart.rb:16
+  Rendering carts/show.html.erb within layouts/application
+  Rendered carts/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 283ms (Views: 252.6ms | ActiveRecord: 9.1ms)
+
+
+Started PATCH "/users/5/carts" for 10.0.2.2 at 2020-03-26 10:28:56 +0000
+Processing by CartsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8KQqPwzhtXYvmeql/O9qEYHus0XQ0Dw0BJ+yblqP5XmlIIZ+AxcH/baEyPBETJPu56lRcgs1WNASJBp6exeBVw==", "cart"=>{"stock"=>"9", "product_id"=>"5"}, "commit"=>"変更", "user_id"=>"5"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:73
+  [1m[36mCart Load (0.9ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."product_id" = ? AND "carts"."user_id" = ? LIMIT ?[0m  [["product_id", 5], ["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:37
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/carts_controller.rb:39
+Redirected to http://localhost:3000/users/5/carts
+Completed 302 Found in 32ms (ActiveRecord: 4.8ms)
+
+
+Started GET "/users/5/carts" for 10.0.2.2 at 2020-03-26 10:28:56 +0000
+Processing by CartsController#show as HTML
+  Parameters: {"user_id"=>"5"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:73
+  [1m[36mCart Load (0.7ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/carts_controller.rb:9
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/models/cart.rb:16
+  Rendering carts/show.html.erb within layouts/application
+  Rendered carts/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 277ms (Views: 248.5ms | ActiveRecord: 3.1ms)
+
+
+Started PATCH "/users/5/carts" for 10.0.2.2 at 2020-03-26 10:28:58 +0000
+Processing by CartsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KW4mIN7O5Y7Gu14pG3qvD8r0UX501mtA6vHRxEENZWR86oph0ThXBV+mfHyj2VbwrLOzSa8zD6T8SnnQYJUBSg==", "cart"=>{"stock"=>"9", "product_id"=>"5"}, "commit"=>"変更", "user_id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:73
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."product_id" = ? AND "carts"."user_id" = ? LIMIT ?[0m  [["product_id", 5], ["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:37
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/carts_controller.rb:39
+Redirected to http://localhost:3000/users/5/carts
+Completed 302 Found in 22ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/users/5/carts" for 10.0.2.2 at 2020-03-26 10:28:58 +0000
+Processing by CartsController#show as HTML
+  Parameters: {"user_id"=>"5"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:73
+  [1m[36mCart Load (1.3ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/carts_controller.rb:9
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/models/cart.rb:16
+  Rendering carts/show.html.erb within layouts/application
+  Rendered carts/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 294ms (Views: 272.6ms | ActiveRecord: 3.3ms)
+
+
+Started PATCH "/users/5/carts" for 10.0.2.2 at 2020-03-26 10:29:04 +0000
+Processing by CartsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"08zC9QyRZWywwbQHf+Wm5Pk/u1qUGZwHnVzpkoINKxyGSG60A2fX5yncllLHRl8bn3hZbU/8+OOL50GGo5VPMg==", "cart"=>{"stock"=>"6", "product_id"=>"5"}, "commit"=>"変更", "user_id"=>"5"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:73
+  [1m[36mCart Load (1.0ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."product_id" = ? AND "carts"."user_id" = ? LIMIT ?[0m  [["product_id", 5], ["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:37
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[36mCart Update (6.2ms)[0m  [1m[33mUPDATE "carts" SET "stock" = ?, "updated_at" = ? WHERE "carts"."id" = ?[0m  [["stock", 6], ["updated_at", "2020-03-26 10:29:04.115876"], ["id", 11]]
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/carts_controller.rb:39
+Redirected to http://localhost:3000/users/5/carts
+Completed 302 Found in 38ms (ActiveRecord: 16.0ms)
+
+
+Started GET "/users/5/carts" for 10.0.2.2 at 2020-03-26 10:29:04 +0000
+Processing by CartsController#show as HTML
+  Parameters: {"user_id"=>"5"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:73
+  [1m[36mCart Load (2.1ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/carts_controller.rb:9
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/models/cart.rb:16
+  Rendering carts/show.html.erb within layouts/application
+  Rendered carts/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 275ms (Views: 251.5ms | ActiveRecord: 5.2ms)
+
+
+Started PATCH "/users/5/carts" for 10.0.2.2 at 2020-03-26 10:29:14 +0000
+Processing by CartsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HNFEo0H30RLzmNoz6r6vBIyUA1ak9Q3YFY0m/iKmylZJVejiTgFjmWqF+GZSHVb76tPhYX8QaTwDNo7qAz6ueA==", "cart"=>{"stock"=>"10", "product_id"=>"5"}, "commit"=>"変更", "user_id"=>"5"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:73
+  [1m[36mCart Load (0.7ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."product_id" = ? AND "carts"."user_id" = ? LIMIT ?[0m  [["product_id", 5], ["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:37
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/carts_controller.rb:44
+  [1m[36mProduct Load (5.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/models/cart.rb:16
+No template found for CartsController#update, rendering head :no_content
+Completed 204 No Content in 511ms (ActiveRecord: 10.0ms)
+
+
+Started GET "/users/5/carts" for 10.0.2.2 at 2020-03-26 10:29:26 +0000
+Processing by CartsController#show as HTML
+  Parameters: {"user_id"=>"5"}
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:73
+  [1m[36mCart Load (0.5ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/carts_controller.rb:9
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/models/cart.rb:16
+  Rendering carts/show.html.erb within layouts/application
+  Rendered carts/show.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 258ms (Views: 232.0ms | ActiveRecord: 5.8ms)
+
+
+Started PATCH "/users/5/carts" for 10.0.2.2 at 2020-03-26 10:29:30 +0000
+Processing by CartsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oedsoMeuJf6MU/cj47qIN1Q6BDwvCZtabsP+YjsEU2X0Y8DhyFiXdRVO1XZbGXHIMn3mC/Ts/754eFZ2Gpw3Sw==", "cart"=>{"stock"=>"7", "product_id"=>"5"}, "commit"=>"変更", "user_id"=>"5"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:73
+  [1m[36mCart Load (1.0ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."product_id" = ? AND "carts"."user_id" = ? LIMIT ?[0m  [["product_id", 5], ["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:37
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[36mCart Update (2.0ms)[0m  [1m[33mUPDATE "carts" SET "stock" = ?, "updated_at" = ? WHERE "carts"."id" = ?[0m  [["stock", 7], ["updated_at", "2020-03-26 10:29:30.611084"], ["id", 11]]
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[35m (8.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/carts_controller.rb:39
+Redirected to http://localhost:3000/users/5/carts
+Completed 302 Found in 82ms (ActiveRecord: 14.6ms)
+
+
+Started GET "/users/5/carts" for 10.0.2.2 at 2020-03-26 10:29:30 +0000
+Processing by CartsController#show as HTML
+  Parameters: {"user_id"=>"5"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:73
+  [1m[36mCart Load (0.6ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/carts_controller.rb:9
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/models/cart.rb:16
+  Rendering carts/show.html.erb within layouts/application
+  Rendered carts/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 261ms (Views: 241.9ms | ActiveRecord: 3.3ms)
+
+
+Started PATCH "/users/5/carts" for 10.0.2.2 at 2020-03-26 10:29:35 +0000
+Processing by CartsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"patEuimILc5y7UR6RMaqWSQu0JGvRiCV6FA66FyeU77wL+j7Jn6fRevwZi/8ZVOmQmkypnSjRHH+65L8fQY3kA==", "cart"=>{"stock"=>"19", "product_id"=>"5"}, "commit"=>"変更", "user_id"=>"5"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:73
+  [1m[36mCart Load (2.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."product_id" = ? AND "carts"."user_id" = ? LIMIT ?[0m  [["product_id", 5], ["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:37
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[36mCart Load (0.8ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/carts_controller.rb:44
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/models/cart.rb:16
+No template found for CartsController#update, rendering head :no_content
+Completed 204 No Content in 574ms (ActiveRecord: 7.1ms)
+
+
+Started GET "/users/5/carts" for 10.0.2.2 at 2020-03-26 10:30:35 +0000
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  
+SyntaxError (/vagrant/team_development/BlueBirdCake/app/controllers/carts_controller.rb:42: syntax error, unexpected ':', expecting end
+        @render :show
+                ^):
+  
+app/controllers/carts_controller.rb:42: syntax error, unexpected ':', expecting end
+Started GET "/users/5/carts" for 10.0.2.2 at 2020-03-26 10:30:55 +0000
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by CartsController#show as HTML
+  Parameters: {"user_id"=>"5"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:74
+  [1m[36mCart Load (0.6ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/carts_controller.rb:9
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/models/cart.rb:16
+  Rendering carts/show.html.erb within layouts/application
+  Rendered carts/show.html.erb within layouts/application (886.9ms)
+Completed 200 OK in 3029ms (Views: 2856.9ms | ActiveRecord: 11.9ms)
+
+
+Started PATCH "/users/5/carts" for 10.0.2.2 at 2020-03-26 10:31:02 +0000
+Processing by CartsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KLnIfpZhYUWSQ1Ku7eBWugF9WXM3DZsGPM/XpefRDOF9PWQ/mZfTzgtecPtVQ69FZzq7ROzo/+IqdH+xxklozw==", "cart"=>{"stock"=>"6", "product_id"=>"5"}, "commit"=>"変更", "user_id"=>"5"}
+  [1m[36mUser Load (6.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:74
+  [1m[36mCart Load (1.1ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."product_id" = ? AND "carts"."user_id" = ? LIMIT ?[0m  [["product_id", 5], ["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:37
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[36mCart Update (3.2ms)[0m  [1m[33mUPDATE "carts" SET "stock" = ?, "updated_at" = ? WHERE "carts"."id" = ?[0m  [["stock", 6], ["updated_at", "2020-03-26 10:31:02.617790"], ["id", 11]]
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/carts_controller.rb:39
+Redirected to http://localhost:3000/users/5/carts
+Completed 302 Found in 68ms (ActiveRecord: 18.2ms)
+
+
+Started GET "/users/5/carts" for 10.0.2.2 at 2020-03-26 10:31:02 +0000
+Processing by CartsController#show as HTML
+  Parameters: {"user_id"=>"5"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:74
+  [1m[36mCart Load (0.7ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/carts_controller.rb:9
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/models/cart.rb:16
+  Rendering carts/show.html.erb within layouts/application
+  Rendered carts/show.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 347ms (Views: 325.2ms | ActiveRecord: 3.6ms)
+
+
+Started PATCH "/users/5/carts" for 10.0.2.2 at 2020-03-26 10:31:04 +0000
+Processing by CartsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9E0nC/XvzhnmcI+ZyzxT2Pz5E2sp99EnBiW4a7m0x4KhyYtK+hl8kn9trcxzn6onmr7xXPIStcMQnhB/mCyjrA==", "cart"=>{"stock"=>"4", "product_id"=>"5"}, "commit"=>"変更", "user_id"=>"5"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:74
+  [1m[36mCart Load (0.6ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."product_id" = ? AND "carts"."user_id" = ? LIMIT ?[0m  [["product_id", 5], ["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:37
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[36mCart Update (1.6ms)[0m  [1m[33mUPDATE "carts" SET "stock" = ?, "updated_at" = ? WHERE "carts"."id" = ?[0m  [["stock", 4], ["updated_at", "2020-03-26 10:31:04.769883"], ["id", 11]]
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/carts_controller.rb:39
+Redirected to http://localhost:3000/users/5/carts
+Completed 302 Found in 45ms (ActiveRecord: 10.4ms)
+
+
+Started GET "/users/5/carts" for 10.0.2.2 at 2020-03-26 10:31:04 +0000
+Processing by CartsController#show as HTML
+  Parameters: {"user_id"=>"5"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:74
+  [1m[36mCart Load (0.6ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/carts_controller.rb:9
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/models/cart.rb:16
+  Rendering carts/show.html.erb within layouts/application
+  Rendered carts/show.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 307ms (Views: 272.2ms | ActiveRecord: 3.7ms)
+
+
+Started PATCH "/users/5/carts" for 10.0.2.2 at 2020-03-26 10:31:07 +0000
+Processing by CartsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NWtIgkccb+fpwSS337hFUAYkzVol39g0YG4YY/GYBoVg7+TDSOrdbHDcBuJnG7yvYGMvbf46vNB21bB30ABiqw==", "cart"=>{"stock"=>"10", "product_id"=>"5"}, "commit"=>"変更", "user_id"=>"5"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:74
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."product_id" = ? AND "carts"."user_id" = ? LIMIT ?[0m  [["product_id", 5], ["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:37
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/carts_controller.rb:39
+  Rendering carts/show.html.erb within layouts/application
+  Rendered carts/show.html.erb within layouts/application (15.3ms)
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 3.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    24:   				</tr>
+    25:   			</thead>
+    26:   			<tbody>
+    27:   				<% @carts.each do |cart| %>
+    28:   				<tr>
+    29:   					<td>
+    30:   						<%= attachment_image_tag cart.product, :product_image, format: 'jpeg', fallback: "no_image.jpg", size: "40x20" %><%= cart.product.name %>
+  
+app/views/carts/show.html.erb:27:in `_app_views_carts_show_html_erb___2488756312930832514_70050245764200'
+app/controllers/carts_controller.rb:42:in `update'
+Started GET "/users/5/carts" for 10.0.2.2 at 2020-03-26 10:31:48 +0000
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by CartsController#show as HTML
+  Parameters: {"user_id"=>"5"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:74
+  [1m[36mCart Load (1.3ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/carts_controller.rb:9
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/models/cart.rb:16
+  Rendering carts/show.html.erb within layouts/application
+  Rendered carts/show.html.erb within layouts/application (1031.4ms)
+Started GET "/users/5/carts" for 10.0.2.2 at 2020-03-26 10:31:49 +0000
+Processing by CartsController#show as HTML
+  Parameters: {"user_id"=>"5"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:74
+  [1m[36mCart Load (1.0ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/carts_controller.rb:9
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/models/cart.rb:16
+  Rendering carts/show.html.erb within layouts/application
+  Rendered carts/show.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 1838ms (Views: 1808.3ms | ActiveRecord: 3.8ms)
+
+
+Completed 200 OK in 3547ms (Views: 3352.4ms | ActiveRecord: 14.8ms)
+
+
+Started PATCH "/users/5/carts" for 10.0.2.2 at 2020-03-26 10:31:53 +0000
+Processing by CartsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"znanQQ5Pd5U/pv8oix86hEYUhPdJ+T8kUU+CE+hpbSub8gsAAbnFHqa73X0zvMN7IFNmwJIcW8BH9CoHyfEJBQ==", "cart"=>{"stock"=>"4", "product_id"=>"5"}, "commit"=>"変更", "user_id"=>"5"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:74
+  [1m[36mCart Load (0.8ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."product_id" = ? AND "carts"."user_id" = ? LIMIT ?[0m  [["product_id", 5], ["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:37
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/carts_controller.rb:39
+Redirected to http://localhost:3000/users/5/carts
+Completed 302 Found in 27ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/users/5/carts" for 10.0.2.2 at 2020-03-26 10:31:53 +0000
+Processing by CartsController#show as HTML
+  Parameters: {"user_id"=>"5"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:74
+  [1m[36mCart Load (0.7ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/carts_controller.rb:9
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/models/cart.rb:16
+  Rendering carts/show.html.erb within layouts/application
+  Rendered carts/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 362ms (Views: 328.5ms | ActiveRecord: 3.7ms)
+
+
+Started PATCH "/users/5/carts" for 10.0.2.2 at 2020-03-26 10:31:56 +0000
+Processing by CartsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"n0J7AdlTMPhwn7uVQi18q5QZHkMjLjpZWd06J7JgVxXKxtdA1qWCc+mCmcD6joVU8l78dPjLXr1PZpIzk/gzOw==", "cart"=>{"stock"=>"8", "product_id"=>"5"}, "commit"=>"変更", "user_id"=>"5"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:74
+  [1m[36mCart Load (0.5ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."product_id" = ? AND "carts"."user_id" = ? LIMIT ?[0m  [["product_id", 5], ["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:37
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[36mCart Update (1.8ms)[0m  [1m[33mUPDATE "carts" SET "stock" = ?, "updated_at" = ? WHERE "carts"."id" = ?[0m  [["stock", 8], ["updated_at", "2020-03-26 10:31:56.417904"], ["id", 11]]
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/carts_controller.rb:39
+Redirected to http://localhost:3000/users/5/carts
+Completed 302 Found in 32ms (ActiveRecord: 8.3ms)
+
+
+Started GET "/users/5/carts" for 10.0.2.2 at 2020-03-26 10:31:56 +0000
+Processing by CartsController#show as HTML
+  Parameters: {"user_id"=>"5"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:74
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/carts_controller.rb:9
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/models/cart.rb:16
+  Rendering carts/show.html.erb within layouts/application
+  Rendered carts/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 433ms (Views: 352.9ms | ActiveRecord: 3.1ms)
+
+
+Started PATCH "/users/5/carts" for 10.0.2.2 at 2020-03-26 10:31:58 +0000
+Processing by CartsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kfsD4CSyU7YO7YNGWrOWWMrgZCHYe+G/59eulrOkgcbEf6+hK0ThPZfwoRPiEG+nrKeGFgOehVvxbAaCkjzl6A==", "cart"=>{"stock"=>"11", "product_id"=>"5"}, "commit"=>"変更", "user_id"=>"5"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:74
+  [1m[36mCart Load (1.0ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."product_id" = ? AND "carts"."user_id" = ? LIMIT ?[0m  [["product_id", 5], ["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:37
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[36mCart Load (1.3ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/carts_controller.rb:44
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/models/cart.rb:16
+  Rendering carts/show.html.erb within layouts/application
+  Rendered carts/show.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 327ms (Views: 278.4ms | ActiveRecord: 6.5ms)
+
+

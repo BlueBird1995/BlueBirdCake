@@ -36,7 +36,7 @@ class OrdersController < ApplicationController
     end
     # 小計を出しています。=0は初期化
 
-    @postage_total_price = @total_price + 800　
+    @postage_total_price = @total_price + 800
   end
 
   def create

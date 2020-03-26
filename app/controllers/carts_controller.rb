@@ -39,13 +39,14 @@ class CartsController < ApplicationController
     if @cart.save
       redirect_to user_carts_path
       else
-     @carts = current_user.carts
-     @total_price = 0
-     @carts.each do |f|
-        @total_price += f.subtotal
-      end
+        @carts = current_user.carts
+        @total_price = 0
+        @carts.each do |f|
+          @total_price += f.subtotal
+        end
+        render :show
     end
-    render :show
+    # render :show
     # renderでエラーメッセージを表示させるために、値を入れ直しています。(redirect_toの違い)
     # redirect_toを使うと、値が再代入されてしまうので、エラーメッセージを出すためにrenderを使っています。
   end

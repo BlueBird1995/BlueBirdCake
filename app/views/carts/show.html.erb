@@ -27,7 +27,7 @@
   				<% @carts.each do |cart| %>
   				<tr>
   					<td>
-  						<%= attachment_image_tag @product, :product_image, format: 'jpeg', fallback: "no_image.jpg", size: "40x20" %><%= cart.product.name %>
+  						<%= attachment_image_tag cart.product, :product_image, format: 'jpeg', fallback: "no_image.jpg", size: "40x20" %><%= cart.product.name %>
   					</td>
   					<td><%= cart.tax_included.to_s(:delimited) %>円</td>
   					<td>
@@ -52,7 +52,7 @@
 	<div class="row">
 		<div class="col-md-4">
 			<!-- 買い物を続けるボタン -->
-			<%= link_to "買い物を続ける",products_path, class:"btn btn-cart" %>
+			<%= link_to "買い物を続ける",root_path, class:"btn btn-cart" %>
 		</div>
 		<div class="col-md-3 offset-5">
 			<table class="table table-bordered">
