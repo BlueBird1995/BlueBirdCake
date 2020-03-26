@@ -1,12 +1,12 @@
-Name
+#Name
 BlueBirdCake
 
-Overview
+#Overview
 長野にあるケーキ屋さんをイメージしたECサイトです。
 チーム開発で作成しました。
 
 ## Description
-
+-ECサイト（ケーキショップ）
 ## Demo
 
 ## VS. 
