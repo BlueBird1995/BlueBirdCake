@@ -12,9 +12,10 @@
       <%= f.text_field :name, class: "form-control" %>
     </div>
 
+    <%#= 同じモデル内のカラムを対象にしたラジオボタンなので、動きます。ハッシュ名status%>
     <div class="col-md-1 offset-2">
-    <label><%=f.radio_button :status, true %>有効</label>
-    <label><%=f.radio_button :status, false %>無効</label>
+      <label><%=f.radio_button :status, true %>有効</label>
+      <label><%=f.radio_button :status, false %>無効</label>
     </div>
 
     <div class="col-md-1 offset-2">

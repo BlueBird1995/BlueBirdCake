@@ -16,13 +16,14 @@
   <h4>注文ステータス</h4>
 
   <%= form_for @order, :url => { action: "update" } do |f| %>
-    <%= f.select :status, ['入金待ち', '入金確認', '製作中', '発送準備中', '発送済み'] %>
-    <%= f.submit "更新" %>
+  <%= f.select :status, ['入金待ち', '入金確認', '製作中', '発送準備中', '発送済み'] %>
+  <%= f.submit "更新" %>
 
+  <%# 本当はthだといいかもしれない。%>
   <table class="table table-bordered">
     <tr class="bg-light">
       <td>商品名</td>
-      <td>単価(税込)</td>
+      <td>単価（税込）</td>
       <td>数量</td>
       <td>小計</td>
       <td>製作ステータス</td>
@@ -31,15 +32,17 @@
 
     <% @ordered_products.each do |ordered_product| %>
     <tr>
+      <%# Productモデルの中からブロック変数|order_product|に入った注文商品それぞれに紐づく、商品IDを使って検索をしている。%>
       <td><%= Product.where(id: ordered_product.product_id).pluck(:name).join %></td>
+      <%#= .to_sのメソッドは4桁以上の数字にカンマを入力してくれています。 %>
       <td><%= ordered_product.product.price.to_s(:delimited) %></td>
       <td><%= ordered_product.stock %></td>
       <td><%= ordered_product.price.to_s(:delimited) %></td>
       <td><%= form_for(ordered_product, url: admins_ordered_product_path, html: {method: "patch"})  do |f| %>
-             <%= f.select :status, ['着手不可', '製作待ち', '製作中', '製作完了'] %></td>
-           <td><%= f.submit "更新" %></td>
+        <%= f.select :status, ['着手不可', '製作待ち', '製作中', '製作完了'] %></td>
+      <td><%= f.submit "更新" %></td>
     </tr>
-           <% end %>
+    <% end %>
     <% end %>
   </table>
   <% end %>

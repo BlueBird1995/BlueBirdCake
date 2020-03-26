@@ -51,6 +51,5 @@ class UsersController < ApplicationController
     if current_user != user
       redirect_to root_path
     end
-    end
   end
 end
