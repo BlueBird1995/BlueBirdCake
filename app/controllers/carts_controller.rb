@@ -45,9 +45,8 @@ class CartsController < ApplicationController
     @carts.each do |f|
       @total_price += f.subtotal
     end
-
+  end
       render :show
-    end
   end
 
   def destroy
@@ -70,8 +69,7 @@ class CartsController < ApplicationController
 
   def correct_user
     user = User.find(params[:user_id])
-    if current_user != user
-      redirect_to root_path
-    end
+    unless current_user == user
+    redirect_to root_path
   end
 end

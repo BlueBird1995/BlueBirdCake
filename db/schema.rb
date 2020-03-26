@@ -59,14 +59,14 @@ ActiveRecord::Schema.define(version: 2020_03_20_132131) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.string "name", default: "", null: false
-    t.string "postal_code", default: "", null: false
-    t.string "address", default: "", null: false
-    t.integer "payment", null: false
+    t.integer "user_id"
+    t.string "name", default: ""
+    t.string "postal_code", default: ""
+    t.string "address", default: ""
+    t.integer "payment"
     t.integer "total_price", null: false
-    t.integer "postage", default: 800, null: false
-    t.string "status", default: "入金待ち", null: false
+    t.integer "postage", default: 800
+    t.string "status", default: "入金待ち"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
