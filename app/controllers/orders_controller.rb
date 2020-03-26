@@ -12,9 +12,7 @@ class OrdersController < ApplicationController
   def confirm
     @order = Order.new(order_params)
     @order.ordered_products.build
-
     @carts = current_user.carts
-
     if params[:address_button] == "my_address" #ご自身の住所
       @order.postal_code = current_user.postal_code
       @order.address = current_user.address

@@ -27,7 +27,7 @@ class CartsController < ApplicationController
       # whereで探すと配列として結果が出てsaveできないので、find_byを使いました。
       redirect_to user_carts_path(@user)
     else
-    @cart.save
+     @cart.save
       redirect_to user_carts_path(@user)
     end
   end
@@ -37,17 +37,15 @@ class CartsController < ApplicationController
     @cart = Cart.find_by(product_id: params[:cart][:product_id],user_id: params[:user_id])
     @cart.stock = params[:cart][:stock]
     if @cart.save
-
-    redirect_to user_carts_path
-    else
-    @carts = current_user.carts
-    @total_price = 0
-    @carts.each do |f|
-      @total_price += f.subtotal
+      redirect_to user_carts_path
+      else
+     @carts = current_user.carts
+     @total_price = 0
+     @carts.each do |f|
+        @total_price += f.subtotal
+      end
     end
-
-      render :show
-    end
+    render :show
   end
 
   def destroy
@@ -70,7 +68,7 @@ class CartsController < ApplicationController
 
   def correct_user
     user = User.find(params[:user_id])
-    if current_user != user
+    unless current_user = user
       redirect_to root_path
     end
   end
