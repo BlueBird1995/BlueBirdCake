@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:show]
+  
   def index
   	@products = Product.all.page(params[:page]).per(8)
   	@genres = Genre.all
