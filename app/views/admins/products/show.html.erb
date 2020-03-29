@@ -16,7 +16,7 @@
 
 		<span>税込価格（税抜価格）¥<%= @product.price.to_s(:delimited) %><%= @product.tax_included.to_s(:delimited) %>円<br>
 
-        <span>販売ステータス  
+        <span>販売ステータス
         	<% if @product.status %>
 		      <span>販売中</span>
 		    <% else %>

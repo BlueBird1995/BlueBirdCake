@@ -8,7 +8,7 @@
 				<% end %>
 				<% end %>
 			<% end %>
-			
+
 <div class="container">
   <h3 class="product-title">商品新規登録画面</h3>
     <div class="row">
@@ -26,15 +26,14 @@
 			<%= f.text_field :name %>
 			<h4>商品説明</h4>
 			<%= f.text_area :description %>
-			<h4>ジャンル</h4>
-
 			<%= f.fields_for :genre do |g| %>
-			<%= g.collection_select :genre_id, @genres, :id, :name, {include_blank: '--選択してください--'}  %>
+				<h4><%= g.label :genre_id, "ジャンル" %></h4>
+				<%= g.collection_select :genre_id, @genres, :id, :name, {include_blank: '--選択してください--'}  %>
 			<% end %>
 
 			<h4>税抜価格</h4>
 			<%= f.text_field :price %>
-			<h4>販売ステータス</h4>
+			<h4><%= f.label :status, '販売ステータス' %></h4>
 			<%= f.select :status, [['販売中',true],['販売停止中',false]], {include_blank: '--選択してください--'} %>
 		</div>
 		<div class="col-md-2 offset-10">

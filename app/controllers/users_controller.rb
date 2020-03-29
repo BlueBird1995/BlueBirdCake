@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :correct_user
   before_action :authenticate_user!
-  
+
   def show
     @user = User.find(params[:id])
   end
@@ -48,9 +48,8 @@ class UsersController < ApplicationController
 
   def correct_user
     user = User.find(params[:id])
-    if current_user != user
+    unless current_user = user
       redirect_to root_path
-    end
     end
   end
 end

@@ -1,6 +1,6 @@
 class CartsController < ApplicationController
   before_action :authenticate_user!
-  before_action :correct_user
+  before_action :correct_user, only: [:show, :create, :update, :destory]
 
   def show
     @cart = Cart.new
@@ -62,7 +62,7 @@ class CartsController < ApplicationController
     @carts.destroy_all
     redirect_to request.referer
   end
-  
+
   private
   def cart_params
     params.require(:cart).permit(:product_id,:stock,:user_id)
