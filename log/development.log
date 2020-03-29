@@ -19675,3 +19675,147 @@ Started GET "/attachments/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/produ
 Refile::App: Could not find attachment by id: 1
 Refile::App: [2020-03-26 06:38:43 +0000] GET "/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" 404 11.3ms
 
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/users/3" for 10.0.2.2 at 2020-03-26 07:28:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:51
+Redirected to http://localhost:3000/
+Filter chain halted as :correct_user rendered or redirected
+Completed 302 Found in 23ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-03-26 07:28:08 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 4]]
+  ↳ app/controllers/homes_controller.rb:5
+  Rendering homes/top.html.erb within layouts/application
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/homes/top.html.erb:34
+Started GET "/users/3" for 10.0.2.2 at 2020-03-26 07:28:10 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50
+Redirected to http://localhost:3000/
+Filter chain halted as :correct_user rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-03-26 07:28:10 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 4]]
+  ↳ app/controllers/homes_controller.rb:5
+  Rendering homes/top.html.erb within layouts/application
+  [1m[36mGenre Load (0.9ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/homes/top.html.erb:34
+Started GET "/users/3/carts" for 10.0.2.2 at 2020-03-26 07:28:12 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  Rendered homes/top.html.erb within layouts/application (13870.7ms)
+  Rendered homes/top.html.erb within layouts/application (11318.5ms)
+Completed 200 OK in 14208ms (Views: 14188.8ms | ActiveRecord: 2.9ms)
+
+
+Completed 200 OK in 11544ms (Views: 11535.4ms | ActiveRecord: 1.4ms)
+
+
+  
+SyntaxError (/vagrant/BlueBirdCake/app/controllers/carts_controller.rb:40: syntax error, unexpected <<
+<<<<<<< HEAD
+^~
+/vagrant/BlueBirdCake/app/controllers/carts_controller.rb:51: syntax error, unexpected ===, expecting keyword_end
+=======
+^~~
+/vagrant/BlueBirdCake/app/controllers/carts_controller.rb:63: syntax error, unexpected >>, expecting keyword_end
+>>>>>>> db9c9fab4793cee5f129097...
+^~
+/vagrant/BlueBirdCake/app/controllers/carts_controller.rb:92: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/carts_controller.rb:40: syntax error, unexpected <<
+app/controllers/carts_controller.rb:51: syntax error, unexpected ===, expecting keyword_end
+app/controllers/carts_controller.rb:63: syntax error, unexpected >>, expecting keyword_end
+app/controllers/carts_controller.rb:92: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/users/3/carts" for 10.0.2.2 at 2020-03-26 07:29:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by CartsController#show as HTML
+  Parameters: {"user_id"=>"3"}
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 10.0.2.2 at 2020-03-26 07:29:05 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 713ms (Views: 702.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users/sign_in" for 10.0.2.2 at 2020-03-26 07:29:18 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"A5r5QdxilUhFszF/TEIfVDhlfPmOUFI/rmZgtHi2s1rXTrUwVuOUjw459zDamPSQIeH4XD/kltnJcBBqpZ+Z/A==", "user"=>{"email"=>"1noseA2L@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "1nosea2l@gmail.com"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 7ms (ActiveRecord: 1.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"A5r5QdxilUhFszF/TEIfVDhlfPmOUFI/rmZgtHi2s1rXTrUwVuOUjw459zDamPSQIeH4XD/kltnJcBBqpZ+Z/A==", "user"=>{"email"=>"1noseA2L@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 233ms (Views: 115.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 10.0.2.2 at 2020-03-26 07:29:21 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 155ms (Views: 153.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-03-26 07:31:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 4]]
+  ↳ app/controllers/homes_controller.rb:5
+  Rendering homes/top.html.erb within layouts/application
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/homes/top.html.erb:34
+  Rendered homes/top.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 157ms (Views: 136.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/attachments/4e7d4bb3ff5e3903df9d722298a47cdf048b546f/store/2/product_image.jpeg" for 10.0.2.2 at 2020-03-26 07:31:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/attachments/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" for 10.0.2.2 at 2020-03-26 07:31:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: Could not find attachment by id: 1
+Refile::App: Could not find attachment by id: 2
+Refile::App: [2020-03-26 07:31:46 +0000] GET "/4e7d4bb3ff5e3903df9d722298a47cdf048b546f/store/2/product_image.jpeg" 404 4.5ms
+
+Refile::App: [2020-03-26 07:31:47 +0000] GET "/02fc8e88258f4d35582eff48280720d3cc9fe451/store/1/product_image.jpeg" 404 20.2ms
+
