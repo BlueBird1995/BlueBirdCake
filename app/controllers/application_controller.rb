@@ -1,8 +1,10 @@
 class ApplicationController < ActionController::Base
 	before_action :configure_permitted_parameters, if: :devise_controller?
   #デバイス機能実行前にconfigure_permitted_parametersの実行をする。
-  
+
   def after_sign_in_path_for(resource)
+    # resourceにする意味はよくわからない
+    # if文だとうまくいかないのでcase-whenを使っています
     case resource
       when Admin
         admins_path
