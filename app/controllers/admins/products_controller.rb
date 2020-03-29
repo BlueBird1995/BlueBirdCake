@@ -1,6 +1,6 @@
 class Admins::ProductsController < ApplicationController
   before_action :authenticate_admin!
-  
+
   def index
     @products = Product.all.page(params[:page]).per(10)
   end
@@ -25,7 +25,7 @@ class Admins::ProductsController < ApplicationController
     if @product.save
     redirect_to admins_products_path
     else
-    @genres = Genre.all 
+    @genres = Genre.all
     render :new
     end
   end

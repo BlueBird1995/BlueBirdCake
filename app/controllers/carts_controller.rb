@@ -1,6 +1,6 @@
 class CartsController < ApplicationController
   before_action :authenticate_user!
-  before_action :correct_user
+  before_action :correct_user, only: [:show, :create, :update]
 
   def show
     @cart = Cart.new
@@ -37,15 +37,15 @@ class CartsController < ApplicationController
     @cart = Cart.find_by(product_id: params[:cart][:product_id],user_id: params[:user_id])
     @cart.stock = params[:cart][:stock]
     if @cart.save
-      redirect_to user_carts_path
-      else
-     @carts = current_user.carts
-     @total_price = 0
-     @carts.each do |f|
-        @total_price += f.subtotal
-      end
+    redirect_to user_carts_path
+    else
+    @carts = current_user.carts
+    @total_price = 0
+    @carts.each do |f|
+      @total_price += f.subtotal
     end
-    render :show
+      render :show
+    end
     # renderでエラーメッセージを表示させるために、値を入れ直しています。(redirect_toの違い)
     # redirect_toを使うと、値が再代入されてしまうので、エラーメッセージを出すためにrenderを使っています。
   end
@@ -63,8 +63,8 @@ class CartsController < ApplicationController
     redirect_to request.referer
     # 前のページに戻るメソッド
   end
-  
-  private
+
+private
   def cart_params
     params.require(:cart).permit(:product_id,:stock,:user_id)
   end
