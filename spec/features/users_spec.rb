@@ -67,7 +67,7 @@ RSpec.feature "ユーザー管理機能" , type: :feature do
         click_on 'commit'
         expect(current_path).to eq new_user_session_path
 
-        #管理者ページで退会の確認する
+        #管理者側で退会の確認する
         visit new_admin_session_path
         fill_in 'admin_email', with: @admin.email
         fill_in 'admin_password', with: @admin.password
