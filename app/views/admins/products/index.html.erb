@@ -1,10 +1,14 @@
 <div class="container">
-  <h3 class="product-title">商品一覧画面</h3>
-    <div class="row">
+	<h3 class="product-title">商品一覧画面</h3>
+	<div class="row">
 
-
+		<%#= 商品を新規追加するボタン %>
 		<div class="push-real-btn">
+<<<<<<< HEAD
 		<a href="/admins/products/new" class="btn-real">New</a>
+=======
+			<a href="/admins/products/new" class="btn-real"></a>
+>>>>>>> e98d8d20b983b45325180507617223da174ee506
 		</div>
 
 		<table class="table">
@@ -25,6 +29,7 @@
 					<td><%= product.price.to_s(:delimited) %>円</td>
 					<td><%= product.genre.name %></td>
 					<td>
+						<%#= 制作中だった場合、それ以外で条件分岐しています %>
 						<% if product.status %>
 						<span>販売中</span>
 						<% else %>
@@ -37,9 +42,13 @@
 		</table>
 	</div>
 
-    <%= paginate @products %>
+	<%# Kaminariを使ってページネーションを表示しています。 %>
+	<%= paginate @products %>
 
-    </div>
-  </div>
 </div>
 </div>
+<<<<<<< HEAD
+=======
+</div>
+</div>
+>>>>>>> e98d8d20b983b45325180507617223da174ee506

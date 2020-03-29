@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 			<% if @product.present? %>
 				<% if @product.errors.any? %>
 				<h3><%= @product.errors.count %>個のエラーがあります。</h3>
@@ -8,27 +9,44 @@
 				<% end %>
 				<% end %>
 			<% end %>
+=======
+<% if @product.present? %>
+<% if @product.errors.any? %>
+<h3><%= @product.errors.count %>個のエラーがあります。</h3>
+<% @product.errors.full_messages.each do |message| %>
+<ul>
+	<li><%= message %></li>
+</ul>
+<% end %>
+<% end %>
+<% end %>
+>>>>>>> e98d8d20b983b45325180507617223da174ee506
 
 <div class="container">
-  <h3 class="product-title">商品新規登録画面</h3>
-    <div class="row">
-	  <div class="col-md-4">
-		<%= form_for @product,:url => {action:"create"} do |f| %>
-		<!-- 画像選択 -->
-		<!-- 画像選択ボタン -->
-		<%= attachment_image_tag @product, :product_image, format: 'jpeg', fallback: "no_image.jpg", size: "300x200" %><br>
-		<%= f.label :product_image, "画像選択", class: "btn-product" %>
-		<%= f.file_field :product_image, class: "image_form" %>
-	  </div>
+	<h3 class="product-title">商品新規登録画面</h3>
+	<div class="row">
+		<div class="col-md-4">
+			<%= form_for @product,:url => {action:"create"} do |f| %>
+			<!-- 画像選択 -->
+			<%= attachment_image_tag @product, :product_image, format: 'jpeg', fallback: "no_image.jpg", size: "300x200" %><br>
+			<!-- 画像選択ボタン -->
+			<%= f.label :product_image, "画像選択", class: "btn-product" %>
+			<%= f.file_field :product_image, class: "image_form" %>
+		</div>
 
-	  <div class="col-md-4">
+		<div class="col-md-4">
 			<h4>商品名</h4>
 			<%= f.text_field :name %>
 			<h4>商品説明</h4>
 			<%= f.text_area :description %>
 			<%= f.fields_for :genre do |g| %>
+<<<<<<< HEAD
 				<h4><%= g.label :genre_id, "ジャンル" %></h4>
 				<%= g.collection_select :genre_id, @genres, :id, :name, {include_blank: '--選択してください--'}  %>
+=======
+			<%# include_blankで初期値を設定 %>
+			<%= g.collection_select :genre_id, @genres, :id, :name, {include_blank: '--選択してください--'}  %>
+>>>>>>> e98d8d20b983b45325180507617223da174ee506
 			<% end %>
 
 			<h4>税抜価格</h4>

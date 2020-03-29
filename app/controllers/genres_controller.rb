@@ -5,6 +5,7 @@ class GenresController < ApplicationController
     @product = Product.where(genre_id: params[:id])
   end
 
+  # 共通テンプレートように作ったが入らなかった
   def index
     @genres = Genre.all
   end

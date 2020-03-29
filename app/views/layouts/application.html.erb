@@ -3,14 +3,14 @@
 
 <head>
   <title>BlueBirdCake</title>
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
+   <%= csrf_meta_tags %>
+   <%= csp_meta_tag %>
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 
-<link rel="icon" href="/assets/cake.ico">
+  <link rel="icon" href="/assets/cake.ico">
 
 </head>
 
@@ -18,33 +18,50 @@
 
   <header class="navbar navbar-expand-md mb-5">
     <% #他の要素とスペースを開けるためにヘッダーにマージンを設定しています。（ほりゆう） %>
+<<<<<<< HEAD
    <div class="logo rounded-circle ml-5">
     <ul class="navbar-nav my-2 px-2">
       <%= link_to root_path ,class: "text-decoration-none",id: "root_btn" do %>
       <li class="h3 shop-name pt-2">Nagano
         <div class="shop-name pl-3">Cake</div>
+=======
+    <div class="logo rounded-circle ml-5">
+      <ul class="navbar-nav my-2 px-2">
+        <%= link_to root_path ,class: "text-decoration-none" do %>
+        <li class="h3 shop-name pt-2">Nagano
+          <div class="shop-name pl-3">Cake</div>
+>>>>>>> e98d8d20b983b45325180507617223da174ee506
         </li>
         <% end %>
-    </ul>
-   </div>
-  </div>
+      </ul>
+    </div>
+    </div>
 
-    <ul class="navbar-nav ml-auto my-3">
+    <ul class="navbar-nav ml-auto my-3 mr-2">
       <% if user_signed_in? %>
       <li class="nav-item p-2 mr-5 rounded ">
-        <i class="fas fa-user"></i><%= link_to ' マイページ', user_path(current_user.id), class: "text-decoration-none nav-text" %></li>
+        <i
+          class="fas fa-user"></i><%= link_to ' マイページ', user_path(current_user.id), class: "text-decoration-none nav-text" %>
+      </li>
       <li class="nav-item p-2 mr-5 rounded">
-       <i class="fas fa-birthday-cake"></i><%= link_to ' 商品一覧', products_path, class: "text-decoration-none nav-text" %></li>
+        <i
+          class="fas fa-birthday-cake"></i><%= link_to ' 商品一覧', products_path, class: "text-decoration-none nav-text" %>
+      </li>
       <li class="nav-item p-2 mr-5 rounded">
-        <i class="fas fa-shopping-cart"></i><%= link_to ' カート', user_carts_path(current_user.id), class: "text-decoration-none nav-text" %></li>
+        <i
+          class="fas fa-shopping-cart"></i><%= link_to ' カート', user_carts_path(current_user.id), class: "text-decoration-none nav-text" %>
+      </li>
       <li class="nav-item p-2 mr-5 rounded">
-        <i class="fas fa-key"></i><%= link_to ' ログアウト', destroy_user_session_path, method: :delete, class: "text-decoration-none nav-text" %>
+        <i
+          class="fas fa-key"></i><%= link_to ' ログアウト', destroy_user_session_path, method: :delete, class: "text-decoration-none nav-text" %>
       </li>
 
       <%# adminのヘッダー %>
       <% elsif admin_signed_in? %>
       <li class="nav-item p-2 mr-5 rounded">
-        <i class="fas fa-birthday-cake"></i><%= link_to ' 商品一覧', admins_products_path, class: "text-decoration-none nav-text" %></li>
+        <i
+          class="fas fa-birthday-cake"></i><%= link_to ' 商品一覧', admins_products_path, class: "text-decoration-none nav-text" %>
+      </li>
       <li class="nav-item p-2 mr-5 rounded">
         <%= link_to '会員一覧', admins_users_path, class: "text-decoration-non nav-text" %></li>
       <li class="nav-item p-2 mr-5 rounded">
@@ -52,16 +69,35 @@
       <li class="nav-item p-2 rounded">
         <%= link_to 'ジャンル管理', admins_genres_path, class: "text-decoration-none nav-text" %>
       </li>
+      <li class="nav-item p-2 rounded">
+        <%= link_to ‘ログアウト’,destroy_admin_session_path, method: :delete, class: "text-decoration-none nav-text" %>
+      </li>
 
       <% else %>
       <li class="nav-item p-2 mr-5 rounded">
-        <i class="fas fa-birthday-cake"></i><%= link_to ' 商品一覧', products_path, class: "text-decoration-none nav-text" %></li>
+        <i
+          class="fas fa-birthday-cake"></i><%= link_to ' 商品一覧', products_path, class: "text-decoration-none nav-text" %>
+      </li>
       <li class="nav-item p-2 mr-5 rounded">
+<<<<<<< HEAD
        <i class="fas fa-user"></i> <%= link_to ' 会員登録', new_user_registration_path, class: "text-decoration-none nav-text" %></li>
+=======
+        <i class="fas fa-user"></i>
+        <%= link_to ' 新規登録', new_user_registration_path, class: "text-decoration-none nav-text" %></li>
+>>>>>>> e98d8d20b983b45325180507617223da174ee506
       <li class="nav-item p-2 mr-5 rounded">
-        <i class="fas fa-key"></i><%= link_to ' ログイン', new_user_session_path, class: "text-decoration-none nav-text" %></li>
+        <i class="fas fa-key"></i><%= link_to ' ログイン', new_user_session_path, class: "text-decoration-none nav-text" %>
+      </li>
       <% end %>
     </ul>
+
+    <% if admin_signed_in? %>
+
+    <form action="" method="get">
+      <input id="sbox1" id="s" name="s" type="text" placeholder="検索 …" />
+    </form>
+
+    <% end %>
   </header>
 
   <%= yield %>
@@ -85,17 +121,17 @@
 
 
         <div class="col-md-4">
-          <p>▶︎BlueBird    ▶︎誕生秘話    ▶︎店舗一覧</p>
-          <p>▶︎会社概要            ▶︎社員の声    ▶︎採用情報</p>
-          <p>▶︎お知らせ            ▶︎CAKECAMP</p>
+          <p>▶︎BlueBird ▶︎誕生秘話 ▶︎店舗一覧</p>
+          <p>▶︎会社概要 ▶︎社員の声 ▶︎採用情報</p>
+          <p>▶︎お知らせ ▶︎CAKECAMP</p>
         </div>
 
         <div class="col-md-5">
-        <img id="ban1" src="/assets/CAKECAMP.png" alt=""/>
+          <img id="ban1" src="/assets/CAKECAMP.png" alt="" />
         </div>
       </div>
     </div>
-        <p class="text-center pt-3">Copyright © 2020 Bluebird All Rights Reserved.</p>
+    <p class="text-center pt-3">Copyright © 2020 Bluebird All Rights Reserved.</p>
   </footer>
 </body>
 

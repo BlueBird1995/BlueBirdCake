@@ -13,7 +13,10 @@
   			<!-- カートを空にするボタン -->
   			<%= button_to "カートを空にする", destroy_all_path, class:"btn btn-kara", method: :delete %>
   		</div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> e98d8d20b983b45325180507617223da174ee506
   		<table class="table table-bordered">
   			<thead>
   				<tr>
@@ -28,10 +31,16 @@
   				<% @carts.each do |cart| %>
   				<tr>
   					<td>
+<<<<<<< HEAD
   						<%= attachment_image_tag @product, :product_image, format: 'jpeg', fallback: "no_image.jpg", size: "40x20" %><%= cart.product.name %>
   					</td>
   					<td><%= cart.tax_included.to_s(:delimited) %>円</td>
 
+=======
+  						<%= attachment_image_tag cart.product, :product_image, format: 'jpeg', fallback: "no_image.jpg", size: "40x20" %><%= cart.product.name %>
+  					</td>
+  					<td><%= cart.tax_included.to_s(:delimited) %>円</td>
+>>>>>>> e98d8d20b983b45325180507617223da174ee506
   					<td>
   						<%= form_for(cart, url: user_carts_path, html: {method: "patch"}) do |f| %>
   						<%= f.number_field :stock, class: "stock-form" %>
@@ -51,11 +60,10 @@
   		</table>
   	</div>
 	<!-- 合計金額表示 -->
-
 	<div class="row">
 		<div class="col-md-4">
 			<!-- 買い物を続けるボタン -->
-			<%= link_to "買い物を続ける",products_path, class:"btn btn-cart" %>
+			<%= link_to "買い物を続ける",root_path, class:"btn btn-cart" %>
 		</div>
 		<div class="col-md-3 offset-5">
 			<table class="table table-bordered">
@@ -66,9 +74,8 @@
 			</table>
 		</div>
 	</div>
-
 	<div class="button_chuuou">
 		<!-- 情報入力に進むボタン -->
-		<%= link_to "情報入力画面に進む",new_order_path(current_user.id), class:"btn btn-go-order" %>
+		<%= link_to "情報入力画面に進む", new_order_path(current_user.id), class:"btn btn-go-order" %>
 	</div>
 </div>
