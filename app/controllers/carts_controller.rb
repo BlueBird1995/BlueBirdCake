@@ -44,8 +44,8 @@ class CartsController < ApplicationController
      @carts.each do |f|
         @total_price += f.subtotal
       end
-    end
     render :show
+    end
     # renderでエラーメッセージを表示させるために、値を入れ直しています。(redirect_toの違い)
     # redirect_toを使うと、値が再代入されてしまうので、エラーメッセージを出すためにrenderを使っています。
   end

@@ -41,7 +41,7 @@
   					<td><%= cart.subtotal.to_s(:delimited) %>円</td>
   					<td>
   						<div class="button_chuuou">
-  							<%= button_to "削除する",user_carts_path(cart), class: 'btn-destroy', method: :delete %></div>
+  							<%= link_to "削除する",user_carts_path(cart), class: 'btn-destroy', method: :delete %></div>
   					</td>
   				</tr>
   				<% end %>
