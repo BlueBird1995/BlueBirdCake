@@ -23,7 +23,7 @@
            <%= f.label :payment, "クレジットカード", {value: :creditcard} %>
          </div>
          <div class="col-md-12 ml-4"> <!-- 縦にしてる -->
-          <%= f.radio_button :payment, :bank %>
+          <%= f.radio_button :payment, :bank, id: "bank_btn" %>
           <%= f.label :payment, "銀行振込", {value: :bank} %>
          </div>
         </div>
@@ -40,7 +40,7 @@
        <% unless current_user.deliveries.empty? %>
          <div class="row">
           <div class="col-md-5 mb-2">
-            <input type="radio" name="address_button" value="deliveries_address" class="mb-3 ml-4">登録済住所から選択
+            <input type="radio" name="address_button" value="deliveries_address" class="mb-3 ml-4" id="already_address">登録済住所から選択
             <div class="col-md-7 mb-2 ml-4">
               <%= select_tag "select", options_from_collection_for_select(@user.deliveries,  :id, :full_address) %>
             </div>
@@ -63,7 +63,7 @@
      </div>
   </div>
     <div class="submit">
-      <%= f.submit '確認画面へ進む' ,class: 'btn order-btn' %>
+      <%= f.submit '確認画面へ進む' ,class: 'btn order-btn', id:"product_submit"%>
     </div>
       <% end %>
 

@@ -17,6 +17,22 @@
 
 			<span>税込価格（税抜価格）¥<%= @product.price.to_s(:delimited) %><%= @product.tax_included.to_s(:delimited) %>円</span><br>
 
+<<<<<<< HEAD
+        <span>販売ステータス
+        	<% if @product.status %>
+		      <span>販売中</span>
+		    <% else %>
+		      <span>販売停止中</span>
+		    <% end %>
+		</span>
+      <div class = "col-md-2 offset-10">
+        <!-- 編集ボタン -->
+        <%= button_to "編集する",edit_admins_product_path(@product),class: 'btn-product',method: :get %>
+      </div>
+    </div>
+  </div>
+</div>
+=======
 			<span>販売ステータス</span>
 			<% if @product.status %>
 			<span>販売中</span>
@@ -30,3 +46,4 @@
 		</div>
 	</div>
 </div>
+>>>>>>> e98d8d20b983b45325180507617223da174ee506

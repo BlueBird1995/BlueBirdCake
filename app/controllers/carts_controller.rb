@@ -1,6 +1,10 @@
 class CartsController < ApplicationController
   before_action :authenticate_user!
+<<<<<<< HEAD
+  before_action :correct_user, only: [:show, :create, :update, :destory]
+=======
   before_action :correct_user, only: [:show, :create, :update]
+>>>>>>> e98d8d20b983b45325180507617223da174ee506
 
   def show
     @cart = Cart.new
@@ -64,7 +68,11 @@ class CartsController < ApplicationController
     # 前のページに戻るメソッド
   end
 
+<<<<<<< HEAD
+  private
+=======
 private
+>>>>>>> e98d8d20b983b45325180507617223da174ee506
   def cart_params
     params.require(:cart).permit(:product_id,:stock,:user_id)
   end

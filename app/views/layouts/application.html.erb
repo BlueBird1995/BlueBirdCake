@@ -18,11 +18,19 @@
 
   <header class="navbar navbar-expand-md mb-5">
     <% #他の要素とスペースを開けるためにヘッダーにマージンを設定しています。（ほりゆう） %>
+<<<<<<< HEAD
+   <div class="logo rounded-circle ml-5">
+    <ul class="navbar-nav my-2 px-2">
+      <%= link_to root_path ,class: "text-decoration-none",id: "root_btn" do %>
+      <li class="h3 shop-name pt-2">Nagano
+        <div class="shop-name pl-3">Cake</div>
+=======
     <div class="logo rounded-circle ml-5">
       <ul class="navbar-nav my-2 px-2">
         <%= link_to root_path ,class: "text-decoration-none" do %>
         <li class="h3 shop-name pt-2">Nagano
           <div class="shop-name pl-3">Cake</div>
+>>>>>>> e98d8d20b983b45325180507617223da174ee506
         </li>
         <% end %>
       </ul>
@@ -71,8 +79,12 @@
           class="fas fa-birthday-cake"></i><%= link_to ' 商品一覧', products_path, class: "text-decoration-none nav-text" %>
       </li>
       <li class="nav-item p-2 mr-5 rounded">
+<<<<<<< HEAD
+       <i class="fas fa-user"></i> <%= link_to ' 会員登録', new_user_registration_path, class: "text-decoration-none nav-text" %></li>
+=======
         <i class="fas fa-user"></i>
         <%= link_to ' 新規登録', new_user_registration_path, class: "text-decoration-none nav-text" %></li>
+>>>>>>> e98d8d20b983b45325180507617223da174ee506
       <li class="nav-item p-2 mr-5 rounded">
         <i class="fas fa-key"></i><%= link_to ' ログイン', new_user_session_path, class: "text-decoration-none nav-text" %>
       </li>

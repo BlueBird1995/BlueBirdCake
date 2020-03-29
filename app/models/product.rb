@@ -1,14 +1,12 @@
 class Product < ApplicationRecord
 	has_many :carts, dependent: :destroy
     has_many :ordered_products, dependent: :destroy
-    validates :genre_id, presence: true 
-    validates :product_image_id,presence: true 
-    validates :price, presence: true 
-    validates :description, presence: true 
-    validates :status, presence: true 
-    validates :name, presence: true 
-    validates :created_at, presence: true 
-    validates :updated_at, presence: true 
+    validates :genre_id, presence: true
+    validates :price, presence: true
+    validates :description, presence: true
+    validates :status, presence: true
+    validates :name, presence: true
+
 
 
 

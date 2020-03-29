@@ -13,6 +13,10 @@
   			<!-- カートを空にするボタン -->
   			<%= button_to "カートを空にする", destroy_all_path, class:"btn btn-kara", method: :delete %>
   		</div>
+<<<<<<< HEAD
+
+=======
+>>>>>>> e98d8d20b983b45325180507617223da174ee506
   		<table class="table table-bordered">
   			<thead>
   				<tr>
@@ -27,9 +31,16 @@
   				<% @carts.each do |cart| %>
   				<tr>
   					<td>
+<<<<<<< HEAD
+  						<%= attachment_image_tag @product, :product_image, format: 'jpeg', fallback: "no_image.jpg", size: "40x20" %><%= cart.product.name %>
+  					</td>
+  					<td><%= cart.tax_included.to_s(:delimited) %>円</td>
+
+=======
   						<%= attachment_image_tag cart.product, :product_image, format: 'jpeg', fallback: "no_image.jpg", size: "40x20" %><%= cart.product.name %>
   					</td>
   					<td><%= cart.tax_included.to_s(:delimited) %>円</td>
+>>>>>>> e98d8d20b983b45325180507617223da174ee506
   					<td>
   						<%= form_for(cart, url: user_carts_path, html: {method: "patch"}) do |f| %>
   						<%= f.number_field :stock, class: "stock-form" %>

@@ -17,7 +17,13 @@
                 <td><%= user.id %></td>
                 <td><%= link_to user.name, admins_user_path(user) %></td>
                 <td><%= user.email %></td>
-                <td><%= user.status %></td>
+                <td>
+                    <% if user.status == true %>
+                        <span>有効会員</span>
+                    <% else %>
+                        <span>退会済</span>
+                    <% end %>
+                </td>
             </tr>
             <% end %>
         </tbody>
